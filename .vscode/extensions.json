@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "bernhard-42.ocp-cad-viewer",
+        "tamasfe.even-better-toml",
+        "charliermarsh.ruff",
+        "mtsmfm.vscode-stl-viewer",
+        "ms-python.python"
+    ]
+}

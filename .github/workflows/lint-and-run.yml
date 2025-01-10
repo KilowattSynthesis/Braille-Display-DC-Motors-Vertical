@@ -1,0 +1,76 @@
+name: Lint, Type Check, and Run Python Code
+
+on: [push]
+
+jobs:
+  lint-with-ruff:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Run ruff linter
+        run: ruff check ./cad/
+
+  check-with-pyright:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install pyright
+        run: pip install pyright
+
+      - name: Run pyright
+        run: pyright ./cad/
+
+
+  run-python-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+        
+      - name: Run Python scripts in CAD folder
+        run: |
+          find ./cad/ -name "*.py" ! -path "*/no_ci/*" | while read file; do
+            echo "Running $file"
+            python "$file"
+          done
+
+      - name: Compress the build folder
+        run: tar -czf cad-build.tar.gz build/
+
+      - name: Upload CAD build product to artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cad-build
+          path: cad-build.tar.gz
+          retention-days: 2

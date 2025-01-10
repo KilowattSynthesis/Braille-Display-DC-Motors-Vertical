@@ -1,0 +1,32 @@
+target-version = "py311"
+
+line-length = 88
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "ERA001",  # Commented-out code.
+    
+    "S101",  # Use of `assert` statement.
+    "RET504",  # Assignment right before return.
+    
+    "TD003",
+    "FIX002",
+
+    "S311", # Allow insecure `random` module.
+    "COM812", # Remove trailing comma requirement. Makes calling `show` easier.
+
+    # Fix colliding defaults which cause warning.
+    "D203",
+    "D213",
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = [
+    "ALL",
+]
+unfixable = []
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
