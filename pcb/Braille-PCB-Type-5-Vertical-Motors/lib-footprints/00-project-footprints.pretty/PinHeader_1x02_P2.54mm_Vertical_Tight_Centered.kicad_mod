@@ -6,7 +6,7 @@
 	(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 	(tags "Through hole pin header THT 1x02 2.54mm single row")
 	(property "Reference" "REF**"
-		(at 0 -3.3 0)
+		(at 2 0 -90)
 		(layer "F.SilkS")
 		(uuid "9f449d09-37db-4679-b4e5-533258de06b2")
 		(effects

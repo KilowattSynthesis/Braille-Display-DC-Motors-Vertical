@@ -859,6 +859,88 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+		)
 		(symbol "Motor:Motor_DC"
 			(pin_names
 				(offset 0)
@@ -1819,6 +1901,18 @@
 		(uuid 239142b9-90d4-404e-80aa-00ca0343b4b8)
 	)
 	(rectangle
+		(start 121.285 15.875)
+		(end 147.955 42.545)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 5f8b2ab0-d59c-44d0-a313-d4a15499894f)
+	)
+	(rectangle
 		(start 58.42 77.47)
 		(end 139.7 167.64)
 		(stroke
@@ -1853,6 +1947,16 @@
 			(type none)
 		)
 		(uuid c50adb9a-8b4f-42be-b13e-b9bb718ed733)
+	)
+	(text "Motor shafts from\nlower layer."
+		(exclude_from_sim no)
+		(at 136.398 39.878 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f357371a-eec6-4804-8bdf-3ab298c64ea8")
 	)
 	(label "DOT3_A"
 		(at 63.5 57.15 0)
@@ -2449,6 +2553,82 @@
 				)
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/fb3b1da4-7011-461c-8537-8ba6b91cb3dc"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 129.54 31.75 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "43146118-16e0-4f01-a54d-8fa8391e1311")
+		(property "Reference" "H21"
+			(at 132.08 30.4799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 132.08 33.0199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "00-project-footprints:Hole_for_Motor_Shaft"
+			(at 129.54 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 129.54 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/55162da9-4257-4f57-9e38-bff5b99e84aa"
+					(reference "H22")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/59cbbb5d-4a8b-420e-b7ff-ab92dead0067"
+					(reference "H23")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/69e1760a-9ce9-4dd2-bdb0-29d48ad2f691"
+					(reference "H24")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/fb3b1da4-7011-461c-8537-8ba6b91cb3dc"
+					(reference "H21")
 					(unit 1)
 				)
 			)
@@ -3258,6 +3438,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 125.73 26.67 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "820d9dc3-2b73-4552-b1ed-cf4f4a3697e3")
+		(property "Reference" "H17"
+			(at 128.27 25.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 128.27 27.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "00-project-footprints:Hole_for_Motor_Shaft"
+			(at 125.73 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 125.73 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/55162da9-4257-4f57-9e38-bff5b99e84aa"
+					(reference "H18")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/59cbbb5d-4a8b-420e-b7ff-ab92dead0067"
+					(reference "H19")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/69e1760a-9ce9-4dd2-bdb0-29d48ad2f691"
+					(reference "H20")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/fb3b1da4-7011-461c-8537-8ba6b91cb3dc"
+					(reference "H17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDC")
 		(at 46.99 109.22 0)
 		(unit 1)
@@ -3584,6 +3840,82 @@
 				)
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/fb3b1da4-7011-461c-8537-8ba6b91cb3dc"
 					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 129.54 21.59 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6bb2dec-08e5-4ee9-8437-e78cf28649e1")
+		(property "Reference" "H13"
+			(at 132.08 20.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 132.08 22.8599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "00-project-footprints:Hole_for_Motor_Shaft"
+			(at 129.54 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 129.54 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/55162da9-4257-4f57-9e38-bff5b99e84aa"
+					(reference "H14")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/59cbbb5d-4a8b-420e-b7ff-ab92dead0067"
+					(reference "H15")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/69e1760a-9ce9-4dd2-bdb0-29d48ad2f691"
+					(reference "H16")
+					(unit 1)
+				)
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd/fb3b1da4-7011-461c-8537-8ba6b91cb3dc"
+					(reference "H13")
 					(unit 1)
 				)
 			)
