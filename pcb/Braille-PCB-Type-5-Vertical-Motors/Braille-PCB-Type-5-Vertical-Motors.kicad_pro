@@ -487,23 +487,6 @@
         "via_diameter": 0.7,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.11,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Tight",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
-        "wire_width": 6
       }
     ],
     "meta": {
@@ -511,6 +494,7 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "+5V": "Power",
       "/Braille_Cell/DOT1_A": "Tight",
       "/Braille_Cell/DOT2_A": "Tight",
       "/Braille_Cell/DOT3_A": "Tight",
@@ -587,6 +571,8 @@
       "Net-(B4-5B)": "Tight",
       "Net-(B4-6B)": "Tight",
       "Net-(J3-Pin_1)": "Power",
+      "Net-(J7-IN2)": "Power",
+      "Net-(JP1-C)": "Power",
       "Net-(L1-Pad2)": "Tight",
       "Net-(L10-Pad2)": "Tight",
       "Net-(L11-Pad2)": "Tight",
@@ -645,7 +631,7 @@
         "pattern": "VDC"
       },
       {
-        "netclass": "Tight",
+        "netclass": "Default",
         "pattern": "*DOT*"
       }
     ]
