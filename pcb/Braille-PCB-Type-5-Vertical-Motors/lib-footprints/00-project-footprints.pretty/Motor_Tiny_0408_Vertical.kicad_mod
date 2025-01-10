@@ -143,4 +143,15 @@
 		(roundrect_rratio 0.4)
 		(uuid "514bb6e6-1862-4f51-b36a-88ec3965cf66")
 	)
+	(model "${KIPRJMOD}/lib-cad/dc_motor_0408.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
