@@ -1,0 +1,10 @@
+loguru
+GitPython
+
+build123d
+ocp_vscode
+git+https://github.com/gumyr/bd_warehouse@c8b3f6bcb5b7c20285cd15f113012c9add32e629
+build123d-ease==0.2.0.0
+
+ruff
+pyright

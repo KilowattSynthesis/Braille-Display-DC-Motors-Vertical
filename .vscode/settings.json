@@ -1,0 +1,21 @@
+{
+	"files.exclude": {
+		"**/__pycache__": true,
+		"**/.ruff_cache": true,
+		"venv": true,
+	},
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.rulers": [88],
+    },
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "python.analysis.diagnosticMode": "workspace",
+    "python.languageServer": "Pylance",
+}
