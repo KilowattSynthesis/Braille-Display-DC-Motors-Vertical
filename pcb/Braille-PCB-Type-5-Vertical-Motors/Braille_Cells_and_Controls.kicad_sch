@@ -731,10 +731,6 @@
 			)
 		)
 	)
-	(no_connect
-		(at 185.42 55.88)
-		(uuid "4911b6ce-1124-49a2-ba8d-b888591c72e6")
-	)
 	(wire
 		(pts
 			(xy 39.37 40.64) (xy 43.18 40.64)
@@ -784,6 +780,16 @@
 			(type default)
 		)
 		(uuid "157886ca-5684-4e59-b455-4d04f9cd9115")
+	)
+	(wire
+		(pts
+			(xy 185.42 55.88) (xy 187.96 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16f1db8a-2fe9-408c-bfc3-e26b2fb3b805")
 	)
 	(wire
 		(pts
@@ -2050,6 +2056,18 @@
 			(justify right)
 		)
 		(uuid "04077e7b-5b80-412a-9a61-5e93e3f759bd")
+	)
+	(hierarchical_label "SHIFT_SER_OUT"
+		(shape output)
+		(at 187.96 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0ea6a204-11de-4b18-adca-2bb84cb4bfb8")
 	)
 	(hierarchical_label "~{SHIFT_SRCLR}"
 		(shape input)
