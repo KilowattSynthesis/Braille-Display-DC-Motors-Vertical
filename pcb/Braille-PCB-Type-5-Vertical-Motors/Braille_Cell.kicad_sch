@@ -5,8 +5,8 @@
 	(uuid "2cd51479-412f-48a3-af9e-1108938fa36b")
 	(paper "USLetter")
 	(title_block
-		(date "2025-01-10")
-		(rev "Type 5 Rev 1")
+		(date "2025-01-11")
+		(rev "Type 5 Rev 2")
 	)
 	(lib_symbols
 		(symbol "00-project-symbols:AD116_H_Bridge"
@@ -2568,7 +2568,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43146118-16e0-4f01-a54d-8fa8391e1311")
-		(property "Reference" "H21"
+		(property "Reference" "H22"
 			(at 132.08 30.4799 0)
 			(effects
 				(font
@@ -3119,7 +3119,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e93178d-c634-49dd-9afc-32ba48210d2e")
-		(property "Reference" "M5"
+		(property "Reference" "M6"
 			(at 99.06 45.7199 0)
 			(effects
 				(font
@@ -3201,7 +3201,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6874c05c-129a-4c8f-99b8-f5f38517ecc8")
-		(property "Reference" "M1"
+		(property "Reference" "M2"
 			(at 99.06 26.6699 0)
 			(effects
 				(font
@@ -3447,7 +3447,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "820d9dc3-2b73-4552-b1ed-cf4f4a3697e3")
-		(property "Reference" "H17"
+		(property "Reference" "H18"
 			(at 128.27 25.3999 0)
 			(effects
 				(font
@@ -3855,7 +3855,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b6bb2dec-08e5-4ee9-8437-e78cf28649e1")
-		(property "Reference" "H13"
+		(property "Reference" "H14"
 			(at 132.08 20.3199 0)
 			(effects
 				(font
@@ -3931,7 +3931,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b71a69f3-fb67-42fe-8145-5d6026c7ca5f")
-		(property "Reference" "J9"
+		(property "Reference" "J10"
 			(at 86.36 25.3999 0)
 			(effects
 				(font
@@ -4186,7 +4186,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c968032e-4942-4557-9ca6-1345182591d1")
-		(property "Reference" "M9"
+		(property "Reference" "M10"
 			(at 99.06 64.7699 0)
 			(effects
 				(font
@@ -4268,7 +4268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cc3196ec-4d2c-446e-b8f9-e81a29fca0a2")
-		(property "Reference" "J17"
+		(property "Reference" "J18"
 			(at 86.36 63.4999 0)
 			(effects
 				(font
@@ -4667,7 +4667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f853205e-0df3-4feb-880a-2fca7aebee17")
-		(property "Reference" "J13"
+		(property "Reference" "J14"
 			(at 86.36 44.4499 0)
 			(effects
 				(font

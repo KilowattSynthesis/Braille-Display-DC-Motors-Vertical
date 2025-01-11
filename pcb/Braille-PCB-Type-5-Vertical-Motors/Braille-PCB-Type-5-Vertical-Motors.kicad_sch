@@ -5,8 +5,8 @@
 	(uuid "3829a125-89bd-48f9-bfbe-92d753eb8f7f")
 	(paper "USLetter")
 	(title_block
-		(date "2025-01-10")
-		(rev "Type 5 Rev 1")
+		(date "2025-01-11")
+		(rev "Type 5 Rev 2")
 	)
 	(lib_symbols
 		(symbol "00-project-symbols:Jumper-3-Way-Power"

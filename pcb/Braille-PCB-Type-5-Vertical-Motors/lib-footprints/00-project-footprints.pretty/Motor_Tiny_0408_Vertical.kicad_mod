@@ -121,14 +121,14 @@
 		(uuid "47d46ae5-e3a3-4fe7-a7f0-6d00f5999560")
 	)
 	(pad "1" smd roundrect
-		(at -0.6 1 45)
+		(at -0.6 0.9 45)
 		(size 1 1.6)
 		(layers "B.Cu" "B.Mask")
 		(roundrect_rratio 0.4)
 		(uuid "c076b018-adb8-4ef5-a98b-8359e70c9a77")
 	)
 	(pad "2" smd roundrect
-		(at 0.6 -1 45)
+		(at 0.6 -0.9 45)
 		(size 1 1.6)
 		(layers "B.Cu" "B.Mask")
 		(roundrect_rratio 0.4)
