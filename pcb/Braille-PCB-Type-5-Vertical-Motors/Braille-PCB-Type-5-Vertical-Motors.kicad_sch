@@ -5058,7 +5058,6 @@
 	)
 	(label "~{SHIFT_OE}"
 		(at 77.47 40.64 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5069,7 +5068,6 @@
 	)
 	(label "UART0_RX"
 		(at 62.23 27.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5080,7 +5078,6 @@
 	)
 	(label "~{SHIFT_SRCLR}"
 		(at 185.42 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5091,7 +5088,6 @@
 	)
 	(label "UART0_RX"
 		(at 57.15 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5102,7 +5098,6 @@
 	)
 	(label "UART0_TX"
 		(at 62.23 25.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5113,7 +5108,6 @@
 	)
 	(label "GP_LED_0"
 		(at 59.69 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5124,7 +5118,6 @@
 	)
 	(label "SHIFT_RCLK"
 		(at 77.47 38.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5135,7 +5128,6 @@
 	)
 	(label "SW_2"
 		(at 34.29 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5146,7 +5138,6 @@
 	)
 	(label "GP_LED_0"
 		(at 72.39 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5157,7 +5148,6 @@
 	)
 	(label "~{SHIFT_SRCLR}"
 		(at 77.47 35.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5168,7 +5158,6 @@
 	)
 	(label "~{SHIFT_OE}"
 		(at 185.42 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5179,7 +5168,6 @@
 	)
 	(label "SHIFT_SER_OUT"
 		(at 185.42 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5190,7 +5178,6 @@
 	)
 	(label "SW_1"
 		(at 21.59 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5201,7 +5188,6 @@
 	)
 	(label "~{SHIFT_OE}"
 		(at 140.97 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5212,7 +5198,6 @@
 	)
 	(label "SHIFT_RCLK"
 		(at 140.97 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5223,7 +5208,6 @@
 	)
 	(label "SHIFT_SER_OUT"
 		(at 157.48 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5234,7 +5218,6 @@
 	)
 	(label "SHIFT_SER_IN"
 		(at 77.47 30.48 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5245,7 +5228,6 @@
 	)
 	(label "SHIFT_SRCK"
 		(at 77.47 33.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5256,7 +5238,6 @@
 	)
 	(label "SHIFT_SER_IN"
 		(at 140.97 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5267,7 +5248,6 @@
 	)
 	(label "~{SHIFT_SRCLR}"
 		(at 140.97 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5278,7 +5258,6 @@
 	)
 	(label "SW_2"
 		(at 21.59 38.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5289,7 +5268,6 @@
 	)
 	(label "SHIFT_RCLK"
 		(at 185.42 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5300,7 +5278,6 @@
 	)
 	(label "SHIFT_SRCK"
 		(at 185.42 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5311,7 +5288,6 @@
 	)
 	(label "GP_LED_1"
 		(at 73.66 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5322,7 +5298,6 @@
 	)
 	(label "GP_LED_1"
 		(at 72.39 45.72 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5333,7 +5308,6 @@
 	)
 	(label "SHIFT_SRCK"
 		(at 140.97 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5344,7 +5318,6 @@
 	)
 	(label "SW_1"
 		(at 16.51 71.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5355,7 +5328,6 @@
 	)
 	(label "UART0_TX"
 		(at 57.15 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
