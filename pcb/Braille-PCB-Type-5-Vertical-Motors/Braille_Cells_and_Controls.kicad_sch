@@ -2160,7 +2160,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "02cd60bb-0d9f-409b-ab87-f0070501b615")
-		(property "Reference" "#PWR0117"
+		(property "Reference" "#PWR0603"
 			(at 175.26 31.75 0)
 			(effects
 				(font
@@ -2210,7 +2210,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0117")
+					(reference "#PWR0603")
 					(unit 1)
 				)
 			)
@@ -2226,7 +2226,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "051812e4-55b2-4982-a209-10ace15c538d")
-		(property "Reference" "U26"
+		(property "Reference" "U601"
 			(at 55.5341 25.4 0)
 			(effects
 				(font
@@ -2322,7 +2322,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "U26")
+					(reference "U601")
 					(unit 1)
 				)
 			)
@@ -2337,7 +2337,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "194e5e18-615e-4295-8fc1-f64b2419640e")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR0604"
 			(at 53.34 67.31 0)
 			(effects
 				(font
@@ -2387,7 +2387,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0114")
+					(reference "#PWR0604")
 					(unit 1)
 				)
 			)
@@ -2402,7 +2402,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1ea6866f-2b6d-4dc6-a1c9-145507c81fb5")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0608"
 			(at 36.83 83.82 0)
 			(effects
 				(font
@@ -2452,7 +2452,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0132")
+					(reference "#PWR0608")
 					(unit 1)
 				)
 			)
@@ -2467,7 +2467,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "20663e6e-d69d-4684-8d9b-f02ed04a145f")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0601"
 			(at 53.34 31.75 0)
 			(effects
 				(font
@@ -2517,7 +2517,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0113")
+					(reference "#PWR0601")
 					(unit 1)
 				)
 			)
@@ -2533,7 +2533,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "37c79a76-8803-4286-9ead-2756359c4e4e")
-		(property "Reference" "C27"
+		(property "Reference" "C601"
 			(at 27.94 83.8199 0)
 			(effects
 				(font
@@ -2587,7 +2587,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "C27")
+					(reference "C601")
 					(unit 1)
 				)
 			)
@@ -2602,7 +2602,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3b90ecf3-cc99-4d88-8e36-6cde8e0b5d1f")
-		(property "Reference" "#PWR0115"
+		(property "Reference" "#PWR0602"
 			(at 114.3 31.75 0)
 			(effects
 				(font
@@ -2652,7 +2652,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0115")
+					(reference "#PWR0602")
 					(unit 1)
 				)
 			)
@@ -2668,7 +2668,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5fa20148-795c-4107-a49b-6c7ab00cfcc1")
-		(property "Reference" "U27"
+		(property "Reference" "U602"
 			(at 116.4941 25.4 0)
 			(effects
 				(font
@@ -2764,7 +2764,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "U27")
+					(reference "U602")
 					(unit 1)
 				)
 			)
@@ -2780,7 +2780,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a69b77f-73ce-4a1f-a49d-887306acdaab")
-		(property "Reference" "C30"
+		(property "Reference" "C602"
 			(at 40.64 83.8199 0)
 			(effects
 				(font
@@ -2834,7 +2834,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "C30")
+					(reference "C602")
 					(unit 1)
 				)
 			)
@@ -2850,7 +2850,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "74295b34-347d-40e5-be16-3ae639e6ae11")
-		(property "Reference" "#PWR0135"
+		(property "Reference" "#PWR0611"
 			(at 36.83 96.52 0)
 			(effects
 				(font
@@ -2900,7 +2900,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0135")
+					(reference "#PWR0611")
 					(unit 1)
 				)
 			)
@@ -2916,7 +2916,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8f94764f-b0ee-4564-8b75-1365ec505921")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0610"
 			(at 24.13 96.52 0)
 			(effects
 				(font
@@ -2966,7 +2966,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0133")
+					(reference "#PWR0610")
 					(unit 1)
 				)
 			)
@@ -2981,7 +2981,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9fe68065-ea7e-430f-b215-6fbd467b893d")
-		(property "Reference" "#PWR0118"
+		(property "Reference" "#PWR0606"
 			(at 175.26 67.31 0)
 			(effects
 				(font
@@ -3031,7 +3031,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0118")
+					(reference "#PWR0606")
 					(unit 1)
 				)
 			)
@@ -3047,7 +3047,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b4f1eff2-9922-46cd-9a27-e3d409e4cf31")
-		(property "Reference" "#PWR0137"
+		(property "Reference" "#PWR0612"
 			(at 49.53 96.52 0)
 			(effects
 				(font
@@ -3097,7 +3097,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0137")
+					(reference "#PWR0612")
 					(unit 1)
 				)
 			)
@@ -3112,7 +3112,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c02cded2-c44c-4380-aa4d-71f7ec8d824c")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0609"
 			(at 49.53 83.82 0)
 			(effects
 				(font
@@ -3162,7 +3162,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0136")
+					(reference "#PWR0609")
 					(unit 1)
 				)
 			)
@@ -3178,7 +3178,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c043d598-e2af-454e-8d1c-031d1c6e43f6")
-		(property "Reference" "C31"
+		(property "Reference" "C603"
 			(at 53.34 83.8199 0)
 			(effects
 				(font
@@ -3232,7 +3232,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "C31")
+					(reference "C603")
 					(unit 1)
 				)
 			)
@@ -3248,7 +3248,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9f2708e-93c1-4eb3-871c-75f4bbfb1b08")
-		(property "Reference" "U28"
+		(property "Reference" "U603"
 			(at 177.4541 25.4 0)
 			(effects
 				(font
@@ -3344,7 +3344,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "U28")
+					(reference "U603")
 					(unit 1)
 				)
 			)
@@ -3359,7 +3359,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd5b3e97-2105-4007-8437-6b4b74c6ca16")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR0607"
 			(at 24.13 83.82 0)
 			(effects
 				(font
@@ -3409,7 +3409,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0134")
+					(reference "#PWR0607")
 					(unit 1)
 				)
 			)
@@ -3424,7 +3424,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0673287-b050-46ab-be5d-c88998d4db19")
-		(property "Reference" "#PWR0116"
+		(property "Reference" "#PWR0605"
 			(at 114.3 67.31 0)
 			(effects
 				(font
@@ -3474,7 +3474,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f/508cfeb6-61a5-4af4-970c-045ef9c703bd"
-					(reference "#PWR0116")
+					(reference "#PWR0605")
 					(unit 1)
 				)
 			)

@@ -66,6 +66,36 @@
 		)
 	)
 	(attr through_hole)
+	(fp_line
+		(start -1.8 1.2)
+		(end -1.8 2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "75116e14-8141-4782-b1ac-35ffde72a131")
+	)
+	(fp_line
+		(start -1.4 1.6)
+		(end -2.2 1.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "5c01b41f-8b9b-42ab-8f54-4c1906970bc5")
+	)
+	(fp_line
+		(start 1.3 1.6)
+		(end 2.1 1.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "a2528c27-3c5a-45ca-a1bf-b397d24fae5c")
+	)
 	(fp_circle
 		(center 0 0)
 		(end 1.94 0)
@@ -76,6 +106,36 @@
 		(fill none)
 		(layer "B.SilkS")
 		(uuid "e06e2243-202e-45c5-9091-f18d8a867445")
+	)
+	(fp_line
+		(start -2.2 1.6)
+		(end -1.4 1.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "ee666000-64af-4490-9176-788fa3bc8631")
+	)
+	(fp_line
+		(start -1.8 1.2)
+		(end -1.8 2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "0c728dd9-e99d-4d09-a209-c21b38055649")
+	)
+	(fp_line
+		(start 2.1 1.6)
+		(end 1.3 1.6)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "a1ebf94e-774e-437d-928c-139445557b5b")
 	)
 	(fp_circle
 		(center 0 0)
@@ -111,36 +171,18 @@
 			)
 		)
 	)
-	(pad "1" thru_hole roundrect
+	(pad "" np_thru_hole circle
 		(at -1.3 0)
-		(size 1 1.6)
-		(drill 0.762)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(roundrect_rratio 0.4)
+		(size 0.5 0.5)
+		(drill 1)
+		(layers "F&B.Cu" "*.Mask")
 		(uuid "47d46ae5-e3a3-4fe7-a7f0-6d00f5999560")
 	)
-	(pad "1" smd roundrect
-		(at -0.6 0.9 45)
-		(size 1 1.6)
-		(layers "B.Cu" "B.Mask")
-		(roundrect_rratio 0.4)
-		(uuid "c076b018-adb8-4ef5-a98b-8359e70c9a77")
-	)
-	(pad "2" smd roundrect
-		(at 0.6 -0.9 45)
-		(size 1 1.6)
-		(layers "B.Cu" "B.Mask")
-		(roundrect_rratio 0.4)
-		(uuid "1902bb22-f52f-4c1d-9552-60308948d3a8")
-	)
-	(pad "2" thru_hole roundrect
+	(pad "" np_thru_hole circle
 		(at 1.3 0)
-		(size 1 1.6)
-		(drill 0.762)
-		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
-		(roundrect_rratio 0.4)
+		(size 0.5 0.5)
+		(drill 1)
+		(layers "F&B.Cu" "*.Mask")
 		(uuid "514bb6e6-1862-4f51-b36a-88ec3965cf66")
 	)
 	(model "${KIPRJMOD}/lib-cad/dc_motor_0408.step"

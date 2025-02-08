@@ -9,222 +9,6 @@
 		(rev "Type 5 Rev 2")
 	)
 	(lib_symbols
-		(symbol "00-project-symbols:Jumper-3-Way-Power"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 1.778 5.842 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper-3-Way-Power"
-				(at -0.762 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Footprint" "00-project-footprints:Jumper-3-Way-2.54mm-Headers"
-				(at 0 -6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 2.54 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 2.54 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper-3-Way-Power_0_1"
-				(polyline
-					(pts
-						(xy -1.016 -1.778) (xy -1.016 -2.54) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.778) (xy -1.016 2.54) (xy -2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper-3-Way-Power_1_1"
-				(rectangle
-					(start -6.35 5.08)
-					(end 5.08 -5.08)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -2.032 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center -1.016 -1.016)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center -1.016 0)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center -1.016 1.016)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 0) (xy 0.508 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin power_in line
-					(at -8.89 -2.54 0)
-					(length 2.54)
-					(name "IN1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -8.89 0 0)
-					(length 2.54)
-					(name "IN2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -8.89 2.54 0)
-					(length 2.54)
-					(name "IN3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "00-project-symbols:RP2040-Zero"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -702,225 +486,6 @@
 				)
 			)
 		)
-		(symbol "Connector:Barrel_Jack_Switch"
-			(pin_names hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.334 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Barrel_Jack_Switch"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "DC Barrel Jack with an internal switch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC power barrel jack connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "BarrelJack*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_0_1"
-				(rectangle
-					(start -5.08 3.81)
-					(end 5.08 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(arc
-					(start -3.302 3.175)
-					(mid -3.9343 2.54)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 3.175)
-					(mid -3.9343 2.54)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.286) (xy 1.905 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 3.683 3.175)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "Barrel_Jack_Switch_1_1"
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector:Screw_Terminal_01x02"
 			(pin_names
 				(offset 1.016) hide)
@@ -1238,174 +803,6 @@
 						)
 					)
 					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Connector_Generic:Conn_01x03"
-			(pin_names
-				(offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x03"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Conn_01x03_1_1"
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 3.81)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at -5.08 2.54 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2380,203 +1777,6 @@
 				)
 			)
 		)
-		(symbol "Jumper:Jumper_3_Open"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim yes)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at -2.54 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Jumper_3_Open"
-				(at 0 2.794 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Jumper, 3-pole, both open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Jumper SPDT"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Jumper* TestPoint*3Pads* TestPoint*Bridge*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Jumper_3_Open_0_0"
-				(circle
-					(center -3.302 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 3.302 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_3_Open_0_1"
-				(arc
-					(start -0.254 1.016)
-					(mid -1.651 1.4992)
-					(end -3.048 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.508) (xy 0 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 3.048 1.016)
-					(mid 1.651 1.4992)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Jumper_3_Open_1_1"
-				(pin passive line
-					(at -6.35 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Mechanical:MountingHole_Pad"
 			(pin_numbers hide)
 			(pin_names
@@ -2806,6 +2006,231 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Sensor_Energy:INA219AxD"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -6.35 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "INA219AxD"
+				(at 5.08 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 20.32 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+				(at 8.89 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "ADC I2C 16-Bit Oversampling Current Shunt"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "INA219AxD_0_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "INA219AxD_1_1"
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -5.08 180)
+					(length 2.54)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 10.16 5.08 180)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 10.16 270)
+					(length 2.54)
+					(name "VS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "IN-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "IN+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3418,13 +2843,19 @@
 		)
 	)
 	(junction
-		(at 41.91 190.5)
+		(at 68.58 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "056142e0-94e6-45d1-885f-890975a5b633")
+	)
+	(junction
+		(at 36.83 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "16757f16-d671-4e7a-959e-bdfd2abc2c67")
 	)
 	(junction
-		(at 41.91 189.23)
+		(at 36.83 172.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "18688ce5-9b8b-4029-80ae-b94f3a05424f")
@@ -3448,16 +2879,10 @@
 		(uuid "3d105feb-c6b3-466d-927e-6130109ee909")
 	)
 	(junction
-		(at 53.34 151.13)
+		(at 68.58 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5b1324a8-ef90-4cb8-83ef-5d687f0913cb")
-	)
-	(junction
-		(at 44.45 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "770dd5c2-0883-4c76-a0f8-ec9194418844")
+		(uuid "56c1c4c3-171b-4f3b-ac68-5df3dc5a5c5d")
 	)
 	(junction
 		(at 152.4 88.9)
@@ -3466,16 +2891,22 @@
 		(uuid "9db78678-1ee0-415b-ae06-6de3b2fa9169")
 	)
 	(junction
-		(at 33.02 173.99)
+		(at 97.79 179.07)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "abd5eaed-f7e9-4f9a-ada1-7f680354d71b")
+	)
+	(junction
+		(at 27.94 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ac3a0131-bd9b-4326-b5dd-9b93d93678e4")
 	)
 	(junction
-		(at 41.91 163.83)
+		(at 118.11 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b751473d-e34b-40b1-9d27-46916705272a")
+		(uuid "b5d4cd2e-dd07-47bb-941b-8e6148ddcc82")
 	)
 	(junction
 		(at 152.4 99.06)
@@ -3484,26 +2915,16 @@
 		(uuid "bf327a6b-f784-407e-825c-741d7d9876e4")
 	)
 	(junction
-		(at 46.99 151.13)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c419c3c0-c39c-4c13-88ef-144270a5aa0d")
-	)
-	(junction
 		(at 152.4 96.52)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f3dc49c9-2501-4baf-b27b-f88ac35f77e7")
 	)
 	(junction
-		(at 50.8 173.99)
+		(at 45.72 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f691f0c5-3d40-4eab-b9ad-e46ed17e251f")
-	)
-	(no_connect
-		(at 50.8 54.61)
-		(uuid "010dcd04-c4e9-44f2-93dc-7694e2651f94")
 	)
 	(no_connect
 		(at 213.36 29.21)
@@ -3518,6 +2939,10 @@
 		(uuid "0c8318f9-a96c-4659-8604-3545c8bd812c")
 	)
 	(no_connect
+		(at 48.26 54.61)
+		(uuid "1a40e4ae-dce7-4f55-88bc-fbef48967db7")
+	)
+	(no_connect
 		(at 68.58 72.39)
 		(uuid "4667f6e2-d3a4-464f-a93d-269d1ee13d24")
 	)
@@ -3526,7 +2951,7 @@
 		(uuid "50292b33-9342-4cb1-8616-b05630fcf160")
 	)
 	(no_connect
-		(at 238.76 80.01)
+		(at 237.49 102.87)
 		(uuid "61e4604a-b21d-47ec-a98e-28631a01e394")
 	)
 	(no_connect
@@ -3534,11 +2959,11 @@
 		(uuid "62d130fe-ca75-4a44-8169-82053c495a56")
 	)
 	(no_connect
-		(at 257.81 80.01)
+		(at 256.54 102.87)
 		(uuid "6431ab91-25c5-4f73-8c5e-05123ec8ec19")
 	)
 	(no_connect
-		(at 257.81 88.9)
+		(at 256.54 127)
 		(uuid "67c34e0a-e8d4-4537-839d-fd8368c813c4")
 	)
 	(no_connect
@@ -3554,7 +2979,11 @@
 		(uuid "a7ac6802-229f-41d2-8865-d0f21d1c3292")
 	)
 	(no_connect
-		(at 233.68 80.01)
+		(at 50.8 54.61)
+		(uuid "aceacd34-be46-4466-a93c-475da11867c2")
+	)
+	(no_connect
+		(at 232.41 102.87)
 		(uuid "bb0580ac-52d4-439a-b8f8-1b9526dff112")
 	)
 	(no_connect
@@ -3566,24 +2995,24 @@
 		(uuid "be8851d6-007b-4d4a-9e31-d7a377af8275")
 	)
 	(no_connect
-		(at 233.68 88.9)
+		(at 232.41 127)
 		(uuid "c351907c-1c24-4255-9505-8ca3b67cc15d")
 	)
 	(no_connect
-		(at 252.73 80.01)
+		(at 251.46 102.87)
 		(uuid "d064ed60-9a5d-4e59-94c8-3308e0d83da8")
 	)
 	(no_connect
-		(at 252.73 88.9)
+		(at 251.46 127)
 		(uuid "d8521120-1a0e-48f1-8583-af067ee5d482")
 	)
 	(no_connect
-		(at 48.26 54.61)
-		(uuid "da502ea8-4552-48b7-99b2-b3f5bf583a9c")
+		(at 237.49 127)
+		(uuid "dbbaea62-7f47-4f91-a0a7-93904aa716a3")
 	)
 	(no_connect
-		(at 238.76 88.9)
-		(uuid "dbbaea62-7f47-4f91-a0a7-93904aa716a3")
+		(at 27.94 40.64)
+		(uuid "e5a88d7e-a5f9-49bd-a3e2-0ef1cb73dc71")
 	)
 	(no_connect
 		(at 40.64 54.61)
@@ -3615,6 +3044,26 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 148.59) (xy 129.54 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07e8897d-88d0-43d5-a689-647e45ba5942")
+	)
+	(wire
+		(pts
+			(xy 95.25 168.91) (xy 97.79 168.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08e13578-d441-40d0-888b-d1e00a17e2d6")
+	)
+	(wire
+		(pts
 			(xy 73.66 100.33) (xy 64.77 100.33)
 		)
 		(stroke
@@ -3635,13 +3084,23 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 154.94) (xy 46.99 151.13)
+			(xy 72.39 171.45) (xy 74.93 171.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0e6cda58-e52d-41bf-80cb-4df5b2b59097")
+		(uuid "0e0de688-d8f1-48dc-801d-31dcd40dfbd6")
+	)
+	(wire
+		(pts
+			(xy 129.54 139.7) (xy 129.54 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1206ec1c-ff47-405a-96c8-6c719bf923cd")
 	)
 	(wire
 		(pts
@@ -3655,7 +3114,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 186.69) (xy 33.02 190.5)
+			(xy 27.94 170.18) (xy 27.94 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3665,7 +3124,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 190.5) (xy 41.91 190.5)
+			(xy 27.94 173.99) (xy 36.83 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3695,6 +3154,16 @@
 	)
 	(wire
 		(pts
+			(xy 63.5 185.42) (xy 68.58 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "195d1a55-b5f4-4a98-9022-6ffbdd79da77")
+	)
+	(wire
+		(pts
 			(xy 60.96 35.56) (xy 109.22 35.56)
 		)
 		(stroke
@@ -3702,16 +3171,6 @@
 			(type default)
 		)
 		(uuid "19979636-a69f-42af-a62b-5199935c3f31")
-	)
-	(wire
-		(pts
-			(xy 46.99 151.13) (xy 46.99 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b7c170e-0aad-4259-ba34-2698e64ced8b")
 	)
 	(wire
 		(pts
@@ -3745,7 +3204,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 189.23) (xy 50.8 189.23)
+			(xy 36.83 172.72) (xy 45.72 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3765,6 +3224,36 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 181.61) (xy 68.58 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25f7f139-2cbc-4d48-9546-b70599c6a486")
+	)
+	(wire
+		(pts
+			(xy 85.09 184.15) (xy 85.09 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26685727-e345-497f-bfe3-5af94032a3ef")
+	)
+	(wire
+		(pts
+			(xy 72.39 176.53) (xy 72.39 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29d335d1-9adc-4b72-aa4c-4e080138dfb4")
+	)
+	(wire
+		(pts
 			(xy 22.86 87.63) (xy 22.86 85.09)
 		)
 		(stroke
@@ -3772,6 +3261,16 @@
 			(type default)
 		)
 		(uuid "2b031c1a-cf78-42d6-85f1-9e03f8a02b25")
+	)
+	(wire
+		(pts
+			(xy 228.6 77.47) (xy 228.6 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d554d4f-1a13-497d-9cb8-e45e81fcfc2b")
 	)
 	(wire
 		(pts
@@ -3805,13 +3304,33 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 190.5) (xy 41.91 193.04)
+			(xy 97.79 179.07) (xy 97.79 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3261dcab-16c5-40b3-9458-43c1c1bcbca9")
+	)
+	(wire
+		(pts
+			(xy 36.83 173.99) (xy 36.83 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "335760e4-99c6-40c6-8e6f-66636aeac5d1")
+	)
+	(wire
+		(pts
+			(xy 97.79 176.53) (xy 97.79 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3477a3ab-046c-42f4-b7b9-758f5bc027d7")
 	)
 	(wire
 		(pts
@@ -3825,6 +3344,16 @@
 	)
 	(wire
 		(pts
+			(xy 95.25 171.45) (xy 97.79 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "388932c2-c674-4ea2-9f3a-cbf7861a7777")
+	)
+	(wire
+		(pts
 			(xy 172.72 96.52) (xy 175.26 96.52)
 		)
 		(stroke
@@ -3835,23 +3364,43 @@
 	)
 	(wire
 		(pts
-			(xy 19.05 161.29) (xy 19.05 163.83)
+			(xy 118.11 181.61) (xy 118.11 184.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3ce84608-46e7-4678-851d-ec0abbe9c551")
+		(uuid "3d0d4094-4496-4cee-8ad2-fd3c003f80ad")
 	)
 	(wire
 		(pts
-			(xy 50.8 173.99) (xy 59.69 173.99)
+			(xy 121.92 181.61) (xy 121.92 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3deb8fc8-c133-49a9-a1c9-32116a4102ba")
+	)
+	(wire
+		(pts
+			(xy 45.72 157.48) (xy 68.58 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "403c4eb3-f008-4a96-a8ad-541b4f2e0684")
+	)
+	(wire
+		(pts
+			(xy 68.58 170.18) (xy 68.58 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "436986cd-94a5-452d-b8a5-cf9a082e57c7")
 	)
 	(wire
 		(pts
@@ -3862,6 +3411,16 @@
 			(type default)
 		)
 		(uuid "437ead86-2259-4396-9b34-aca129e51872")
+	)
+	(wire
+		(pts
+			(xy 118.11 181.61) (xy 121.92 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43d18699-99ff-40ad-bedd-a98e87f7d4bf")
 	)
 	(wire
 		(pts
@@ -3905,37 +3464,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 152.4) (xy 41.91 163.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "53db66f9-ec44-4660-b5d2-19377c77d191")
-	)
-	(wire
-		(pts
-			(xy 44.45 152.4) (xy 44.45 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "54f5cba1-d4e6-46b6-b363-0f3c520dd042")
-	)
-	(wire
-		(pts
-			(xy 41.91 152.4) (xy 44.45 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "559ac781-53d9-4023-a8f6-b0d8f5a2f471")
-	)
-	(wire
-		(pts
-			(xy 102.87 191.77) (xy 102.87 193.04)
+			(xy 146.05 191.77) (xy 146.05 193.04)
 		)
 		(stroke
 			(width 0)
@@ -3985,13 +3514,33 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 181.61) (xy 41.91 189.23)
+			(xy 68.58 185.42) (xy 68.58 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dc793cf-e84b-43e6-a410-37c9100e1c0c")
+	)
+	(wire
+		(pts
+			(xy 36.83 165.1) (xy 36.83 172.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5e480cd9-0fb5-4095-bf7e-43d8a7c17bdd")
+	)
+	(wire
+		(pts
+			(xy 74.93 176.53) (xy 72.39 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ea20961-e16c-4655-ae1d-62644b92853b")
 	)
 	(wire
 		(pts
@@ -4002,6 +3551,16 @@
 			(type default)
 		)
 		(uuid "61dadb30-c1b4-4c37-801e-3d34db07d7b2")
+	)
+	(wire
+		(pts
+			(xy 95.25 179.07) (xy 97.79 179.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61dd51a9-32b3-4dc5-b62f-d8b60470ba21")
 	)
 	(wire
 		(pts
@@ -4035,6 +3594,16 @@
 	)
 	(wire
 		(pts
+			(xy 118.11 181.61) (xy 118.11 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6426a224-605d-417b-bd1e-6edc17c13bc4")
+	)
+	(wire
+		(pts
 			(xy 152.4 88.9) (xy 154.94 88.9)
 		)
 		(stroke
@@ -4065,7 +3634,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 173.99) (xy 33.02 173.99)
+			(xy 26.67 157.48) (xy 27.94 157.48)
 		)
 		(stroke
 			(width 0)
@@ -4075,23 +3644,23 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 173.99) (xy 33.02 179.07)
+			(xy 68.58 167.64) (xy 72.39 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a05a8b2-68ab-49d6-9031-b9ef14723b45")
+	)
+	(wire
+		(pts
+			(xy 27.94 157.48) (xy 27.94 162.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6d0eeb55-d286-4e29-9d86-65a7fc81b5a9")
-	)
-	(wire
-		(pts
-			(xy 46.99 151.13) (xy 53.34 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d17c00c-70bd-47b0-87da-00495eada36f")
 	)
 	(wire
 		(pts
@@ -4102,6 +3671,26 @@
 			(type default)
 		)
 		(uuid "7259da30-a920-4ca4-b679-09c769bc4ac4")
+	)
+	(wire
+		(pts
+			(xy 68.58 181.61) (xy 68.58 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73d09390-d142-438f-a50a-d7e4faa749b0")
+	)
+	(wire
+		(pts
+			(xy 95.25 176.53) (xy 97.79 176.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7796775e-2254-4335-b605-ee1df0fa6f6c")
 	)
 	(wire
 		(pts
@@ -4125,16 +3714,6 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 163.83) (xy 67.31 163.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c751b63-ff3a-4b86-a1a8-c9d97909542c")
-	)
-	(wire
-		(pts
 			(xy 177.8 99.06) (xy 175.26 99.06)
 		)
 		(stroke
@@ -4142,16 +3721,6 @@
 			(type default)
 		)
 		(uuid "835ae8e1-1988-4bcc-8006-7191ba075275")
-	)
-	(wire
-		(pts
-			(xy 44.45 146.05) (xy 44.45 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "854159cd-cf94-4454-8519-6816c0a9b4b7")
 	)
 	(wire
 		(pts
@@ -4165,6 +3734,16 @@
 	)
 	(wire
 		(pts
+			(xy 72.39 167.64) (xy 72.39 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f84a846-3f5f-4c4d-823e-44fbd2ec1b39")
+	)
+	(wire
+		(pts
 			(xy 66.04 80.01) (xy 68.58 80.01)
 		)
 		(stroke
@@ -4175,13 +3754,23 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 175.26) (xy 102.87 173.99)
+			(xy 146.05 175.26) (xy 146.05 173.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "96e9f486-eef9-4f53-83ef-8ce4eb0793fa")
+	)
+	(wire
+		(pts
+			(xy 85.09 161.29) (xy 85.09 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98313250-e4b6-4024-9894-1fb352c63b79")
 	)
 	(wire
 		(pts
@@ -4212,16 +3801,6 @@
 			(type default)
 		)
 		(uuid "9ba9eb2e-89ce-49a6-a935-f0371fd3055d")
-	)
-	(wire
-		(pts
-			(xy 53.34 148.59) (xy 53.34 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a05ea85a-c336-43fd-9479-0f3e3c5ffb92")
 	)
 	(wire
 		(pts
@@ -4265,7 +3844,17 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 173.99) (xy 50.8 173.99)
+			(xy 121.92 191.77) (xy 121.92 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5333470-9143-491a-9b6a-f8f9cde469a7")
+	)
+	(wire
+		(pts
+			(xy 44.45 157.48) (xy 45.72 157.48)
 		)
 		(stroke
 			(width 0)
@@ -4335,36 +3924,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 151.13) (xy 55.88 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab3b18af-f645-4ff9-b4c9-bf0ae89334af")
-	)
-	(wire
-		(pts
-			(xy 67.31 181.61) (xy 69.85 181.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab587fef-e7f2-48ca-ab2b-74d74cc5e686")
-	)
-	(wire
-		(pts
-			(xy 67.31 163.83) (xy 67.31 176.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abead116-3750-45be-9903-1164556ef19c")
-	)
-	(wire
-		(pts
 			(xy 40.64 87.63) (xy 40.64 85.09)
 		)
 		(stroke
@@ -4395,7 +3954,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 189.23) (xy 41.91 190.5)
+			(xy 36.83 172.72) (xy 36.83 173.99)
 		)
 		(stroke
 			(width 0)
@@ -4415,17 +3974,7 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 173.99) (xy 59.69 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc43a1c1-3933-427f-af62-42fd2f723fec")
-	)
-	(wire
-		(pts
-			(xy 50.8 187.96) (xy 50.8 189.23)
+			(xy 45.72 171.45) (xy 45.72 172.72)
 		)
 		(stroke
 			(width 0)
@@ -4445,17 +3994,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 179.07) (xy 86.36 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfb28829-fbdc-4fa9-a43c-475f93c08a64")
-	)
-	(wire
-		(pts
-			(xy 31.75 167.64) (xy 31.75 173.99)
+			(xy 26.67 151.13) (xy 26.67 157.48)
 		)
 		(stroke
 			(width 0)
@@ -4472,6 +4011,16 @@
 			(type default)
 		)
 		(uuid "c363368f-8f8c-44fd-b9a6-b416196627e2")
+	)
+	(wire
+		(pts
+			(xy 121.92 193.04) (xy 125.73 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5caef22-d8f0-405b-ab58-3dc64484a532")
 	)
 	(wire
 		(pts
@@ -4495,7 +4044,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 173.99) (xy 50.8 180.34)
+			(xy 45.72 157.48) (xy 45.72 163.83)
 		)
 		(stroke
 			(width 0)
@@ -4505,13 +4054,23 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 184.15) (xy 102.87 182.88)
+			(xy 146.05 184.15) (xy 146.05 182.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d5f43d66-08c2-4e59-86cf-e2b04d77ed79")
+	)
+	(wire
+		(pts
+			(xy 228.6 71.12) (xy 231.14 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d62d6e42-6222-415c-ac89-02217bf97a3d")
 	)
 	(wire
 		(pts
@@ -4565,16 +4124,6 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 148.59) (xy 53.34 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e09f07f3-cbaa-46ac-87b3-eb5c04891772")
-	)
-	(wire
-		(pts
 			(xy 33.02 104.14) (xy 33.02 107.95)
 		)
 		(stroke
@@ -4582,6 +4131,16 @@
 			(type default)
 		)
 		(uuid "e1e48288-bdce-4d7a-92cc-a21e260b914d")
+	)
+	(wire
+		(pts
+			(xy 118.11 195.58) (xy 118.11 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1f18aee-54d1-41db-98df-631282f3d4a6")
 	)
 	(wire
 		(pts
@@ -4595,6 +4154,16 @@
 	)
 	(wire
 		(pts
+			(xy 125.73 195.58) (xy 118.11 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5abcb94-c6fe-41fe-a248-35d05da99f2b")
+	)
+	(wire
+		(pts
 			(xy 152.4 93.98) (xy 152.4 96.52)
 		)
 		(stroke
@@ -4605,23 +4174,13 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 163.83) (xy 41.91 163.83)
+			(xy 68.58 157.48) (xy 68.58 167.64)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e6ad5229-60c2-4e86-a22d-0d27583d3f8c")
-	)
-	(wire
-		(pts
-			(xy 67.31 176.53) (xy 69.85 176.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e901d895-6259-4324-8983-1f25b8b1e572")
+		(uuid "e8e82275-456c-420d-8292-26c347521c26")
 	)
 	(wire
 		(pts
@@ -4645,16 +4204,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 179.07) (xy 69.85 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ecba261c-8de6-4100-b423-ebcd84bd2803")
-	)
-	(wire
-		(pts
 			(xy 60.96 30.48) (xy 109.22 30.48)
 		)
 		(stroke
@@ -4672,16 +4221,6 @@
 			(type default)
 		)
 		(uuid "f064cfc0-c77d-4558-aba4-e886f0c24602")
-	)
-	(wire
-		(pts
-			(xy 19.05 163.83) (xy 25.4 163.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f0c9c2dc-6ef9-47c4-a17e-63a021a2dc65")
 	)
 	(wire
 		(pts
@@ -4715,13 +4254,13 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 146.05) (xy 55.88 146.05)
+			(xy 228.6 69.85) (xy 228.6 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f52ae6d5-e31e-4594-9b62-ec43552cd5a1")
+		(uuid "f5a08d4c-1d82-4b02-ba60-d9ba4d6fbfa9")
 	)
 	(wire
 		(pts
@@ -4745,7 +4284,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 173.99) (xy 34.29 173.99)
+			(xy 27.94 157.48) (xy 29.21 157.48)
 		)
 		(stroke
 			(width 0)
@@ -4755,13 +4294,13 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 172.72) (xy 92.71 179.07)
+			(xy 228.6 73.66) (xy 231.14 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "faa8ce0f-1109-4ace-bbb5-c2842543c2a4")
+		(uuid "fb697f5e-b2b6-44d1-ad15-ae187775c9ef")
 	)
 	(wire
 		(pts
@@ -4786,8 +4325,20 @@
 		(uuid 0eb69fb7-81e6-45b7-a960-09a8cdb4afe5)
 	)
 	(rectangle
-		(start 226.695 72.39)
-		(end 265.43 95.885)
+		(start 110.49 172.72)
+		(end 137.16 198.12)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 2e3cef62-640d-4fc4-b2a6-8cf0e3968bf3)
+	)
+	(rectangle
+		(start 225.425 95.25)
+		(end 264.16 109.22)
 		(stroke
 			(width 0)
 			(type default)
@@ -4798,8 +4349,8 @@
 		(uuid 838267a1-2a37-4d35-914d-f985ee0be9d5)
 	)
 	(rectangle
-		(start 97.79 166.37)
-		(end 111.76 200.66)
+		(start 140.97 166.37)
+		(end 154.94 200.66)
 		(stroke
 			(width 0)
 			(type default)
@@ -4811,7 +4362,7 @@
 	)
 	(rectangle
 		(start 222.25 13.97)
-		(end 265.43 62.23)
+		(end 248.92 86.36)
 		(stroke
 			(width 0)
 			(type default)
@@ -4835,7 +4386,7 @@
 	)
 	(rectangle
 		(start 14.605 131.445)
-		(end 95.885 201.295)
+		(end 138.43 201.295)
 		(stroke
 			(width 0)
 			(type default)
@@ -4856,6 +4407,18 @@
 			(type none)
 		)
 		(uuid c032dc35-61b4-4c4e-8973-63aa1abe075d)
+	)
+	(rectangle
+		(start 119.38 133.35)
+		(end 134.62 157.48)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c1e14ffa-515e-4cb4-8179-d6636fd362ac)
 	)
 	(rectangle
 		(start 13.97 13.97)
@@ -4882,6 +4445,18 @@
 		(uuid d487fac8-f789-4ac8-a476-b5cbcde401f6)
 	)
 	(rectangle
+		(start 224.155 119.38)
+		(end 265.43 133.35)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid d50ea488-ccf5-4326-92aa-3c39b0b2ae91)
+	)
+	(rectangle
 		(start 45.72 97.155)
 		(end 76.2 128.27)
 		(stroke
@@ -4904,25 +4479,6 @@
 			(type none)
 		)
 		(uuid fb86a331-73fc-4565-b618-6aa8a5e7aea6)
-	)
-	(text_box "Set VDC to:\n  1 - RP2040-Regulated 3V3\n  2 - AMS1117-Regulated 3V3\n		(requires other select)\n  3 - Optional Power Input"
-		(exclude_from_sim no)
-		(at 57.785 186.69 0)
-		(size 36.83 12.065)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "b521c71e-0e9c-4154-8abf-d908e01dede9")
 	)
 	(text_box "# Stacking:\n## Bottom PCB:\n	* Moves real dots 1, 3, 5\n	* Has MCU\n	* First in shift chain\n	* Shifts out to top PCB's shift-in\n	* Has shift-in from MCU\n\n## Top PCB:\n	* Moves real dots 2, 4, 6\n	* Physically shifted RIGHT a bit.\n	* No MCU\n	* Gets power and signals from bottom PCB\n	* Has NC on shift-out\n	* Gets shift-in from bottom PCB's shift-out"
 		(exclude_from_sim no)
@@ -4966,7 +4522,7 @@
 	)
 	(text "M2 Around\nCells"
 		(exclude_from_sim no)
-		(at 245.872 93.218 0)
+		(at 244.348 105.918 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4983,16 +4539,6 @@
 			)
 		)
 		(uuid "51453ab4-21fa-4d59-8fbe-11a824a6fec5")
-	)
-	(text "Optional Power Input"
-		(exclude_from_sim no)
-		(at 61.468 140.462 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "59ce184d-39cf-47b7-917e-4e25f29d79d7")
 	)
 	(text "- Pull ~{SRCLR} LOW\n	for normal operation."
 		(exclude_from_sim no)
@@ -5014,6 +4560,16 @@
 		)
 		(uuid "6de4b36a-1740-44e8-81b9-65a3493e2a4d")
 	)
+	(text "M2 Around\nLights"
+		(exclude_from_sim no)
+		(at 244.602 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6f974778-dd9f-469f-8356-3b3e2ebae753")
+	)
 	(text "Connector for Top (Input)\n(Place on Left)"
 		(exclude_from_sim no)
 		(at 135.128 83.82 90)
@@ -5034,19 +4590,9 @@
 		)
 		(uuid "95337454-5d6c-40c5-b15a-9be8362631be")
 	)
-	(text "Barrel Jack\nCenter-Pos\n5.5 OD x 2.1mm ID"
+	(text "Regulator for VDC\nMotor Drive"
 		(exclude_from_sim no)
-		(at 84.582 143.764 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "b35acc9a-8942-4224-9696-d4a5ff547004")
-	)
-	(text "Power Input\nand Selection"
-		(exclude_from_sim no)
-		(at 28.956 141.732 0)
+		(at 75.946 138.43 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -5336,56 +4882,142 @@
 		)
 		(uuid "ffbf29af-2b87-4647-82b0-c5359e5ef159")
 	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 58.42 163.83 180)
+	(global_label "I2C_SDA"
+		(shape input)
+		(at 97.79 168.91 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left)
 		)
-		(uuid "050aa85a-81d0-4b1e-b23b-585328ba6bab")
-		(property "Netclass" "Power"
-			(at 59.1185 166.37 0)
+		(uuid "303ad8ce-347f-499a-8f46-b2edf3654080")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 108.3952 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
-					(italic yes)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SDA"
+		(shape input)
+		(at 27.94 45.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5b2ebea8-2add-47ed-961b-a2602d3970ec")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.3348 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SCL"
+		(shape input)
+		(at 125.73 195.58 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "63402c5f-3aef-41f3-b8ca-fa4355c0721e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.2747 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SCL"
+		(shape input)
+		(at 27.94 43.18 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ae73c125-33d5-4866-9ec0-10de258ca827")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.3953 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SCL"
+		(shape input)
+		(at 97.79 171.45 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e5cedd4b-c7aa-4592-a0da-3aa22855238f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 108.3347 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SDA"
+		(shape input)
+		(at 125.73 193.04 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fab6d182-24ee-4505-9f81-99fed415cd2c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.3352 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
 			)
 		)
 	)
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 20.32 163.83 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "5daf465f-b6d7-4997-946f-ddca867eb1cd")
-		(property "Netclass" "Power"
-			(at 21.0185 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 55.88 173.99 0)
+		(at 50.8 157.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5395,7 +5027,7 @@
 		)
 		(uuid "782761a9-bd3a-484c-947f-b43a3704b1ab")
 		(property "Netclass" "Power"
-			(at 56.5785 171.45 0)
+			(at 51.4985 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5408,7 +5040,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 31.75 170.18 90)
+		(at 26.67 153.67 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5418,7 +5050,7 @@
 		)
 		(uuid "82ec5ba9-0a78-4d34-a72f-af8d37f157a0")
 		(property "Netclass" "Power"
-			(at 29.21 170.8785 90)
+			(at 24.13 154.3685 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5438,7 +5070,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0811d49b-6d7c-4452-be1c-cc7190d2ba65")
-		(property "Reference" "D27"
+		(property "Reference" "D101"
 			(at 54.61 115.8874 90)
 			(effects
 				(font
@@ -5492,7 +5124,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "D27")
+					(reference "D101")
 					(unit 1)
 				)
 			)
@@ -5508,7 +5140,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a0c5595-8a71-4da5-a0df-9e66ebbb1096")
-		(property "Reference" "#PWR0126"
+		(property "Reference" "#PWR0122"
 			(at 64.77 127 0)
 			(effects
 				(font
@@ -5558,7 +5190,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0126")
+					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -5573,7 +5205,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0cea7bc3-d23e-4c5d-8635-3d385e124aa9")
-		(property "Reference" "J23"
+		(property "Reference" "J108"
 			(at 158.242 86.614 0)
 			(effects
 				(font
@@ -5637,7 +5269,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J23")
+					(reference "J108")
 					(unit 1)
 				)
 			)
@@ -5645,7 +5277,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 102.87 179.07 0)
+		(at 146.05 179.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5653,8 +5285,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0e23ad57-0ff6-41bd-b2b6-6426eacc1bbb")
-		(property "Reference" "R1"
-			(at 105.41 177.7999 0)
+		(property "Reference" "R104"
+			(at 148.59 177.7999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5663,7 +5295,7 @@
 			)
 		)
 		(property "Value" "5k1"
-			(at 105.41 180.3399 0)
+			(at 148.59 180.3399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5672,7 +5304,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 101.092 179.07 90)
+			(at 144.272 179.07 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5681,7 +5313,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 102.87 179.07 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5690,7 +5322,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 102.87 179.07 0)
+			(at 146.05 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5707,72 +5339,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 46.99 154.94 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0eb47b37-89e2-487f-905b-4795b2eb3e07")
-		(property "Reference" "#PWR016"
-			(at 46.99 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 46.99 159.004 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 46.99 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 46.99 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 46.99 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d8494aec-864a-4346-bcac-1d4e14c8416e")
-		)
-		(instances
-			(project "Braille-PCB-Type-5-Vertical-Motors"
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR016")
+					(reference "R104")
 					(unit 1)
 				)
 			)
@@ -5788,7 +5355,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f6f909e-bf4e-43e0-b4dd-549a79acb014")
-		(property "Reference" "J2"
+		(property "Reference" "J103"
 			(at 238.76 48.2599 0)
 			(effects
 				(font
@@ -5804,6 +5371,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-2_P5.08mm"
@@ -5842,7 +5410,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J2")
+					(reference "J103")
 					(unit 1)
 				)
 			)
@@ -5858,7 +5426,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "114542af-29d9-403f-98f6-3925f1af2133")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR0113"
 			(at 154.94 88.9 0)
 			(effects
 				(font
@@ -5909,7 +5477,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR027")
+					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -5924,7 +5492,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "140e90c0-f625-4b69-900b-4c5b0e77879d")
-		(property "Reference" "J5"
+		(property "Reference" "J101"
 			(at 76.962 17.526 90)
 			(effects
 				(font
@@ -5979,7 +5547,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J5")
+					(reference "J101")
 					(unit 1)
 				)
 			)
@@ -5995,7 +5563,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "15be1d5f-76fe-4df6-9680-51ab05c9c1df")
-		(property "Reference" "J22"
+		(property "Reference" "J106"
 			(at 169.418 70.104 0)
 			(effects
 				(font
@@ -6059,7 +5627,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J22")
+					(reference "J106")
 					(unit 1)
 				)
 			)
@@ -6067,7 +5635,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 50.8 184.15 0)
+		(at 45.72 167.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6075,8 +5643,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1687425c-7101-4a9c-9eda-612d7ed54d20")
-		(property "Reference" "C29"
-			(at 48.006 182.88 0)
+		(property "Reference" "C105"
+			(at 42.926 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6085,7 +5653,7 @@
 			)
 		)
 		(property "Value" "22u"
-			(at 48.006 185.42 0)
+			(at 42.926 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6094,7 +5662,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 49.8348 187.96 0)
+			(at 44.7548 171.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6103,7 +5671,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 50.8 184.15 0)
+			(at 45.72 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6112,7 +5680,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 50.8 184.15 0)
+			(at 45.72 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6129,7 +5697,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "C29")
+					(reference "C105")
 					(unit 1)
 				)
 			)
@@ -6144,7 +5712,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "17297721-b7bf-4a63-a5c8-26e6f5ade8de")
-		(property "Reference" "J21"
+		(property "Reference" "J105"
 			(at 158.242 70.104 0)
 			(effects
 				(font
@@ -6208,7 +5776,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J21")
+					(reference "J105")
 					(unit 1)
 				)
 			)
@@ -6216,7 +5784,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 33.02 182.88 0)
+		(at 27.94 166.37 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6224,8 +5792,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23e5512f-9da4-4b90-b5f2-51989af950c4")
-		(property "Reference" "C28"
-			(at 29.21 181.6099 0)
+		(property "Reference" "C104"
+			(at 24.13 165.0999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6234,7 +5802,7 @@
 			)
 		)
 		(property "Value" "10u"
-			(at 29.21 184.1499 0)
+			(at 24.13 167.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6243,7 +5811,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
-			(at 32.0548 186.69 0)
+			(at 26.9748 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6252,7 +5820,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 33.02 182.88 0)
+			(at 27.94 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6261,7 +5829,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 33.02 182.88 0)
+			(at 27.94 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6278,7 +5846,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "C28")
+					(reference "C104")
 					(unit 1)
 				)
 			)
@@ -6294,7 +5862,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "250b8ced-f95a-4bf5-9d65-51b4fccc1c43")
-		(property "Reference" "R50"
+		(property "Reference" "R102"
 			(at 67.31 105.4099 0)
 			(effects
 				(font
@@ -6348,7 +5916,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "R50")
+					(reference "R102")
 					(unit 1)
 				)
 			)
@@ -6356,7 +5924,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 77.47 0)
+		(at 232.41 100.33 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -6364,8 +5932,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "25a0dca6-c74c-4b0e-8112-cb3685e50bc6")
-		(property "Reference" "H5"
-			(at 231.14 74.9299 0)
+		(property "Reference" "H105"
+			(at 229.87 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6374,7 +5942,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 231.14 77.4699 0)
+			(at 229.87 100.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6384,7 +5952,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 233.68 77.47 0)
+			(at 232.41 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6393,7 +5961,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 77.47 0)
+			(at 232.41 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6402,7 +5970,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 77.47 0)
+			(at 232.41 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6416,7 +5984,74 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H5")
+					(reference "H105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 129.54 149.86 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27dcb329-b047-4a27-9a73-f576d30a1a91")
+		(property "Reference" "#PWR0124"
+			(at 129.54 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 129.54 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 129.54 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a1eafd65-5be5-4263-89b4-010ec000fa37")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
@@ -6432,7 +6067,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2d31577a-2d6d-4c75-b8d1-54ebda3039f1")
-		(property "Reference" "#PWR0130"
+		(property "Reference" "#PWR0118"
 			(at 33.02 107.95 0)
 			(effects
 				(font
@@ -6482,7 +6117,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0130")
+					(reference "#PWR0118")
 					(unit 1)
 				)
 			)
@@ -6490,7 +6125,7 @@
 	)
 	(symbol
 		(lib_id "power:VDC")
-		(at 102.87 173.99 0)
+		(at 146.05 173.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6498,8 +6133,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2dfe02e8-085a-447f-824b-bd81a5224793")
-		(property "Reference" "#PWR08"
-			(at 102.87 177.8 0)
+		(property "Reference" "#PWR0127"
+			(at 146.05 177.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6508,7 +6143,7 @@
 			)
 		)
 		(property "Value" "VDC"
-			(at 102.87 168.91 0)
+			(at 146.05 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6516,7 +6151,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 173.99 0)
+			(at 146.05 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6525,7 +6160,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 173.99 0)
+			(at 146.05 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6534,7 +6169,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDC\""
-			(at 102.87 173.99 0)
+			(at 146.05 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6548,7 +6183,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR08")
+					(reference "#PWR0127")
 					(unit 1)
 				)
 			)
@@ -6564,7 +6199,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "312c2a4f-5693-4405-ac6b-a24c5b4afa53")
-		(property "Reference" "D26"
+		(property "Reference" "D102"
 			(at 68.58 115.8874 90)
 			(effects
 				(font
@@ -6618,7 +6253,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "D26")
+					(reference "D102")
 					(unit 1)
 				)
 			)
@@ -6626,7 +6261,7 @@
 	)
 	(symbol
 		(lib_id "Regulator_Linear:AMS1117-3.3")
-		(at 41.91 173.99 0)
+		(at 36.83 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6634,8 +6269,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3367a948-b877-49a8-9c42-a3313e123a5c")
-		(property "Reference" "U32"
-			(at 41.91 167.64 0)
+		(property "Reference" "U102"
+			(at 36.83 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6643,7 +6278,7 @@
 			)
 		)
 		(property "Value" "AMS1117-3.3"
-			(at 41.91 170.18 0)
+			(at 36.83 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6651,7 +6286,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
-			(at 41.91 168.91 0)
+			(at 36.83 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6660,7 +6295,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.advanced-monolithic.com/pdf/ds1117.pdf"
-			(at 44.45 180.34 0)
+			(at 39.37 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6669,7 +6304,7 @@
 			)
 		)
 		(property "Description" "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223"
-			(at 41.91 173.99 0)
+			(at 36.83 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6689,7 +6324,72 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "U32")
+					(reference "U102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VDC")
+		(at 228.6 69.85 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "34508ac2-c019-4375-bec4-10d52eb1e30f")
+		(property "Reference" "#PWR0108"
+			(at 228.6 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "VDC"
+			(at 228.6 66.294 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VDC\""
+			(at 228.6 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6982bd2e-55c5-4664-97a7-3571b3e5d1e7")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -6705,7 +6405,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c49691f-f385-43f4-817b-bff02f285fa8")
-		(property "Reference" "SW1"
+		(property "Reference" "SW101"
 			(at 24.13 78.7399 90)
 			(effects
 				(font
@@ -6759,7 +6459,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "SW1")
+					(reference "SW101")
 					(unit 1)
 				)
 			)
@@ -6775,7 +6475,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "431b4a3f-518c-4cdb-a616-c7eef85eefb6")
-		(property "Reference" "#PWR0127"
+		(property "Reference" "#PWR0110"
 			(at 59.69 80.01 0)
 			(effects
 				(font
@@ -6826,7 +6526,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0127")
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -6834,7 +6534,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 257.81 77.47 0)
+		(at 256.54 100.33 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -6842,8 +6542,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "44682a93-ef31-4c18-8d46-111d18dcef05")
-		(property "Reference" "H10"
-			(at 260.35 74.9299 0)
+		(property "Reference" "H108"
+			(at 259.08 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6852,7 +6552,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 260.35 77.4699 0)
+			(at 259.08 100.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6862,7 +6562,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 257.81 77.47 0)
+			(at 256.54 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6871,7 +6571,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 257.81 77.47 0)
+			(at 256.54 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6880,7 +6580,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 257.81 77.47 0)
+			(at 256.54 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6894,7 +6594,77 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H10")
+					(reference "H108")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 68.58 173.99 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "45ac8fbb-96a8-464f-a5a8-c685f2af03f0")
+		(property "Reference" "R103"
+			(at 66.04 172.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "R"
+			(at 66.04 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 70.358 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 68.58 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 68.58 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "1fd3578a-681a-424a-941b-883987576f27")
+		)
+		(pin "1"
+			(uuid "bc2a158c-00b4-4851-80e3-2412874353c9")
+		)
+		(instances
+			(project ""
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "R103")
 					(unit 1)
 				)
 			)
@@ -6910,7 +6680,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4be5c2b9-8fab-463b-afef-1998423ad647")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR0107"
 			(at 228.6 58.42 0)
 			(effects
 				(font
@@ -6960,7 +6730,95 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR014")
+					(reference "#PWR0107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Energy:INA219AxD")
+		(at 85.09 173.99 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f00f6bb-8762-46a4-8872-c9dcb6c63d7f")
+		(property "Reference" "U103"
+			(at 87.2841 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "INA219AxD"
+			(at 87.2841 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 105.41 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/ina219.pdf"
+			(at 93.98 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Zero-Drift, Bidirectional Current/Power Monitor (0-26V) With I2C Interface, SOIC-8"
+			(at 85.09 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "94b0653f-00f6-43c0-afb1-d30b8fa7bdc2")
+		)
+		(pin "3"
+			(uuid "7b1f41f6-005a-4526-bfc3-fb5e7c600ae3")
+		)
+		(pin "6"
+			(uuid "17820a99-d090-451a-90ea-e891bdfaff4f")
+		)
+		(pin "2"
+			(uuid "9dad77c9-5a65-4286-a1cf-18beff3929ee")
+		)
+		(pin "5"
+			(uuid "9f4edeec-c4e5-4d1d-b617-c53ca6281327")
+		)
+		(pin "4"
+			(uuid "2a3542f2-741a-4654-b521-90325bb93ad4")
+		)
+		(pin "7"
+			(uuid "5a082a5e-98b6-4acb-9bd8-286943bdfb44")
+		)
+		(pin "8"
+			(uuid "9f86698d-a15a-4c7b-8f91-1589f5bfaba1")
+		)
+		(instances
+			(project ""
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "U103")
 					(unit 1)
 				)
 			)
@@ -6977,7 +6835,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "510d8746-8b28-433b-ad6d-e13038ba6bb0")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR0101"
 			(at 228.6 26.67 0)
 			(effects
 				(font
@@ -7027,7 +6885,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR011")
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -7043,7 +6901,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "533fe071-2c38-4e22-9ee4-f9d041adc8d1")
-		(property "Reference" "J24"
+		(property "Reference" "J109"
 			(at 169.291 86.614 0)
 			(effects
 				(font
@@ -7107,7 +6965,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J24")
+					(reference "J109")
 					(unit 1)
 				)
 			)
@@ -7123,7 +6981,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c79c84b-1b33-4a1b-808a-9e04defdb030")
-		(property "Reference" "R51"
+		(property "Reference" "R101"
 			(at 53.34 105.4099 0)
 			(effects
 				(font
@@ -7177,31 +7035,24 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "R51")
+					(reference "R101")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "00-project-symbols:Jumper-3-Way-Power")
-		(at 78.74 179.07 0)
+		(lib_id "power:GND")
+		(at 85.09 189.23 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "61ca9c9d-a5b3-42e9-ae14-a75922178626")
-		(property "Reference" "J7"
-			(at 85.09 182.626 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper-3-Way-Power"
-			(at 79.7911 186.69 90)
+		(fields_autoplaced yes)
+		(uuid "611dc6a9-b848-4b86-a3ae-7515c9aa9a05")
+		(property "Reference" "#PWR0132"
+			(at 85.09 195.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7209,8 +7060,16 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "00-project-footprints:Jumper-3-Way-2.54mm-Headers"
-			(at 81.28 179.07 0)
+		(property "Value" "GND"
+			(at 85.09 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7219,7 +7078,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 81.28 179.07 0)
+			(at 85.09 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7227,31 +7086,22 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 81.28 179.07 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "2"
-			(uuid "2744f6ee-4147-480f-b15a-990e84045c15")
-		)
-		(pin "4"
-			(uuid "191de550-c76d-4b2a-ac45-7eb23c18e89a")
-		)
-		(pin "3"
-			(uuid "82a067b1-2708-4bec-9750-d94f58c4175e")
 		)
 		(pin "1"
-			(uuid "0aa57b98-856a-49bd-bf80-179edf4d1376")
+			(uuid "ae7ed1e6-556f-4233-8a4f-8c4056d5acad")
 		)
 		(instances
-			(project ""
+			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J7")
+					(reference "#PWR0132")
 					(unit 1)
 				)
 			)
@@ -7259,15 +7109,15 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
-		(at 44.45 137.16 90)
+		(at 236.22 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(uuid "62e8db58-0b96-4859-bea4-b55b10cd1e9e")
-		(property "Reference" "J3"
-			(at 46.228 134.112 90)
+		(property "Reference" "J104"
+			(at 239.268 72.898 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7276,7 +7126,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x02"
-			(at 46.9899 134.62 90)
+			(at 238.76 73.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7286,7 +7136,7 @@
 			)
 		)
 		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-2_P5.08mm"
-			(at 44.45 137.16 0)
+			(at 236.22 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7295,7 +7145,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 44.45 137.16 0)
+			(at 236.22 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7304,7 +7154,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 44.45 137.16 0)
+			(at 236.22 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7321,82 +7171,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Barrel_Jack_Switch")
-		(at 63.5 148.59 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "65df2e64-2910-4b5c-9e99-79a75530df5e")
-		(property "Reference" "J8"
-			(at 69.85 147.3199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Barrel_Jack_Switch"
-			(at 69.85 149.8599 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
-			(at 62.23 149.606 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 62.23 149.606 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "DC Barrel Jack with an internal switch"
-			(at 63.5 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "11f8bdc3-975d-4468-ba43-808b19ebcc97")
-		)
-		(pin "2"
-			(uuid "513fda11-db33-42da-8af1-1cae0ec4a5b9")
-		)
-		(pin "3"
-			(uuid "3cc78520-1ef8-43d4-93a7-f74aff2459ad")
-		)
-		(instances
-			(project ""
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J8")
+					(reference "J104")
 					(unit 1)
 				)
 			)
@@ -7412,7 +7187,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6728f4f5-3900-4e04-b4c5-2e6fe8501d41")
-		(property "Reference" "H4"
+		(property "Reference" "H104"
 			(at 215.9 39.3699 0)
 			(effects
 				(font
@@ -7464,7 +7239,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H4")
+					(reference "H104")
 					(unit 1)
 				)
 			)
@@ -7472,7 +7247,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 252.73 77.47 0)
+		(at 251.46 100.33 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -7480,8 +7255,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c43b49b-0882-49a9-8a34-b3e145dba9fa")
-		(property "Reference" "H6"
-			(at 250.19 74.9299 0)
+		(property "Reference" "H107"
+			(at 250.19 96.774 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7490,7 +7265,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 250.19 77.4699 0)
+			(at 248.92 100.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7500,7 +7275,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 252.73 77.47 0)
+			(at 251.46 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7509,7 +7284,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 252.73 77.47 0)
+			(at 251.46 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7518,7 +7293,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 252.73 77.47 0)
+			(at 251.46 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7532,7 +7307,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H6")
+					(reference "H107")
 					(unit 1)
 				)
 			)
@@ -7548,7 +7323,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "71008bde-d006-4ad6-a449-4a6d6c385a1e")
-		(property "Reference" "H1"
+		(property "Reference" "H101"
 			(at 215.9 16.5099 0)
 			(effects
 				(font
@@ -7600,7 +7375,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H1")
+					(reference "H101")
 					(unit 1)
 				)
 			)
@@ -7616,7 +7391,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "72e1ff14-7e9f-4bd5-bbdb-5cdfb7258fce")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR0103"
 			(at 19.05 27.94 0)
 			(effects
 				(font
@@ -7667,7 +7442,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR04")
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -7683,7 +7458,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75bbbfbd-e90d-4ff9-944b-e14c0b83a3f4")
-		(property "Reference" "#PWR0125"
+		(property "Reference" "#PWR0121"
 			(at 50.8 127 0)
 			(effects
 				(font
@@ -7733,7 +7508,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0125")
+					(reference "#PWR0121")
 					(unit 1)
 				)
 			)
@@ -7750,7 +7525,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77378858-29a9-45e5-bae2-db5477104e18")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR0114"
 			(at 173.99 88.9 0)
 			(effects
 				(font
@@ -7801,7 +7576,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR035")
+					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -7817,7 +7592,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78baf91a-81fd-4833-833e-422666fdbce3")
-		(property "Reference" "J1"
+		(property "Reference" "J102"
 			(at 238.76 25.3999 0)
 			(effects
 				(font
@@ -7833,6 +7608,7 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "TerminalBlock:TerminalBlock_bornier-2_P5.08mm"
@@ -7871,7 +7647,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J1")
+					(reference "J102")
 					(unit 1)
 				)
 			)
@@ -7887,7 +7663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a36b55f-8f7f-4823-bc58-91e91feb5e02")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR0106"
 			(at 228.6 49.53 0)
 			(effects
 				(font
@@ -7937,7 +7713,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR013")
+					(reference "#PWR0106")
 					(unit 1)
 				)
 			)
@@ -7953,7 +7729,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ff3b4c2-2ae5-496a-8af1-94ca6fe6f42f")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR0115"
 			(at 144.78 99.06 0)
 			(effects
 				(font
@@ -8004,7 +7780,77 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR028")
+					(reference "#PWR0115")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 121.92 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "800ac4e0-a6c6-4eb4-9aba-806b49a86d47")
+		(property "Reference" "R106"
+			(at 124.46 186.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5k1"
+			(at 124.46 189.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 120.142 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 121.92 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "feeeac42-5de9-43ba-b995-2d95f57768e1")
+		)
+		(pin "1"
+			(uuid "792baf47-1696-479f-893c-5653049e6bb1")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "R106")
 					(unit 1)
 				)
 			)
@@ -8020,7 +7866,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8031b18b-b5d1-47b5-a635-fd80443b0cfc")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR0104"
 			(at 228.6 35.56 0)
 			(effects
 				(font
@@ -8070,7 +7916,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR012")
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -8086,7 +7932,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "83cb196b-7d3b-4c7b-8c8b-661652f2e4b1")
-		(property "Reference" "H2"
+		(property "Reference" "H102"
 			(at 215.9 24.1299 0)
 			(effects
 				(font
@@ -8138,7 +7984,73 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H2")
+					(reference "H102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 85.09 161.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8892ac7a-9c15-4a96-adc0-92d8b1d78034")
+		(property "Reference" "#PWR0126"
+			(at 85.09 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 85.09 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 85.09 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1822bef3-25c3-4dc0-893e-52c52a6a8aae")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0126")
 					(unit 1)
 				)
 			)
@@ -8154,7 +8066,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "88d2929f-ca7a-4a1a-ba07-6b342e804cd6")
-		(property "Reference" "H3"
+		(property "Reference" "H103"
 			(at 215.9 31.7499 0)
 			(effects
 				(font
@@ -8206,7 +8118,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H3")
+					(reference "H103")
 					(unit 1)
 				)
 			)
@@ -8214,7 +8126,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 86.36 0)
+		(at 232.41 124.46 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -8222,8 +8134,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91747fdd-7c93-4e88-bee4-3a680a765d41")
-		(property "Reference" "H7"
-			(at 231.14 83.8199 0)
+		(property "Reference" "H109"
+			(at 229.87 121.9199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8232,7 +8144,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 231.14 86.3599 0)
+			(at 229.87 124.4599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8242,7 +8154,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 233.68 86.36 0)
+			(at 232.41 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8251,7 +8163,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 86.36 0)
+			(at 232.41 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8260,7 +8172,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 86.36 0)
+			(at 232.41 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8274,7 +8186,73 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H7")
+					(reference "H109")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 228.6 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93cd44d8-f131-436f-b493-3170bef13bdc")
+		(property "Reference" "#PWR0109"
+			(at 228.6 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 228.6 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 228.6 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7b4d5d5e-c25d-417e-99e9-aacc54c5c378")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -8289,7 +8267,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9435a5b2-963d-40a2-8d94-7aa7c83fd875")
-		(property "Reference" "C1"
+		(property "Reference" "C101"
 			(at 24.13 110.4899 0)
 			(effects
 				(font
@@ -8343,7 +8321,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "C1")
+					(reference "C101")
 					(unit 1)
 				)
 			)
@@ -8351,7 +8329,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 257.81 86.36 0)
+		(at 256.54 124.46 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -8359,8 +8337,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "99d05030-1ba5-470e-ab91-4ba82a388ee4")
-		(property "Reference" "H12"
-			(at 260.35 83.8199 0)
+		(property "Reference" "H112"
+			(at 259.08 121.9199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8369,7 +8347,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 260.35 86.3599 0)
+			(at 259.08 124.4599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8379,7 +8357,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 257.81 86.36 0)
+			(at 256.54 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8388,7 +8366,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 257.81 86.36 0)
+			(at 256.54 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8397,7 +8375,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 257.81 86.36 0)
+			(at 256.54 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8411,7 +8389,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H12")
+					(reference "H112")
 					(unit 1)
 				)
 			)
@@ -8427,7 +8405,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a5e0c49-e2b5-409f-807a-b1498b6ec276")
-		(property "Reference" "#PWR0131"
+		(property "Reference" "#PWR0120"
 			(at 33.02 124.46 0)
 			(effects
 				(font
@@ -8477,7 +8455,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0131")
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
@@ -8493,7 +8471,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e35c5ae-6761-4de9-aa1a-e9aa527561f6")
-		(property "Reference" "U1"
+		(property "Reference" "U101"
 			(at 45.72 17.78 0)
 			(effects
 				(font
@@ -8608,7 +8586,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "U1")
+					(reference "U101")
 					(unit 1)
 				)
 			)
@@ -8624,7 +8602,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1cf53a2-3477-4f2b-8bb3-1182f6794420")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0105"
 			(at 29.21 30.48 0)
 			(effects
 				(font
@@ -8675,7 +8653,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR05")
+					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -8683,7 +8661,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 86.36 0)
+		(at 237.49 124.46 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -8691,8 +8669,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a21b543f-38c0-4feb-a41c-768adee7a5a5")
-		(property "Reference" "H8"
-			(at 241.3 83.8199 0)
+		(property "Reference" "H110"
+			(at 240.03 121.9199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8701,7 +8679,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 86.3599 0)
+			(at 240.03 124.4599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8711,7 +8689,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 238.76 86.36 0)
+			(at 237.49 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8720,7 +8698,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 86.36 0)
+			(at 237.49 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8729,7 +8707,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 86.36 0)
+			(at 237.49 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8743,78 +8721,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_3_Open")
-		(at 31.75 163.83 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "ad6aa1fc-b331-4fe0-a857-57e797117bb7")
-		(property "Reference" "JP1"
-			(at 31.75 160.528 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Jumper_3_Open"
-			(at 31.75 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 31.75 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 31.75 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 3-pole, both open"
-			(at 31.75 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "55341f89-7cde-470b-95dd-4ea12eb3f455")
-		)
-		(pin "2"
-			(uuid "c1549e81-81f6-4db1-9a9b-ccee22df9e4c")
-		)
-		(pin "1"
-			(uuid "28674d8b-cef2-488c-a64a-d19a1ac2185e")
-		)
-		(instances
-			(project ""
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "JP1")
+					(reference "H110")
 					(unit 1)
 				)
 			)
@@ -8822,7 +8729,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 19.05 161.29 0)
+		(at 26.67 151.13 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8830,8 +8737,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ae2e1258-7cca-4162-9be1-ce1d33e896d8")
-		(property "Reference" "#PWR010"
-			(at 19.05 165.1 0)
+		(property "Reference" "#PWR0125"
+			(at 26.67 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8840,7 +8747,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 19.05 157.48 0)
+			(at 26.67 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8848,7 +8755,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 19.05 161.29 0)
+			(at 26.67 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8857,7 +8764,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 19.05 161.29 0)
+			(at 26.67 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8866,7 +8773,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 19.05 161.29 0)
+			(at 26.67 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8880,7 +8787,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR010")
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -8896,7 +8803,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b53e3cfa-4615-4d32-a65a-e349db7f60b2")
-		(property "Reference" "C26"
+		(property "Reference" "C102"
 			(at 36.83 110.4899 0)
 			(effects
 				(font
@@ -8950,7 +8857,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "C26")
+					(reference "C102")
 					(unit 1)
 				)
 			)
@@ -8966,7 +8873,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b6d39232-4eb1-4168-b15b-fa3755e4a557")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0117"
 			(at 20.32 107.95 0)
 			(effects
 				(font
@@ -9016,7 +8923,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR01")
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -9032,7 +8939,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b806d248-dcaa-433a-b937-ad23d67347ce")
-		(property "Reference" "SW2"
+		(property "Reference" "SW102"
 			(at 41.91 78.7399 90)
 			(effects
 				(font
@@ -9086,32 +8993,24 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "SW2")
+					(reference "SW102")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x03")
-		(at 22.86 43.18 0)
-		(mirror y)
+		(lib_id "power:+3V3")
+		(at 118.11 180.34 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c04e843e-9f6e-43c9-8153-27eba419148d")
-		(property "Reference" "J4"
-			(at 20.828 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x03"
-			(at 22.86 36.83 0)
+		(fields_autoplaced yes)
+		(uuid "c054c26a-792b-4610-bc15-4ba5670746b0")
+		(property "Reference" "#PWR0129"
+			(at 118.11 184.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9119,8 +9018,16 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 22.86 43.18 0)
+		(property "Value" "+3V3"
+			(at 118.11 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9128,8 +9035,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 22.86 43.18 0)
+		(property "Datasheet" ""
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9137,28 +9044,22 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 22.86 43.18 0)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 118.11 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "3"
-			(uuid "bacb2f11-bc8c-4f2f-a823-09320edaeba0")
-		)
-		(pin "2"
-			(uuid "b43d6835-7b76-4fc9-84c3-96bc240476c7")
 		)
 		(pin "1"
-			(uuid "423d8350-5dce-4c89-951e-c8ee62dc845c")
+			(uuid "ab844fa4-56a3-4ef0-980f-36b3f6fd6d10")
 		)
 		(instances
-			(project ""
+			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J4")
+					(reference "#PWR0129")
 					(unit 1)
 				)
 			)
@@ -9174,7 +9075,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c28a32ae-be82-4c80-ab76-0a615b8374ce")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR0111"
 			(at 22.86 93.98 0)
 			(effects
 				(font
@@ -9224,74 +9125,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 67.31 181.61 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cc89708d-4de3-442b-b306-5f35b6d6ba25")
-		(property "Reference" "#PWR0129"
-			(at 71.12 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 63.5 181.6099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.31 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.31 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 67.31 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "71a45e49-a401-4dee-9031-7141d65823cb")
-		)
-		(instances
-			(project "Braille-PCB-Type-5-Vertical-Motors"
-				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR0129")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -9299,7 +9133,7 @@
 	)
 	(symbol
 		(lib_id "power:VDC")
-		(at 92.71 172.72 0)
+		(at 63.5 185.42 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9307,8 +9141,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ce2d44cb-27e8-4577-8e96-e1c57b39c02d")
-		(property "Reference" "#PWR015"
-			(at 92.71 176.53 0)
+		(property "Reference" "#PWR0131"
+			(at 67.31 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9317,7 +9151,7 @@
 			)
 		)
 		(property "Value" "VDC"
-			(at 92.71 167.64 0)
+			(at 62.23 182.88 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9325,7 +9159,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 92.71 172.72 0)
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9334,7 +9168,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 92.71 172.72 0)
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9343,7 +9177,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDC\""
-			(at 92.71 172.72 0)
+			(at 63.5 185.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9357,42 +9191,43 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR015")
+					(reference "#PWR0131")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 102.87 187.96 90)
+		(lib_id "Device:C")
+		(at 129.54 144.78 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d6cf6a2e-4221-407e-983d-88b1785a43d6")
-		(property "Reference" "D1"
-			(at 106.68 188.2774 90)
+		(uuid "d56fbcb0-15ce-481f-a20d-3123e0f3b4f2")
+		(property "Reference" "C103"
+			(at 125.73 143.5099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Value" "LED"
-			(at 106.68 190.8174 90)
+		(property "Value" "100n"
+			(at 125.73 146.0499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 102.87 187.96 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 128.5748 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9401,7 +9236,77 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 102.87 187.96 0)
+			(at 129.54 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 129.54 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "82685ce0-e464-46d7-a270-db28341d2b48")
+		)
+		(pin "1"
+			(uuid "4fffcfa9-9a4c-4346-bccd-16da6ede6cbd")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 146.05 187.96 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6cf6a2e-4221-407e-983d-88b1785a43d6")
+		(property "Reference" "D103"
+			(at 149.86 188.2774 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 149.86 190.8174 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 146.05 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 146.05 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9410,7 +9315,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 102.87 187.96 0)
+			(at 146.05 187.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9427,7 +9332,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "D1")
+					(reference "D103")
 					(unit 1)
 				)
 			)
@@ -9444,7 +9349,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd2223a3-304d-472d-90ea-16d790fd2db9")
-		(property "Reference" "#PWR036"
+		(property "Reference" "#PWR0116"
 			(at 184.15 99.06 0)
 			(effects
 				(font
@@ -9495,7 +9400,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR036")
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)
@@ -9511,7 +9416,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e090f6fd-0bd4-4421-896c-0aa577a8a06f")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0119"
 			(at 20.32 124.46 0)
 			(effects
 				(font
@@ -9561,7 +9466,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR02")
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -9577,7 +9482,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3ea6201-8041-4e60-9dec-55ce6e61b5b5")
-		(property "Reference" "J6"
+		(property "Reference" "J107"
 			(at 76.2 80.0099 0)
 			(effects
 				(font
@@ -9649,7 +9554,73 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "J6")
+					(reference "J107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 97.79 184.15 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e421295e-d334-49f2-bc04-5bc0ffa8db4a")
+		(property "Reference" "#PWR0130"
+			(at 97.79 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 97.79 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 97.79 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 97.79 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 97.79 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a879429e-867a-4377-8845-ae8308432b5c")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0130")
 					(unit 1)
 				)
 			)
@@ -9665,7 +9636,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e60d5ef5-f3cc-4e25-8dce-2a1ad735d29b")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR0112"
 			(at 40.64 93.98 0)
 			(effects
 				(font
@@ -9715,7 +9686,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR07")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
@@ -9723,7 +9694,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 238.76 77.47 0)
+		(at 237.49 100.33 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -9731,8 +9702,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e76a6030-7e49-41ed-b160-1ea0c8d092c7")
-		(property "Reference" "H9"
-			(at 241.3 74.9299 0)
+		(property "Reference" "H106"
+			(at 240.03 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9741,7 +9712,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 241.3 77.4699 0)
+			(at 240.03 100.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9751,7 +9722,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 238.76 77.47 0)
+			(at 237.49 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9760,7 +9731,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 77.47 0)
+			(at 237.49 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9769,7 +9740,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 238.76 77.47 0)
+			(at 237.49 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9783,7 +9754,77 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H9")
+					(reference "H106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 118.11 187.96 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9945ba4-a302-474f-9327-1e33b45d312c")
+		(property "Reference" "R105"
+			(at 115.57 186.6899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5k1"
+			(at 115.57 189.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 119.888 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 118.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 118.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0b474c8e-d5ed-4e83-a35c-19f22233b499")
+		)
+		(pin "1"
+			(uuid "888f7870-1635-4d3b-b16f-e0b0e964485f")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "R105")
 					(unit 1)
 				)
 			)
@@ -9800,7 +9841,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea9e03ee-043f-4c92-a8f2-ac9a9b8fa532")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR0102"
 			(at 29.21 25.4 0)
 			(effects
 				(font
@@ -9851,7 +9892,7 @@
 		(instances
 			(project ""
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR03")
+					(reference "#PWR0102")
 					(unit 1)
 				)
 			)
@@ -9859,7 +9900,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 252.73 86.36 0)
+		(at 251.46 124.46 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -9867,8 +9908,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f00894e8-1c8b-4feb-aaa7-a5bc05ed3c32")
-		(property "Reference" "H11"
-			(at 250.19 83.8199 0)
+		(property "Reference" "H111"
+			(at 250.952 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9877,7 +9918,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 250.19 86.3599 0)
+			(at 248.92 124.4599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9887,7 +9928,7 @@
 			)
 		)
 		(property "Footprint" "00-project-footprints:Braille_Block_MountingHoles_M2_3x"
-			(at 252.73 86.36 0)
+			(at 251.46 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9896,7 +9937,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 252.73 86.36 0)
+			(at 251.46 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9905,7 +9946,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 252.73 86.36 0)
+			(at 251.46 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9919,7 +9960,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "H11")
+					(reference "H111")
 					(unit 1)
 				)
 			)
@@ -9927,7 +9968,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 41.91 193.04 0)
+		(at 36.83 176.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9936,7 +9977,7 @@
 		(fields_autoplaced yes)
 		(uuid "f06eb1ad-197c-4b60-98c3-94072f47b6d6")
 		(property "Reference" "#PWR0128"
-			(at 41.91 199.39 0)
+			(at 36.83 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9945,7 +9986,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 41.91 198.12 0)
+			(at 36.83 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9953,7 +9994,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 41.91 193.04 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9962,7 +10003,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 41.91 193.04 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9971,7 +10012,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 41.91 193.04 0)
+			(at 36.83 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9992,17 +10033,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 102.87 193.04 0)
+		(lib_id "power:+3V3")
+		(at 129.54 139.7 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f56ea6e3-c6b5-411f-9a2d-18c4984c5640")
-		(property "Reference" "#PWR09"
-			(at 102.87 199.39 0)
+		(uuid "f1253674-ff13-44ee-ad38-423a35a3f700")
+		(property "Reference" "#PWR0123"
+			(at 129.54 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10010,8 +10051,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 102.87 198.12 0)
+		(property "Value" "+3V3"
+			(at 129.54 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10019,7 +10060,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 102.87 193.04 0)
+			(at 129.54 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10028,7 +10069,73 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 102.87 193.04 0)
+			(at 129.54 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 129.54 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e0419a9e-8e95-41e0-82e8-79db4b7f6129")
+		)
+		(instances
+			(project "Braille-PCB-Type-5-Vertical-Motors"
+				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 146.05 193.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f56ea6e3-c6b5-411f-9a2d-18c4984c5640")
+		(property "Reference" "#PWR0133"
+			(at 146.05 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 146.05 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 146.05 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 146.05 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10037,7 +10144,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 102.87 193.04 0)
+			(at 146.05 193.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10051,7 +10158,7 @@
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
 				(path "/3829a125-89bd-48f9-bfbe-92d753eb8f7f"
-					(reference "#PWR09")
+					(reference "#PWR0133")
 					(unit 1)
 				)
 			)

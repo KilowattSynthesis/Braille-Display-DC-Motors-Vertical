@@ -632,7 +632,8 @@
       "Net-(L6-Pad2)": "Tight",
       "Net-(L7-Pad2)": "Tight",
       "Net-(L8-Pad2)": "Tight",
-      "Net-(L9-Pad2)": "Tight"
+      "Net-(L9-Pad2)": "Tight",
+      "Net-(U102-VO)": "Power"
     },
     "netclass_patterns": [
       {
