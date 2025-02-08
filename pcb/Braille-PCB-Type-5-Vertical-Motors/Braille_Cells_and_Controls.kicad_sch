@@ -5,8 +5,8 @@
 	(uuid "e119c01b-8921-4f49-92c0-65359687bb30")
 	(paper "USLetter")
 	(title_block
-		(date "2025-01-11")
-		(rev "Type 5 Rev 2")
+		(date "2025-02-08")
+		(rev "Type 5 Rev 3")
 	)
 	(lib_symbols
 		(symbol "74xx:74HC595"

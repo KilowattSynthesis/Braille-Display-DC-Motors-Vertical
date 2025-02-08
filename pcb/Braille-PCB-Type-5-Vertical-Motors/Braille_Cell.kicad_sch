@@ -5,8 +5,8 @@
 	(uuid "2cd51479-412f-48a3-af9e-1108938fa36b")
 	(paper "USLetter")
 	(title_block
-		(date "2025-01-11")
-		(rev "Type 5 Rev 2")
+		(date "2025-02-08")
+		(rev "Type 5 Rev 3")
 	)
 	(lib_symbols
 		(symbol "00-project-symbols:AD116_H_Bridge"
@@ -2300,7 +2300,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "021b2596-4390-41eb-86ca-ce1dcb7a1d8f")
-		(property "Reference" "H205"
+		(property "Reference" "H305"
 			(at 213.995 121.2849 0)
 			(effects
 				(font
@@ -2376,7 +2376,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0431eba3-71ab-4419-b6d8-9b785de2909f")
-		(property "Reference" "H204"
+		(property "Reference" "H304"
 			(at 217.805 116.2049 0)
 			(effects
 				(font
@@ -2451,7 +2451,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23732d66-c184-45f0-916b-daa6a32b39fc")
-		(property "Reference" "D203"
+		(property "Reference" "D303"
 			(at 212.09 80.264 90)
 			(effects
 				(font
@@ -2540,7 +2540,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2899cad5-0c2f-475c-abf7-a13aa7ea82a3")
-		(property "Reference" "R203"
+		(property "Reference" "R303"
 			(at 213.36 68.5799 0)
 			(effects
 				(font
@@ -2703,7 +2703,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30c8a2c9-a468-406a-b635-68b5931c4790")
-		(property "Reference" "M201"
+		(property "Reference" "M301"
 			(at 146.05 83.82 0)
 			(effects
 				(font
@@ -3088,7 +3088,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "52422763-37f5-4b74-a638-fc8777146a2f")
-		(property "Reference" "D202"
+		(property "Reference" "D302"
 			(at 237.49 58.674 90)
 			(effects
 				(font
@@ -3176,7 +3176,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "550ae706-4c32-4996-9f77-2ed80320da81")
-		(property "Reference" "M202"
+		(property "Reference" "M302"
 			(at 175.26 116.84 0)
 			(effects
 				(font
@@ -3331,7 +3331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c25935e-6729-4b52-b73b-55cf5d82085b")
-		(property "Reference" "R202"
+		(property "Reference" "R302"
 			(at 238.76 46.9899 0)
 			(effects
 				(font
@@ -3413,7 +3413,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "651941e9-0ac7-4857-8e23-c1409c6e02a6")
-		(property "Reference" "H206"
+		(property "Reference" "H306"
 			(at 217.805 126.3649 0)
 			(effects
 				(font
@@ -3488,7 +3488,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6cbd5d9f-4a88-4e64-a4e3-b7f27fd5e9aa")
-		(property "Reference" "D201"
+		(property "Reference" "D301"
 			(at 212.09 35.814 90)
 			(effects
 				(font
@@ -3906,7 +3906,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a79d0450-9d48-43ca-9e87-96fa804720d5")
-		(property "Reference" "M203"
+		(property "Reference" "M303"
 			(at 149.86 151.13 0)
 			(effects
 				(font
