@@ -35,7 +35,7 @@ class HousingSpec:
     cell_pitch_x: float = 6
     cell_pitch_y: float = 10
 
-    motor_body_od: float = 4.2
+    motor_body_od: float = 4.5
     motor_body_length: float = 8.0 + 1.0  # Extra 1mm for fit (esp for bottom).
 
     gap_above_top_motor: float = 5
