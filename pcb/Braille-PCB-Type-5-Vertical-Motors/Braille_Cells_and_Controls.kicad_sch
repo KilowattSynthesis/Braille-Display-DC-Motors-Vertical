@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "e119c01b-8921-4f49-92c0-65359687bb30")
 	(paper "USLetter")
 	(title_block
@@ -75,35 +75,17 @@
 				)
 			)
 			(symbol "74HC595_1_0"
-				(pin tri_state line
-					(at 10.16 7.62 180)
-					(length 2.54)
-					(name "QB"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input line
-					(at -10.16 2.54 0)
+					(at -10.16 10.16 0)
 					(length 2.54)
-					(name "~{SRCLR}"
+					(name "SER"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "10"
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -122,6 +104,24 @@
 						)
 					)
 					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "~{SRCLR}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -165,17 +165,35 @@
 						)
 					)
 				)
-				(pin input line
-					(at -10.16 10.16 0)
+				(pin power_in line
+					(at 0 15.24 270)
 					(length 2.54)
-					(name "SER"
+					(name "VCC"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "14"
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -17.78 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -201,17 +219,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 15.24 270)
+				(pin tri_state line
+					(at 10.16 7.62 180)
 					(length 2.54)
-					(name "VCC"
+					(name "QB"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "16"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -327,24 +345,6 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at 0 -17.78 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin output line
 					(at 10.16 -12.7 180)
 					(length 2.54)
@@ -377,9 +377,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -452,7 +455,7 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -464,7 +467,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -513,12 +516,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3V3"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -590,7 +598,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -602,7 +610,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -633,12 +641,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -729,7 +742,54 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 20.32 73.025)
+		(end 60.96 103.505)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 45e3e307-6062-4d5c-b9c5-9e9cc46fa25e)
+	)
+	(rectangle
+		(start 222.25 12.7)
+		(end 265.43 118.745)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9ea9bafd-65ce-434a-b48a-102aeaede56f)
+	)
+	(rectangle
+		(start 20.32 22.225)
+		(end 205.105 69.215)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid fc02cfde-a18e-47ac-a10e-fe23ad583deb)
+	)
+	(text "Decoupling for\nShift Registers"
+		(exclude_from_sim no)
+		(at 30.226 99.822 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "da4215bf-cb46-4c70-aa1f-553e84879055")
 	)
 	(wire
 		(pts
@@ -1470,52 +1530,6 @@
 			(type default)
 		)
 		(uuid "fedcdd74-9239-4650-82a7-45c061edede0")
-	)
-	(rectangle
-		(start 20.32 73.025)
-		(end 60.96 103.505)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 45e3e307-6062-4d5c-b9c5-9e9cc46fa25e)
-	)
-	(rectangle
-		(start 222.25 12.7)
-		(end 265.43 118.745)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9ea9bafd-65ce-434a-b48a-102aeaede56f)
-	)
-	(rectangle
-		(start 20.32 22.225)
-		(end 205.105 69.215)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid fc02cfde-a18e-47ac-a10e-fe23ad583deb)
-	)
-	(text "Decoupling for\nShift Registers"
-		(exclude_from_sim no)
-		(at 30.226 99.822 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "da4215bf-cb46-4c70-aa1f-553e84879055")
 	)
 	(label "CELL0_DOT2_B"
 		(at 223.52 27.94 0)
@@ -3483,6 +3497,10 @@
 	(sheet
 		(at 238.76 44.45)
 		(size 15.24 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3512,63 +3530,63 @@
 		)
 		(pin "DOT2_A_CTRL" input
 			(at 238.76 52.07 180)
+			(uuid "9359354d-19bf-4f8c-a432-855d020ea40b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9359354d-19bf-4f8c-a432-855d020ea40b")
 		)
 		(pin "DOT2_B_CTRL" input
 			(at 238.76 54.61 180)
+			(uuid "6a425443-44a9-49d7-bbe2-29844cc74a39")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6a425443-44a9-49d7-bbe2-29844cc74a39")
 		)
 		(pin "DOT3_A_CTRL" input
 			(at 238.76 57.15 180)
+			(uuid "ef37c429-642c-4a82-90f8-674f0674fbdf")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "ef37c429-642c-4a82-90f8-674f0674fbdf")
 		)
 		(pin "DOT3_B_CTRL" input
 			(at 238.76 59.69 180)
+			(uuid "8d870aef-530a-4931-9a40-446bdeca0b7b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8d870aef-530a-4931-9a40-446bdeca0b7b")
 		)
 		(pin "DOT1_A_CTRL" input
 			(at 238.76 46.99 180)
+			(uuid "9d1d106d-eab8-4d34-bb67-e4384f78a1b2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9d1d106d-eab8-4d34-bb67-e4384f78a1b2")
 		)
 		(pin "DOT1_B_CTRL" input
 			(at 238.76 49.53 180)
+			(uuid "42c6bc7a-871e-45b0-ac32-f5876686408f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "42c6bc7a-871e-45b0-ac32-f5876686408f")
 		)
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
@@ -3581,6 +3599,10 @@
 	(sheet
 		(at 238.76 69.85)
 		(size 15.24 18.415)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3610,63 +3632,63 @@
 		)
 		(pin "DOT2_A_CTRL" input
 			(at 238.76 77.47 180)
+			(uuid "0f09db75-9c9a-41a1-a219-8abb234627f4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "0f09db75-9c9a-41a1-a219-8abb234627f4")
 		)
 		(pin "DOT2_B_CTRL" input
 			(at 238.76 80.01 180)
+			(uuid "9f36f93b-b393-433b-a318-e71d9db11b41")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9f36f93b-b393-433b-a318-e71d9db11b41")
 		)
 		(pin "DOT3_A_CTRL" input
 			(at 238.76 82.55 180)
+			(uuid "e024faa4-872e-4f8f-89ff-081a2a3b352a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e024faa4-872e-4f8f-89ff-081a2a3b352a")
 		)
 		(pin "DOT3_B_CTRL" input
 			(at 238.76 85.09 180)
+			(uuid "91b16fb3-2c6e-4b41-bd87-ec05ab9193fc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "91b16fb3-2c6e-4b41-bd87-ec05ab9193fc")
 		)
 		(pin "DOT1_A_CTRL" input
 			(at 238.76 72.39 180)
+			(uuid "37726d94-beee-4a9a-a83e-52edd3331650")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "37726d94-beee-4a9a-a83e-52edd3331650")
 		)
 		(pin "DOT1_B_CTRL" input
 			(at 238.76 74.93 180)
+			(uuid "e56855d4-c825-4e73-a89f-d0c6d3a268d1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e56855d4-c825-4e73-a89f-d0c6d3a268d1")
 		)
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
@@ -3679,6 +3701,10 @@
 	(sheet
 		(at 238.76 96.52)
 		(size 15.24 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3708,63 +3734,63 @@
 		)
 		(pin "DOT2_A_CTRL" input
 			(at 238.76 104.14 180)
+			(uuid "31305e64-f0b4-472e-93b9-655b3dd44201")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "31305e64-f0b4-472e-93b9-655b3dd44201")
 		)
 		(pin "DOT2_B_CTRL" input
 			(at 238.76 106.68 180)
+			(uuid "a0fb03f2-e2d3-471d-a149-71bc421bdbe3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "a0fb03f2-e2d3-471d-a149-71bc421bdbe3")
 		)
 		(pin "DOT3_A_CTRL" input
 			(at 238.76 109.22 180)
+			(uuid "afc3b720-3075-4e7e-b23c-9a2c7d88b735")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "afc3b720-3075-4e7e-b23c-9a2c7d88b735")
 		)
 		(pin "DOT3_B_CTRL" input
 			(at 238.76 111.76 180)
+			(uuid "49b9fc92-d233-4909-8d21-07b9f3ecc5fa")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "49b9fc92-d233-4909-8d21-07b9f3ecc5fa")
 		)
 		(pin "DOT1_A_CTRL" input
 			(at 238.76 99.06 180)
+			(uuid "42bddeb0-6b10-4351-9820-bf814a980940")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "42bddeb0-6b10-4351-9820-bf814a980940")
 		)
 		(pin "DOT1_B_CTRL" input
 			(at 238.76 101.6 180)
+			(uuid "d49b3ffc-7b1e-4321-982b-18058d0378e6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d49b3ffc-7b1e-4321-982b-18058d0378e6")
 		)
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"
@@ -3777,6 +3803,10 @@
 	(sheet
 		(at 238.76 17.78)
 		(size 15.24 18.415)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -3806,63 +3836,63 @@
 		)
 		(pin "DOT2_A_CTRL" input
 			(at 238.76 25.4 180)
+			(uuid "33bc924b-8306-46fa-a167-ea40943e444d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "33bc924b-8306-46fa-a167-ea40943e444d")
 		)
 		(pin "DOT2_B_CTRL" input
 			(at 238.76 27.94 180)
+			(uuid "2b29d0a1-2ee6-473c-9362-4733b02d1b6d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2b29d0a1-2ee6-473c-9362-4733b02d1b6d")
 		)
 		(pin "DOT3_A_CTRL" input
 			(at 238.76 30.48 180)
+			(uuid "2381d5f8-7eb1-4cd9-af87-cac053f4e089")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2381d5f8-7eb1-4cd9-af87-cac053f4e089")
 		)
 		(pin "DOT3_B_CTRL" input
 			(at 238.76 33.02 180)
+			(uuid "5f3220fc-5d28-4c91-a4fe-b27a9cfe7f59")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "5f3220fc-5d28-4c91-a4fe-b27a9cfe7f59")
 		)
 		(pin "DOT1_A_CTRL" input
 			(at 238.76 20.32 180)
+			(uuid "0d0d95b9-1c8b-4372-9b8e-5170820f3d34")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "0d0d95b9-1c8b-4372-9b8e-5170820f3d34")
 		)
 		(pin "DOT1_B_CTRL" input
 			(at 238.76 22.86 180)
+			(uuid "a97fd3a5-d3b8-4569-8778-da5bd1da5017")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "a97fd3a5-d3b8-4569-8778-da5bd1da5017")
 		)
 		(instances
 			(project "Braille-PCB-Type-5-Vertical-Motors"

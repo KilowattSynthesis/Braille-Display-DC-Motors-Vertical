@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "2cd51479-412f-48a3-af9e-1108938fa36b")
 	(paper "USLetter")
 	(title_block
@@ -68,35 +68,17 @@
 						(type background)
 					)
 				)
-				(pin output line
-					(at 11.43 -2.54 180)
+				(pin input line
+					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "OUT_B"
+					(name "IN_A"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -122,24 +104,6 @@
 						)
 					)
 				)
-				(pin input line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "IN_A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin power_in line
 					(at 0 7.62 270)
 					(length 2.54)
@@ -151,6 +115,24 @@
 						)
 					)
 					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -176,11 +158,32 @@
 						)
 					)
 				)
+				(pin output line
+					(at 11.43 -2.54 180)
+					(length 2.54)
+					(name "OUT_B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Generic:Conn_01x02"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -247,14 +250,14 @@
 			)
 			(symbol "Conn_01x02_1_1"
 				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(rectangle
@@ -269,14 +272,14 @@
 					)
 				)
 				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
+					(start -1.27 -2.413)
+					(end 0 -2.667)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
 					)
 				)
 				(pin passive line
@@ -316,9 +319,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0.254)
 			)
@@ -391,7 +397,7 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 0.762) (xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -403,7 +409,7 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -452,10 +458,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:LED_Dual_AAKK"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -523,18 +532,6 @@
 			(symbol "LED_Dual_AAKK_0_1"
 				(polyline
 					(pts
-						(xy -5.08 -2.54) (xy 2.032 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -5.08 2.54) (xy 2.032 2.54)
 					)
 					(stroke
@@ -547,31 +544,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 -3.81)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 3.81) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 -2.54) (xy 1.905 -2.54)
+						(xy -5.08 -2.54) (xy 2.032 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -583,10 +556,10 @@
 				)
 				(polyline
 					(pts
-						(xy 3.81 2.54) (xy 1.905 2.54)
+						(xy -1.27 3.81) (xy -1.27 1.27) (xy 1.27 2.54) (xy -1.27 3.81)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -605,9 +578,32 @@
 						(type none)
 					)
 				)
+				(circle
+					(center 0 0)
+					(radius 4.572)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
 				(polyline
 					(pts
-						(xy -1.27 3.81) (xy -1.27 1.27) (xy 1.27 2.54) (xy -1.27 3.81)
+						(xy 1.27 3.81) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 -3.81)
 					)
 					(stroke
 						(width 0.254)
@@ -641,15 +637,28 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 0 0)
-					(radius 4.572)
+				(polyline
+					(pts
+						(xy 3.81 2.54) (xy 1.905 2.54)
+					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 -2.54) (xy 1.905 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 			)
@@ -727,9 +736,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -848,6 +860,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Mechanical:MountingHole"
 			(pin_names
@@ -930,12 +943,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1026,12 +1044,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:VDC"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1103,7 +1126,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -1115,7 +1138,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -1146,7 +1169,124 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 58.42 134.62)
+		(end 156.21 165.1)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 12338a61-e492-45c6-a4cd-3e1b8708af54)
+	)
+	(rectangle
+		(start 57.15 66.04)
+		(end 184.15 166.37)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 239142b9-90d4-404e-80aa-00ca0343b4b8)
+	)
+	(rectangle
+		(start 58.42 68.58)
+		(end 156.21 99.06)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 54be69e9-e7b9-4eac-a675-77665c1c8fff)
+	)
+	(rectangle
+		(start 203.2 111.76)
+		(end 240.03 138.43)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 58dc906b-23ca-475f-a9ad-448c59bbe2f6)
+	)
+	(rectangle
+		(start 121.285 15.875)
+		(end 147.955 42.545)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 5f8b2ab0-d59c-44d0-a313-d4a15499894f)
+	)
+	(rectangle
+		(start 85.09 101.6)
+		(end 182.88 132.08)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 670468eb-3f7a-445e-9827-5b55c603dfcf)
+	)
+	(rectangle
+		(start 194.31 15.24)
+		(end 245.11 103.505)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9ba05183-5ebf-4dfc-bdca-f18cbb1eed5b)
+	)
+	(rectangle
+		(start 38.1 77.47)
+		(end 53.975 151.13)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid c50adb9a-8b4f-42be-b13e-b9bb718ed733)
+	)
+	(text "Light guide from lower layer."
+		(exclude_from_sim no)
+		(at 222.123 135.763 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c0633f01-a231-41b0-a289-bb0f27801ed3")
+	)
+	(text "Motor shafts from\nlower layer."
+		(exclude_from_sim no)
+		(at 136.398 39.878 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "f357371a-eec6-4804-8bdf-3ab298c64ea8")
 	)
 	(junction
 		(at 236.22 74.93)
@@ -1904,122 +2044,6 @@
 		)
 		(uuid "fdf158ae-90d5-4dd1-9111-19fa5ede7612")
 	)
-	(rectangle
-		(start 58.42 134.62)
-		(end 156.21 165.1)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 12338a61-e492-45c6-a4cd-3e1b8708af54)
-	)
-	(rectangle
-		(start 57.15 66.04)
-		(end 184.15 166.37)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 239142b9-90d4-404e-80aa-00ca0343b4b8)
-	)
-	(rectangle
-		(start 58.42 68.58)
-		(end 156.21 99.06)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 54be69e9-e7b9-4eac-a675-77665c1c8fff)
-	)
-	(rectangle
-		(start 203.2 111.76)
-		(end 240.03 138.43)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 58dc906b-23ca-475f-a9ad-448c59bbe2f6)
-	)
-	(rectangle
-		(start 121.285 15.875)
-		(end 147.955 42.545)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 5f8b2ab0-d59c-44d0-a313-d4a15499894f)
-	)
-	(rectangle
-		(start 85.09 101.6)
-		(end 182.88 132.08)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 670468eb-3f7a-445e-9827-5b55c603dfcf)
-	)
-	(rectangle
-		(start 194.31 15.24)
-		(end 245.11 103.505)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 9ba05183-5ebf-4dfc-bdca-f18cbb1eed5b)
-	)
-	(rectangle
-		(start 38.1 77.47)
-		(end 53.975 151.13)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid c50adb9a-8b4f-42be-b13e-b9bb718ed733)
-	)
-	(text "Light guide from lower layer."
-		(exclude_from_sim no)
-		(at 222.123 135.763 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c0633f01-a231-41b0-a289-bb0f27801ed3")
-	)
-	(text "Motor shafts from\nlower layer."
-		(exclude_from_sim no)
-		(at 136.398 39.878 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "f357371a-eec6-4804-8bdf-3ab298c64ea8")
-	)
 	(label "DOT1_B"
 		(at 109.22 86.36 180)
 		(effects
@@ -2222,7 +2246,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0056a826-44a1-467d-8604-9118839b17f8")
-		(property "Reference" "#PWR0306"
+		(property "Reference" "#PWR0206"
 			(at 114.3 113.03 0)
 			(effects
 				(font
@@ -2300,7 +2324,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "021b2596-4390-41eb-86ca-ce1dcb7a1d8f")
-		(property "Reference" "H305"
+		(property "Reference" "H205"
 			(at 213.995 121.2849 0)
 			(effects
 				(font
@@ -2376,7 +2400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0431eba3-71ab-4419-b6d8-9b785de2909f")
-		(property "Reference" "H304"
+		(property "Reference" "H204"
 			(at 217.805 116.2049 0)
 			(effects
 				(font
@@ -2451,7 +2475,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23732d66-c184-45f0-916b-daa6a32b39fc")
-		(property "Reference" "D303"
+		(property "Reference" "D203"
 			(at 212.09 80.264 90)
 			(effects
 				(font
@@ -2540,7 +2564,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2899cad5-0c2f-475c-abf7-a13aa7ea82a3")
-		(property "Reference" "R303"
+		(property "Reference" "R203"
 			(at 213.36 68.5799 0)
 			(effects
 				(font
@@ -2622,7 +2646,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "291c4b5d-c7ac-4349-bf17-2d294a1de7dc")
-		(property "Reference" "C303"
+		(property "Reference" "C203"
 			(at 48.26 135.8899 0)
 			(effects
 				(font
@@ -2703,7 +2727,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "30c8a2c9-a468-406a-b635-68b5931c4790")
-		(property "Reference" "M301"
+		(property "Reference" "M201"
 			(at 146.05 83.82 0)
 			(effects
 				(font
@@ -2780,7 +2804,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43146118-16e0-4f01-a54d-8fa8391e1311")
-		(property "Reference" "H303"
+		(property "Reference" "H203"
 			(at 132.08 30.4799 0)
 			(effects
 				(font
@@ -2856,7 +2880,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "478a8ce5-a63c-4a5c-b943-7102c392921a")
-		(property "Reference" "#PWR0310"
+		(property "Reference" "#PWR0210"
 			(at 44.45 148.59 0)
 			(effects
 				(font
@@ -2934,7 +2958,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4dfcec12-fd5f-4b86-abda-d9f5a88a1c4e")
-		(property "Reference" "#PWR0304"
+		(property "Reference" "#PWR0204"
 			(at 44.45 101.6 0)
 			(effects
 				(font
@@ -3011,7 +3035,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "511e90a5-4972-4616-9985-166d476a3299")
-		(property "Reference" "#PWR0312"
+		(property "Reference" "#PWR0212"
 			(at 87.63 165.1 0)
 			(effects
 				(font
@@ -3088,7 +3112,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "52422763-37f5-4b74-a638-fc8777146a2f")
-		(property "Reference" "D302"
+		(property "Reference" "D202"
 			(at 237.49 58.674 90)
 			(effects
 				(font
@@ -3176,7 +3200,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "550ae706-4c32-4996-9f77-2ed80320da81")
-		(property "Reference" "M302"
+		(property "Reference" "M202"
 			(at 175.26 116.84 0)
 			(effects
 				(font
@@ -3253,7 +3277,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c0efcfd-0407-41fe-a8d7-b431b56a1a79")
-		(property "Reference" "#PWR0307"
+		(property "Reference" "#PWR0207"
 			(at 44.45 125.73 0)
 			(effects
 				(font
@@ -3331,7 +3355,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c25935e-6729-4b52-b73b-55cf5d82085b")
-		(property "Reference" "R302"
+		(property "Reference" "R202"
 			(at 238.76 46.9899 0)
 			(effects
 				(font
@@ -3413,7 +3437,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "651941e9-0ac7-4857-8e23-c1409c6e02a6")
-		(property "Reference" "H306"
+		(property "Reference" "H206"
 			(at 217.805 126.3649 0)
 			(effects
 				(font
@@ -3488,7 +3512,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6cbd5d9f-4a88-4e64-a4e3-b7f27fd5e9aa")
-		(property "Reference" "D301"
+		(property "Reference" "D201"
 			(at 212.09 35.814 90)
 			(effects
 				(font
@@ -3577,7 +3601,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b841379-e304-41b8-8e32-047be987995f")
-		(property "Reference" "C301"
+		(property "Reference" "C201"
 			(at 48.26 88.8999 0)
 			(effects
 				(font
@@ -3659,7 +3683,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "820d9dc3-2b73-4552-b1ed-cf4f4a3697e3")
-		(property "Reference" "H302"
+		(property "Reference" "H202"
 			(at 128.27 25.3999 0)
 			(effects
 				(font
@@ -3735,7 +3759,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8d52de36-e264-45c8-b3a3-f9d7e6775753")
-		(property "Reference" "#PWR0305"
+		(property "Reference" "#PWR0205"
 			(at 44.45 113.03 0)
 			(effects
 				(font
@@ -3813,7 +3837,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a19a2de7-b2b5-432b-8290-3da4310e238a")
-		(property "Reference" "U303"
+		(property "Reference" "U203"
 			(at 89.8241 140.97 0)
 			(effects
 				(font
@@ -3906,7 +3930,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a79d0450-9d48-43ca-9e87-96fa804720d5")
-		(property "Reference" "M303"
+		(property "Reference" "M203"
 			(at 149.86 151.13 0)
 			(effects
 				(font
@@ -3983,7 +4007,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8295941-7028-42eb-827c-72434d9c4c89")
-		(property "Reference" "C302"
+		(property "Reference" "C202"
 			(at 48.26 113.0299 0)
 			(effects
 				(font
@@ -4065,7 +4089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b1fcf1a4-a2fc-479e-a5cf-a3354604c157")
-		(property "Reference" "#PWR0311"
+		(property "Reference" "#PWR0211"
 			(at 87.63 147.32 0)
 			(effects
 				(font
@@ -4143,7 +4167,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b6bb2dec-08e5-4ee9-8437-e78cf28649e1")
-		(property "Reference" "H301"
+		(property "Reference" "H201"
 			(at 132.08 20.3199 0)
 			(effects
 				(font
@@ -4219,7 +4243,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b71a69f3-fb67-42fe-8145-5d6026c7ca5f")
-		(property "Reference" "J301"
+		(property "Reference" "J201"
 			(at 133.35 82.5499 0)
 			(effects
 				(font
@@ -4302,7 +4326,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc977538-5b3a-4289-9519-f7d35ffb5684")
-		(property "Reference" "#PWR0309"
+		(property "Reference" "#PWR0209"
 			(at 44.45 135.89 0)
 			(effects
 				(font
@@ -4380,7 +4404,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c45021e9-c161-4025-a150-98f613676236")
-		(property "Reference" "U301"
+		(property "Reference" "U201"
 			(at 89.8241 73.66 0)
 			(effects
 				(font
@@ -4474,7 +4498,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cc3196ec-4d2c-446e-b8f9-e81a29fca0a2")
-		(property "Reference" "J303"
+		(property "Reference" "J203"
 			(at 132.08 149.8599 0)
 			(effects
 				(font
@@ -4557,7 +4581,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cd62cef2-49b7-4c98-9f99-9a45046d6adc")
-		(property "Reference" "R301"
+		(property "Reference" "R201"
 			(at 213.36 24.1299 0)
 			(effects
 				(font
@@ -4639,7 +4663,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e469902a-a1b4-46a6-a179-25c24501957d")
-		(property "Reference" "#PWR0302"
+		(property "Reference" "#PWR0202"
 			(at 44.45 88.9 0)
 			(effects
 				(font
@@ -4717,7 +4741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f433b092-0337-4bea-8d68-e74417fdadb8")
-		(property "Reference" "#PWR0301"
+		(property "Reference" "#PWR0201"
 			(at 87.63 80.01 0)
 			(effects
 				(font
@@ -4795,7 +4819,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7c2cb77-04f4-479d-880c-36ffd82ba294")
-		(property "Reference" "#PWR0308"
+		(property "Reference" "#PWR0208"
 			(at 114.3 130.81 0)
 			(effects
 				(font
@@ -4873,7 +4897,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f853205e-0df3-4feb-880a-2fca7aebee17")
-		(property "Reference" "J302"
+		(property "Reference" "J202"
 			(at 160.02 115.5699 0)
 			(effects
 				(font
@@ -4956,7 +4980,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f8c6003f-9b18-4cfe-90fd-a9115898958d")
-		(property "Reference" "U302"
+		(property "Reference" "U202"
 			(at 116.4941 106.68 0)
 			(effects
 				(font
@@ -5050,7 +5074,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa66195d-5d70-4614-9df1-4477fde545f1")
-		(property "Reference" "#PWR0303"
+		(property "Reference" "#PWR0203"
 			(at 87.63 97.79 0)
 			(effects
 				(font
