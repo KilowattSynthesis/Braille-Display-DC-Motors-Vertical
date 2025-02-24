@@ -49,7 +49,9 @@ class HousingSpec:
     x_dist_dots_to_mounting_holes: float = 5.0
 
     mounting_hole_spacing_y: float = 3
-    mounting_hole_diameter: float = 1.8  # Thread-forming screws from bottom.
+    mounting_hole_id: float = 1.8  # Thread-forming screws from bottom.
+    mounting_hole_peg_od: float = 2
+    mounting_hole_peg_length: float = 1.5
 
     border_x: float = 5
 
@@ -80,11 +82,7 @@ class HousingSpec:
     @property
     def total_x(self) -> float:
         """Total width of the braille housing."""
-        return (
-            self.mounting_hole_spacing_x
-            + self.mounting_hole_diameter
-            + self.border_x * 2
-        )
+        return self.mounting_hole_spacing_x + self.mounting_hole_id + self.border_x * 2
 
     @property
     def total_z(self) -> float:
@@ -179,20 +177,36 @@ def motor_housing(spec: HousingSpec) -> bd.Part | bd.Compound:
             amount=spec.motor_body_length,
         )
 
-    # Subtract the mounting holes.
-    for hole_x, hole_y in product(
-        bde.evenly_space_with_center(count=2, spacing=spec.mounting_hole_spacing_x),
-        bde.evenly_space_with_center(count=3, spacing=spec.mounting_hole_spacing_y),
+    # Remove the mounting holes (center holes).
+    for x_val in bde.evenly_space_with_center(
+        count=2,
+        spacing=spec.mounting_hole_spacing_x,
     ):
-        p -= bd.Cylinder(
-            spec.mounting_hole_diameter / 2,
-            spec.total_z,
+        p -= bd.Pos(X=x_val) * bd.Cylinder(
+            radius=spec.mounting_hole_id / 2,
+            height=spec.total_z,
             align=bde.align.ANCHOR_BOTTOM,
-        ).translate((hole_x, hole_y, 0))
+        )
+    # Add the mounting pegs (corner holes).
+    for x_val, y_val in product(
+        bde.evenly_space_with_center(
+            count=2,
+            spacing=spec.mounting_hole_spacing_x,
+        ),
+        bde.evenly_space_with_center(
+            count=2,
+            spacing=spec.mounting_hole_spacing_y * 2,
+        ),
+    ):
+        p += bd.Pos(x_val, y_val) * bd.Cylinder(
+            radius=spec.mounting_hole_peg_od / 2,
+            height=spec.mounting_hole_peg_length,
+            align=bde.align.ANCHOR_TOP,
+        )
 
     # Subtract the gap_above_top_motor.
     p -= bd.Box(
-        spec.mounting_hole_spacing_x - spec.mounting_hole_diameter - 3,
+        spec.mounting_hole_spacing_x - spec.mounting_hole_id - 3,
         spec.total_y,
         spec.gap_above_top_motor,
         align=bde.align.ANCHOR_BOTTOM,
@@ -308,7 +322,7 @@ def make_top_plate_for_tapping(
         bde.evenly_space_with_center(count=3, spacing=spec.mounting_hole_spacing_y),
     ):
         p -= bd.Cylinder(
-            spec.mounting_hole_diameter / 2,
+            spec.mounting_hole_id / 2,
             spec.top_plate_thickness,
             align=bde.align.ANCHOR_BOTTOM,
         ).translate((hole_x, hole_y, 0))
@@ -359,7 +373,7 @@ def write_milling_drawing_info(
     lines.extend(
         [
             "Mounting hole positions (X, Y):",
-            f"  Diameter: {spec.mounting_hole_diameter}",
+            f"  Diameter: {spec.mounting_hole_id}",
             "",
         ]
     )
