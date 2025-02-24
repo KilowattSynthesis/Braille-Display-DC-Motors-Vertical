@@ -41,7 +41,7 @@ class MainSpec:
         return copy.deepcopy(self)
 
 
-def make_dc_motor(spec: MainSpec) -> bd.Part:
+def make_dc_motor(spec: MainSpec) -> bd.Part | bd.Compound:
     """Make a tiny DC motor.
 
     Used for test fitting in KiCAD models, mostly.

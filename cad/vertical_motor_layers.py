@@ -113,7 +113,7 @@ class HousingSpec:
         return copy.deepcopy(self)
 
 
-def motor_housing(spec: HousingSpec) -> bd.Part:
+def motor_housing(spec: HousingSpec) -> bd.Part | bd.Compound:
     """Make housing with the placement from the demo.
 
     Args:
@@ -206,7 +206,7 @@ def make_top_plate_for_tapping(
     *,
     tap_holes: bool,
     enable_dot_6_nut_hole: bool = False,
-) -> bd.Part:
+) -> bd.Part | bd.Compound:
     """Make the threaded top plate, with holes for tapping."""
     p = bd.Part(None)
 
@@ -432,7 +432,7 @@ def write_milling_drawing_info(
     return "\n".join(lines)
 
 
-def two_mock_motors_joined(spec: HousingSpec) -> bd.Part:
+def two_mock_motors_joined(spec: HousingSpec) -> bd.Part | bd.Compound:
     """Make a fake motor assembly chunk, with 2 motors joined by a plate."""
     config_bottom_plate_thickness = 2
     config_extra_motor_length = 2  # Extra length so the plate is higher than flush.
@@ -474,7 +474,7 @@ def two_mock_motors_joined(spec: HousingSpec) -> bd.Part:
     return p
 
 
-def three_mock_thin_motors_joined(spec: HousingSpec) -> bd.Part:
+def three_mock_thin_motors_joined(spec: HousingSpec) -> bd.Part | bd.Compound:
     """Make three cylinders the size of thin motors hulled."""
     p = bd.Part(None)
 
@@ -485,7 +485,8 @@ def three_mock_thin_motors_joined(spec: HousingSpec) -> bd.Part:
     ]
 
     p += bd.extrude(
-        bd.make_hull(
+        # TODO(KilowattSynthesis): Open an issue and remove type ignore.
+        bd.make_hull(  # type: ignore reportArgumentType
             reduce(
                 lambda a, b: a + b,
                 [
