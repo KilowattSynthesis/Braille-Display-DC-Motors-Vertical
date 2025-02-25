@@ -52,6 +52,7 @@ class HousingSpec:
     mounting_hole_id: float = 1.8  # Thread-forming screws from bottom.
     mounting_hole_peg_od: float = 2
     mounting_hole_peg_length: float = 1.5
+    meat_above_peg: float = 3
 
     border_x: float = 5
 
@@ -177,12 +178,22 @@ def motor_housing(spec: HousingSpec) -> bd.Part | bd.Compound:
             amount=spec.motor_body_length,
         )
 
-    # Remove the mounting holes (center holes).
-    for x_val in bde.evenly_space_with_center(
-        count=2,
-        spacing=spec.mounting_hole_spacing_x,
+    # Remove the mounting holes.
+    for x_val, y_val in product(
+        bde.evenly_space_with_center(
+            count=2,
+            spacing=spec.mounting_hole_spacing_x,
+        ),
+        bde.evenly_space_with_center(
+            count=3,
+            spacing=spec.mounting_hole_spacing_y,
+        ),
     ):
-        p -= bd.Pos(X=x_val) * bd.Cylinder(
+        p -= bd.Pos(
+            X=x_val,
+            Y=y_val,
+            Z=(0 if y_val == 0 else spec.meat_above_peg),  # Leave meat above peg.
+        ) * bd.Cylinder(
             radius=spec.mounting_hole_id / 2,
             height=spec.total_z,
             align=bde.align.ANCHOR_BOTTOM,
