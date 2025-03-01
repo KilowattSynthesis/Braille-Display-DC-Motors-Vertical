@@ -1,5 +1,8 @@
-from machine import Pin
+from machine import I2C, Pin
 import time
+import json
+
+from ina219 import INA219
 
 # Sleep a bit longer in init to ensure it gets set right.
 SHIFT_REGISTER_INIT_SLEEP_MS = 100
@@ -19,6 +22,22 @@ PIN_SW2 = Pin(27, Pin.IN, Pin.PULL_UP)
 PIN_GP_LED_0 = Pin(7, Pin.OUT)
 PIN_GP_LED_1 = Pin(8, Pin.OUT)
 
+INA_SHUNT_OMHS = 0.33
+ina_i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=100_000)
+ina: INA219  # Constructed/initialized in `init_ina()`
+
+def init_ina() -> None:
+    """Initialize INA219 current sensor. Perform I2C scan."""
+    print("Scanning I2C bus for INA219.")
+    i2c_addr_list: list[int] = ina_i2c.scan()
+    print(f"Found {len(i2c_addr_list)} devices: {i2c_addr_list}")
+
+    if i2c_addr_list != [0x40]:
+        raise ValueError("INA219 not found at expected address.")
+    
+    global ina
+    ina = INA219(ina_i2c, addr=0x40)
+    ina.set_calibration_32V_2A()
 
 def init_shift_register() -> None:
     """Initialize shift register pins to default states."""
@@ -70,21 +89,22 @@ def set_shift_registers(data: list[bool]) -> None:
     time.sleep_us(SHIFT_REGISTER_SLEEP_US)
 
 
-def basic_demo() -> None:
+def demo_set_all_to_each_state() -> None:
     print("All outputs off (high-impedance)")
     outputs = [False] * 48  # All outputs off
     set_shift_registers(outputs)
-    time.sleep(2)
+    sleep_ms_and_log_ina_json(2000)
 
     print("All outputs on - positive")
     outputs = [(i % 2 == 0) for i in range(48)]  # Alternating on/off pattern
     set_shift_registers(outputs)
-    time.sleep(2)
+    sleep_ms_and_log_ina_json(2000)
 
     print("All outputs on - negative")
     outputs = [(i % 2 == 1) for i in range(48)]  # Alternating on/off pattern
     set_shift_registers(outputs)
-    time.sleep(2)
+    sleep_ms_and_log_ina_json(2000)
+
 
 def make_shift_register_list_of_cells(
     cell_states: list[tuple[str, str, str, str, str, str] | str],
@@ -119,7 +139,7 @@ def make_shift_register_list_of_cells(
 
 def respond_to_buttons() -> None:
     """Respond to the button presses by setting the state of all.
-    
+
     * Pressing SW1 sets all to "pos" for a short time, then back to high-z.
     * Pressing SW2 sets all to "neg" for a short time, then back to high-z.
     """
@@ -150,19 +170,37 @@ def respond_to_buttons() -> None:
     PIN_GP_LED_0.value(0)
     PIN_GP_LED_1.value(0)
 
+
 def demo_each_dot_one_by_one() -> None:
     for dot_num in range(24):
         print(f"Dot {dot_num} - Direction 1")
         shift_register_state = [False] * 48
         shift_register_state[dot_num] = True
         set_shift_registers(shift_register_state)
-        time.sleep(1)
+        sleep_ms_and_log_ina_json(1000)
 
         print(f"Dot {dot_num} - Direction 2")
         shift_register_state = [False] * 48
         shift_register_state[dot_num + 1] = True
         set_shift_registers(shift_register_state)
-        time.sleep(1)
+        sleep_ms_and_log_ina_json(1000)
+        
+
+def log_ina_json() -> None:
+    shunt_mV = ina.shunt_voltage * 1000
+    data = {
+        "current_mA": shunt_mV / INA_SHUNT_OMHS,
+        "bus_voltage_mV": ina.bus_voltage,
+        "shunt_voltage_mV": shunt_mV,
+    }
+
+    print(json.dumps(data))
+
+def sleep_ms_and_log_ina_json(sleep_time_ms: int, log_period_ms: int = 250) -> None:
+    while sleep_time_ms > 0:
+        log_ina_json()
+        time.sleep_ms(log_period_ms)
+        sleep_time_ms -= log_period_ms
 
 
 def main() -> None:
@@ -170,13 +208,13 @@ def main() -> None:
     init_shift_register()
     PIN_GP_LED_0.value(0)
     PIN_GP_LED_1.value(0)
+    init_ina()
     print("Init complete.")
 
-    while 0:
+    if 1:
         print("Starting basic demo.")
-        basic_demo()
+        demo_set_all_to_each_state()
         print("Basic demo complete.")
-
 
     while 1:
         print("Starting demo_each_dot_one_by_one().")
