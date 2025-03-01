@@ -3107,6 +3107,26 @@
 		)
 		(uuid "51453ab4-21fa-4d59-8fbe-11a824a6fec5")
 	)
+	(text "A0=A1=GND -> Addr=0x40"
+		(exclude_from_sim no)
+		(at 103.886 158.242 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5828b74f-9989-46e6-83cd-3fb2c0a2b1f7")
+	)
+	(text "I2C Port #1"
+		(exclude_from_sim no)
+		(at 23.622 49.022 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5cdf9094-ca1c-489b-8c6d-72eb5311d200")
+	)
 	(text "- Pull ~{SRCLR} LOW\n	for normal operation."
 		(exclude_from_sim no)
 		(at 63.246 56.896 0)
