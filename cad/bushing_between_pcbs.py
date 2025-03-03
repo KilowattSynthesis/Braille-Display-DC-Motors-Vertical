@@ -67,6 +67,20 @@ def bushing_between_pcbs(spec: Spec) -> bd.Part | bd.Compound:
             )
         ) - bd.Box(spec.hole_id, spec.bushing_od, spec.bushing_height * 4)
 
+        p += bd.extrude(
+            bd.SlotCenterToCenter(
+                center_separation=spec.slot_offset_center_to_center,
+                height=spec.bushing_od,
+            ),
+            amount=spec.slot_extension_transition_distance_z,
+        ).translate(
+            (
+                -spec.slot_offset_center_to_center / 2,  # Slot starts centered.
+                0,
+                0,
+            )
+        )
+
     # On the top, add a pusher in the slot.
     if spec.draw_top_slot:
         p += bd.extrude(
@@ -86,6 +100,20 @@ def bushing_between_pcbs(spec: Spec) -> bd.Part | bd.Compound:
                 ),
             )
         ) - bd.Box(spec.hole_id, spec.bushing_od, spec.bushing_height * 4)
+
+        p += bd.extrude(
+            bd.SlotCenterToCenter(
+                center_separation=spec.slot_offset_center_to_center,
+                height=spec.bushing_od,
+            ),
+            amount=spec.slot_extension_transition_distance_z,
+        ).translate(
+            (
+                spec.slot_offset_center_to_center / 2,  # Slot starts centered.
+                0,
+                (spec.bushing_height - spec.slot_extension_transition_distance_z),
+            )
+        )
 
     # Remove hole.
     p -= bd.Cylinder(
