@@ -3838,7 +3838,7 @@
 		(fields_autoplaced yes)
 		(uuid "a19a2de7-b2b5-432b-8290-3da4310e238a")
 		(property "Reference" "U203"
-			(at 89.8241 140.97 0)
+			(at 89.7733 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3846,8 +3846,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AD116"
-			(at 89.8241 143.51 0)
+		(property "Value" "AD116/BDR6120S"
+			(at 89.7733 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4405,7 +4405,7 @@
 		(fields_autoplaced yes)
 		(uuid "c45021e9-c161-4025-a150-98f613676236")
 		(property "Reference" "U201"
-			(at 89.8241 73.66 0)
+			(at 89.7733 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4413,8 +4413,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AD116"
-			(at 89.8241 76.2 0)
+		(property "Value" "AD116/BDR6120S"
+			(at 89.7733 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4981,7 +4981,7 @@
 		(fields_autoplaced yes)
 		(uuid "f8c6003f-9b18-4cfe-90fd-a9115898958d")
 		(property "Reference" "U202"
-			(at 116.4941 106.68 0)
+			(at 116.4433 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4989,8 +4989,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "AD116"
-			(at 116.4941 109.22 0)
+		(property "Value" "AD116/BDR6120S"
+			(at 116.4433 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
