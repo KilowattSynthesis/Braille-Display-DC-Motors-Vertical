@@ -1,3 +1,7 @@
+# mpremote connect <port_path> mip install github:josverl/micropython-stubs/mip/typing.mpy
+
+from typing import Literal
+
 from machine import I2C, Pin
 import time
 import json
@@ -7,8 +11,9 @@ from ina219 import INA219
 # Sleep a bit longer in init to ensure it gets set right.
 SHIFT_REGISTER_INIT_SLEEP_MS = 100
 
+# Nexperia datasheet suggests that 100 ns is the highest-expected minimum pulse time.
 # Sleep time between each bit shift.
-SHIFT_REGISTER_SLEEP_US = 2000
+SHIFT_REGISTER_SLEEP_US = 2
 
 # Pin definitions for shift register control
 PIN_SHIFT_SER_IN = Pin(2, Pin.OUT)  # GP2: Serial data input
@@ -26,6 +31,7 @@ INA_SHUNT_OMHS = 0.33
 ina_i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=100_000)
 ina: INA219  # Constructed/initialized in `init_ina()`
 
+
 def init_ina() -> None:
     """Initialize INA219 current sensor. Perform I2C scan."""
     print("Scanning I2C bus for INA219.")
@@ -34,22 +40,23 @@ def init_ina() -> None:
 
     if i2c_addr_list != [0x40]:
         raise ValueError("INA219 not found at expected address.")
-    
+
     global ina
     ina = INA219(ina_i2c, addr=0x40)
     ina.set_calibration_32V_2A()
 
+
 def init_shift_register() -> None:
     """Initialize shift register pins to default states."""
     # Clear shift register.
-    PIN_SHIFT_N_SRCLR.value(0)
+    PIN_SHIFT_N_SRCLR.low()
     time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
-    PIN_SHIFT_N_SRCLR.value(1)  # Active low, so set to normal (not clearing).
+    PIN_SHIFT_N_SRCLR.high()  # Active low, so set to normal (not clearing).
     time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
 
-    PIN_SHIFT_N_OE.value(0)  # Active low, set low to enable outputs
-    PIN_SHIFT_SRCK.value(0)  # Clock starts low
-    PIN_SHIFT_RCLK.value(0)  # Latch starts low
+    PIN_SHIFT_N_OE.low()  # Active low, set low to enable outputs
+    PIN_SHIFT_SRCK.low()  # Clock starts low
+    PIN_SHIFT_RCLK.low()  # Latch starts low
 
     # Wait for initialization to complete
     time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
@@ -67,26 +74,62 @@ def set_shift_registers(data: list[bool]) -> None:
         data: list of 48 boolean values representing desired output states
              (6 registers x 8 bits per register)
     """
+    start_time_us = time.ticks_us()
     if len(data) != 48:
         raise ValueError("Data must contain exactly 48 boolean values")
 
-    # Shift out all 48 bits
-    for bit in reversed(data):  # Shift MSB first
-        # Set data bit.
-        PIN_SHIFT_SER_IN.value(1 if bit else 0)
-        time.sleep_us(SHIFT_REGISTER_SLEEP_US)
+    # Precompute GPIO operations
+    srck_set = PIN_SHIFT_SRCK.value
+    ser_set = PIN_SHIFT_SER_IN.value
+    rclk_set = PIN_SHIFT_RCLK.value
 
-        # Clock in the bit.
-        PIN_SHIFT_SRCK.value(1)
-        time.sleep_us(SHIFT_REGISTER_SLEEP_US)
-        PIN_SHIFT_SRCK.value(0)
-        time.sleep_us(SHIFT_REGISTER_SLEEP_US)
+    # Shift out all 48 bits, MSB first
+    for bit in reversed(data):
+        ser_set(bit)
+        srck_set(1)
+        srck_set(0)
 
     # Latch the data to outputs
-    PIN_SHIFT_RCLK.value(1)
-    time.sleep_us(SHIFT_REGISTER_SLEEP_US)
-    PIN_SHIFT_RCLK.value(0)
-    time.sleep_us(SHIFT_REGISTER_SLEEP_US)
+    rclk_set(1)
+    rclk_set(0)
+
+    end_time_us = time.ticks_us()
+    duration_us = time.ticks_diff(end_time_us, start_time_us)
+    print(f"Shift register set in {duration_us:,} us = {duration_us / 1000:.1f} ms.")
+
+
+def fast_clear_shift_registers() -> None:
+    """Clear all shift registers.
+
+    Duration: 700us.
+    """
+    # This first block here should do it, but the Chinese knockoffs don't like it:
+    # # Immediately clear all shift register storage bits
+    # PIN_SHIFT_N_SRCLR.low()  # Assert active-low clear
+    # time.sleep_us(1)  # Short delay to ensure clear is latched
+    # PIN_SHIFT_N_SRCLR.high()  # Deassert clear
+
+    # # Latch the cleared shift register into output
+    # PIN_SHIFT_RCLK.high()
+    # time.sleep_us(1)  # Ensure the latch registers the cleared values
+    # PIN_SHIFT_RCLK.low()
+
+    # Get direct access to `.value()` method for speed
+    ser_set = PIN_SHIFT_SER_IN.value
+    srck_set = PIN_SHIFT_SRCK.value
+    rclk_set = PIN_SHIFT_RCLK.value
+
+    # Ensure data line is LOW before shifting
+    ser_set(0)
+
+    # Shift out 48 LOW bits (fastest possible method)
+    for _ in range(48):
+        srck_set(1)
+        srck_set(0)
+
+    # Latch the data to outputs
+    rclk_set(1)
+    rclk_set(0)
 
 
 def demo_set_all_to_each_state() -> None:
@@ -145,16 +188,16 @@ def respond_to_buttons() -> None:
     """
 
     ACTION_TIME_MS = 250
-    DEBOUNCE_TIME_MS = 400
+    DEBOUNCE_TIME_MS = 650
 
     if PIN_SW1.value() == 0:
         print(f"SW1 pressed. Activate all for {ACTION_TIME_MS} ms.")
-        PIN_GP_LED_0.value(1)
+        PIN_GP_LED_0.high()
         direction = "pos"
 
     elif PIN_SW2.value() == 0:
         print(f"SW2 pressed. Activate all for {ACTION_TIME_MS} ms.")
-        PIN_GP_LED_1.value(1)
+        PIN_GP_LED_1.high()
         direction = "neg"
 
     else:
@@ -167,8 +210,47 @@ def respond_to_buttons() -> None:
     set_shift_registers(make_shift_register_list_of_cells(["high-z"] * 4))
     print("Waiting for debounce.")
     time.sleep_ms(DEBOUNCE_TIME_MS)
-    PIN_GP_LED_0.value(0)
-    PIN_GP_LED_1.value(0)
+    PIN_GP_LED_0.low()
+    PIN_GP_LED_1.low()
+
+
+def respond_to_buttons_single_dot(dot_num: int) -> None:
+    """Respond to the button presses by setting the state of `dot_num`."""
+
+    ACTION_TIME_MS = 1
+    DEBOUNCE_TIME_MS = 400
+
+    if PIN_SW1.value() == 0:
+        PIN_GP_LED_0.high()
+        direction = "down"
+        print(f"SW1 pressed. Push Dot {dot_num} {direction} for {ACTION_TIME_MS} ms.")
+
+    elif PIN_SW2.value() == 0:
+        PIN_GP_LED_1.high()
+        direction = "up"
+        print(f"SW2 pressed. Push Dot {dot_num} {direction} for {ACTION_TIME_MS} ms.")
+
+    else:
+        return
+
+    register_state = [False] * 48
+    if direction == "down":
+        register_state[dot_num * 2] = True
+    elif direction == "up":
+        register_state[dot_num * 2 + 1] = True
+
+    # print(f"Setting shift registers: {register_state}")
+    set_shift_registers(register_state)
+
+    sleep_ms_and_log_ina_json(
+        ACTION_TIME_MS, log_period_ms=int(round(ACTION_TIME_MS / 15))
+    )
+
+    fast_clear_shift_registers()
+    print("Waiting for debounce.")
+    time.sleep_ms(DEBOUNCE_TIME_MS)
+    PIN_GP_LED_0.low()
+    PIN_GP_LED_1.low()
 
 
 def demo_each_dot_one_by_one() -> None:
@@ -184,34 +266,84 @@ def demo_each_dot_one_by_one() -> None:
         shift_register_state[dot_num + 1] = True
         set_shift_registers(shift_register_state)
         sleep_ms_and_log_ina_json(1000)
-        
 
-def log_ina_json() -> None:
+
+def log_ina_json(
+    timestamp_ms: int | None = None,
+    *,
+    enable_fields: tuple[
+        Literal["current_mA", "bus_voltage_mV", "shunt_voltage_mV"], ...
+    ] = ("current_mA",),
+) -> None:
     shunt_mV = ina.shunt_voltage * 1000
-    data = {
-        "current_mA": shunt_mV / INA_SHUNT_OMHS,
-        "bus_voltage_mV": ina.bus_voltage,
-        "shunt_voltage_mV": shunt_mV,
-    }
+
+    data = {}
+
+    if "current_mA" in enable_fields:
+        data["current_mA"] = shunt_mV / INA_SHUNT_OMHS
+    if "bus_voltage_mV" in enable_fields:
+        data["bus_voltage_mV"] = ina.bus_voltage
+    if "shunt_voltage_mV" in enable_fields:
+        data["shunt_voltage_mV"] = shunt_mV
+
+    if timestamp_ms is not None:
+        data["timestamp_ms"] = timestamp_ms
 
     print(json.dumps(data))
 
+
 def sleep_ms_and_log_ina_json(sleep_time_ms: int, log_period_ms: int = 250) -> None:
-    while sleep_time_ms > 0:
-        log_ina_json()
-        time.sleep_ms(log_period_ms)
-        sleep_time_ms -= log_period_ms
+    start_time_ms = time.ticks_ms()
+
+    while True:
+        current_time_ms = time.ticks_ms()
+        elapsed_time_ms = time.ticks_diff(current_time_ms, start_time_ms)
+
+        if elapsed_time_ms >= sleep_time_ms:
+            break  # Stop when the total sleep time has elapsed
+
+        log_ina_json(elapsed_time_ms)
+
+        # Calculate the remaining time
+        next_log_time_ms = time.ticks_add(
+            start_time_ms, elapsed_time_ms + log_period_ms
+        )
+        remaining_time_ms = time.ticks_diff(next_log_time_ms, time.ticks_ms())
+
+        if remaining_time_ms > 0:
+            time.sleep_ms(min(remaining_time_ms, sleep_time_ms - elapsed_time_ms))
+
+
+def minimum_measure_time() -> None:
+    """Measure the minimum time it takes to log INA219 data."""
+    start_time_us = time.ticks_us()
+    pass
+    end_time_us = time.ticks_us()
+    duration_us = time.ticks_diff(end_time_us, start_time_us)
+    print(f"Minimum measure time: {duration_us} us.")
 
 
 def main() -> None:
     print("Starting init.")
     init_shift_register()
-    PIN_GP_LED_0.value(0)
-    PIN_GP_LED_1.value(0)
+    PIN_GP_LED_0.low()
+    PIN_GP_LED_1.low()
     init_ina()
     print("Init complete.")
 
-    if 1:
+    minimum_measure_time()
+
+    # Await button press to start demo.
+    print("Awaiting button press to start demo.")
+    while PIN_SW1.value() and PIN_SW2.value():
+        pass
+    print("Button press detected. Starting demo.")
+    time.sleep_ms(1000)  # Debounce.
+
+    while 1:
+        respond_to_buttons_single_dot(11)
+
+    if 0:
         print("Starting basic demo.")
         demo_set_all_to_each_state()
         print("Basic demo complete.")
