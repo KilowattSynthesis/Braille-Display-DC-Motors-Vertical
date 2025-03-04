@@ -213,6 +213,21 @@ def respond_to_buttons() -> None:
     PIN_GP_LED_0.low()
     PIN_GP_LED_1.low()
 
+def set_dot(dot_num: int, direction: Literal["up", "down"], duration_ms: int = 0) -> None:
+    register_state = [False] * 48
+    if direction == "down":
+        register_state[dot_num * 2] = True
+    elif direction == "up":
+        register_state[dot_num * 2 + 1] = True
+
+    set_shift_registers(register_state)
+
+    sleep_ms_and_log_ina_json(
+        duration_ms, log_period_ms=int(round(duration_ms / 15))
+    )
+
+    fast_clear_shift_registers()
+
 
 def respond_to_buttons_single_dot(dot_num: int) -> None:
     """Respond to the button presses by setting the state of `dot_num`."""
@@ -323,6 +338,27 @@ def minimum_measure_time() -> None:
     print(f"Minimum measure time: {duration_us} us.")
 
 
+def prompt_and_execute() -> None:
+    print("""
+Available commands:
+- exit()  # Doesn't really do anything.
+- set_dot(dot_num: int, direction: "up"/"down", duration_ms: int = 0) -> None:
+    """)
+
+    print("Enter a command:")
+    command = input(">>> ").strip()
+
+    if command == "exit":
+        print("Exiting.")
+        return
+
+    try:
+        exec(command)
+    except Exception as e:
+        print(f"Error: {e}")
+
+    print("Command executed.")
+
 def main() -> None:
     print("Starting init.")
     init_shift_register()
@@ -333,12 +369,17 @@ def main() -> None:
 
     minimum_measure_time()
 
+    while 1:
+        prompt_and_execute()
+        
+
     # Await button press to start demo.
     print("Awaiting button press to start demo.")
     while PIN_SW1.value() and PIN_SW2.value():
         pass
     print("Button press detected. Starting demo.")
     time.sleep_ms(1000)  # Debounce.
+
 
     while 1:
         respond_to_buttons_single_dot(11)
