@@ -38,7 +38,9 @@ class HousingSpec:
     motor_body_od: float = 4.5
     motor_body_length: float = 8.0 + 1.0  # Extra 1mm for fit (esp for bottom).
 
-    gap_above_top_motor: float = 5
+    # Main gap for top motor. 8mm seems workable (with 6mm bolts).
+    # 10mm safe for trying springs as couplers.
+    gap_above_top_motor: float = 10.0
 
     cell_count_x: int = 4
     cell_count_y: int = 1
