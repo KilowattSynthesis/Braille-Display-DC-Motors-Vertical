@@ -53,6 +53,20 @@ def init_shift_register() -> None:
     set_shift_registers([False] * 48)
 
 
+def init() -> None:
+    print("Starting init.")
+    init_shift_register()
+    PIN_GP_LED_0.low()
+    PIN_GP_LED_1.low()
+    init_ina()
+    print("Init complete.")
+
+
+def reset() -> None:
+    # CLI alias.
+    init()
+
+
 def set_shift_registers(data: list[bool]) -> None:
     """
     Set the state of all shift registers based on input data.
@@ -200,7 +214,10 @@ def respond_to_buttons() -> None:
     PIN_GP_LED_0.low()
     PIN_GP_LED_1.low()
 
-def set_dot(dot_num: int, direction: Literal["up", "down"], duration_ms: int = 0) -> None:
+
+def set_dot(
+    dot_num: int, direction: Literal["up", "down"], duration_ms: int = 0
+) -> None:
     register_state = [False] * 48
     if direction == "down":
         register_state[dot_num * 2] = True
@@ -209,9 +226,7 @@ def set_dot(dot_num: int, direction: Literal["up", "down"], duration_ms: int = 0
 
     set_shift_registers(register_state)
 
-    sleep_ms_and_log_ina_json(
-        duration_ms, log_period_ms=int(round(duration_ms / 15))
-    )
+    sleep_ms_and_log_ina_json(duration_ms, log_period_ms=int(round(duration_ms / 15)))
 
     fast_clear_shift_registers()
 
@@ -315,6 +330,7 @@ def sleep_ms_and_log_ina_json(sleep_time_ms: int, log_period_ms: int = 250) -> N
         if remaining_time_ms > 0:
             time.sleep_ms(min(remaining_time_ms, sleep_time_ms - elapsed_time_ms))
 
+
 def sleep_ms_and_get_ina_stats(sleep_time_ms: int) -> dict[str, float]:
     start_time_ms = time.ticks_ms()
     current_values_mA = []
@@ -327,11 +343,12 @@ def sleep_ms_and_get_ina_stats(sleep_time_ms: int) -> dict[str, float]:
             break
 
     return {
-        'min': min(current_values_mA),
-        'max': max(current_values_mA),
-        'avg': sum(current_values_mA) / len(current_values_mA),
-        'len': len(current_values_mA),
+        "min": min(current_values_mA),
+        "max": max(current_values_mA),
+        "avg": sum(current_values_mA) / len(current_values_mA),
+        "len": len(current_values_mA),
     }
+
 
 def minimum_measure_time() -> None:
     """Measure the minimum time it takes to log INA219 data."""
@@ -340,6 +357,7 @@ def minimum_measure_time() -> None:
     end_time_us = time.ticks_us()
     duration_us = time.ticks_diff(end_time_us, start_time_us)
     print(f"Minimum measure time: {duration_us} us.")
+
 
 def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
     dot_pass_list = []
@@ -352,7 +370,7 @@ def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
         set_shift_registers(register_state)
         stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
         print(f"    {stats}")
-        if stats['max'] < 20:
+        if stats["max"] < 20:
             print(f"WARNING: Dot #{dot_num} 'down' failed self-test.")
             dot_failed = True
 
@@ -362,7 +380,7 @@ def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
         set_shift_registers(register_state)
         stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
         print(f"    {stats}")
-        if stats['max'] < 20:
+        if stats["max"] < 20:
             print(f"WARNING: Dot #{dot_num} 'up' failed self-test.")
             dot_failed = True
 
@@ -375,41 +393,88 @@ def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
     print(f"Passing dots ({len(dot_pass_list)}): {dot_pass_list}")
     print(f"Failing dots ({len(dot_fail_list)}): {dot_fail_list}")
 
-def prompt_and_execute() -> None:
+
+def self_test_lights_and_buttons() -> None:
+    print("Testing lights and buttons.")
+    print("Press SW1 to turn on GP_LED_0.")
+    print("Press SW2 to turn on GP_LED_1.")
+    print("Press both to exit.")
+
+    last_sw1 = 1
+    last_sw2 = 1
+
+    while 1:
+        sw1 = PIN_SW1.value()
+        sw2 = PIN_SW2.value()
+
+        if sw1 != last_sw1:
+            last_sw1 = sw1
+            PIN_GP_LED_0.value(not sw1)
+            print(f"SW1: {sw1}")
+
+        if sw2 != last_sw2:
+            last_sw2 = sw2
+            PIN_GP_LED_1.value(not sw2)
+            print(f"SW2: {sw2}")
+
+        if sw1 == 0 and sw2 == 0:
+            PIN_GP_LED_0.low()
+            PIN_GP_LED_1.low()
+            print("Both buttons pressed. Exiting.")
+            break
+
+        time.sleep_ms(100)
+
+
+def print_available_commands() -> None:
     print("""
 Available commands:
-- exit()  # Doesn't really do anything.
-- self_test_each_dot()  # Run a self-test on each dot.
-- set_dot(dot_num: int, direction: "up"/"down", duration_ms: int = 0) -> None:
+    - exit()  # Doesn't really do anything.
+    - init AKA reset
+        -> Initialize the shift registers and INA219.
+    - self_test_each_dot()
+    - self_test_lights_and_buttons()
+    - set_dot(dot_num: int, direction: "up"/"down", duration_ms: int = 0) -> None:
     """)
 
-    print("Enter a command:")
-    command = input(">>> ").strip()
+
+def help() -> None:
+    print_available_commands()
+
+
+# Set some helpful local aliases.
+up = "up"
+down = "down"
+
+
+def prompt_and_execute() -> None:
+    print("Enter a command, or use 'help':")
+    command = input(">> ").strip()
 
     if command == "exit":
         print("Exiting.")
         return
 
+    # If the command does not have parentheses, add them.
+    if "(" not in command and ")" not in command:
+        command += "()"
+
+    print(f"Executing command: {command}\n")
+
     try:
         exec(command)
     except Exception as e:
         print(f"Error: {e}")
+    print()
 
-    print("Command executed.")
 
 def main() -> None:
-    print("Starting init.")
-    init_shift_register()
-    PIN_GP_LED_0.low()
-    PIN_GP_LED_1.low()
-    init_ina()
-    print("Init complete.")
-
+    init()
+    
     minimum_measure_time()
 
     while 1:
         prompt_and_execute()
-        
 
     # Await button press to start demo.
     print("Awaiting button press to start demo.")
@@ -417,7 +482,6 @@ def main() -> None:
         pass
     print("Button press detected. Starting demo.")
     time.sleep_ms(1000)  # Debounce.
-
 
     while 1:
         respond_to_buttons_single_dot(11)
