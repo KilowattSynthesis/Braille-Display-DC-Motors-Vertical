@@ -315,6 +315,23 @@ def sleep_ms_and_log_ina_json(sleep_time_ms: int, log_period_ms: int = 250) -> N
         if remaining_time_ms > 0:
             time.sleep_ms(min(remaining_time_ms, sleep_time_ms - elapsed_time_ms))
 
+def sleep_ms_and_get_ina_stats(sleep_time_ms: int) -> dict[str, float]:
+    start_time_ms = time.ticks_ms()
+    current_values_mA = []
+    while True:
+        current_values_mA.append(ina.shunt_voltage * 1000 / INA_SHUNT_OMHS)
+        current_time_ms = time.ticks_ms()
+        elapsed_time_ms = time.ticks_diff(current_time_ms, start_time_ms)
+
+        if elapsed_time_ms >= sleep_time_ms:
+            break
+
+    return {
+        'min': min(current_values_mA),
+        'max': max(current_values_mA),
+        'avg': sum(current_values_mA) / len(current_values_mA),
+        'len': len(current_values_mA),
+    }
 
 def minimum_measure_time() -> None:
     """Measure the minimum time it takes to log INA219 data."""
@@ -324,11 +341,45 @@ def minimum_measure_time() -> None:
     duration_us = time.ticks_diff(end_time_us, start_time_us)
     print(f"Minimum measure time: {duration_us} us.")
 
+def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
+    dot_pass_list = []
+    dot_fail_list = []
+    for dot_num in range(24):
+        dot_failed = False
+        print(f"Dot {dot_num} - DOWN")
+        register_state = [False] * 48
+        register_state[dot_num * 2] = True
+        set_shift_registers(register_state)
+        stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
+        print(f"    {stats}")
+        if stats['max'] < 20:
+            print(f"WARNING: Dot #{dot_num} 'down' failed self-test.")
+            dot_failed = True
+
+        print(f"Dot {dot_num} - UP")
+        register_state = [False] * 48
+        register_state[dot_num * 2 + 1] = True
+        set_shift_registers(register_state)
+        stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
+        print(f"    {stats}")
+        if stats['max'] < 20:
+            print(f"WARNING: Dot #{dot_num} 'up' failed self-test.")
+            dot_failed = True
+
+        if dot_failed:
+            dot_fail_list.append(dot_num)
+        else:
+            dot_pass_list.append(dot_num)
+
+    print("Self-test complete.")
+    print(f"Passing dots ({len(dot_pass_list)}): {dot_pass_list}")
+    print(f"Failing dots ({len(dot_fail_list)}): {dot_fail_list}")
 
 def prompt_and_execute() -> None:
     print("""
 Available commands:
 - exit()  # Doesn't really do anything.
+- self_test_each_dot()  # Run a self-test on each dot.
 - set_dot(dot_num: int, direction: "up"/"down", duration_ms: int = 0) -> None:
     """)
 
