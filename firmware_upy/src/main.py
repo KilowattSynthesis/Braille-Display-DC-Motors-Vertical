@@ -8,13 +8,6 @@ import json
 
 from ina219 import INA219
 
-# Sleep a bit longer in init to ensure it gets set right.
-SHIFT_REGISTER_INIT_SLEEP_MS = 100
-
-# Nexperia datasheet suggests that 100 ns is the highest-expected minimum pulse time.
-# Sleep time between each bit shift.
-SHIFT_REGISTER_SLEEP_US = 2
-
 # Pin definitions for shift register control
 PIN_SHIFT_SER_IN = Pin(2, Pin.OUT)  # GP2: Serial data input
 PIN_SHIFT_SRCK = Pin(3, Pin.OUT)  # GP3: Shift register clock
@@ -27,7 +20,7 @@ PIN_SW2 = Pin(27, Pin.IN, Pin.PULL_UP)
 PIN_GP_LED_0 = Pin(7, Pin.OUT)
 PIN_GP_LED_1 = Pin(8, Pin.OUT)
 
-INA_SHUNT_OMHS = 0.33
+INA_SHUNT_OMHS = 0.300
 ina_i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=100_000)
 ina: INA219  # Constructed/initialized in `init_ina()`
 
@@ -50,20 +43,14 @@ def init_shift_register() -> None:
     """Initialize shift register pins to default states."""
     # Clear shift register.
     PIN_SHIFT_N_SRCLR.low()
-    time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
     PIN_SHIFT_N_SRCLR.high()  # Active low, so set to normal (not clearing).
-    time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
 
     PIN_SHIFT_N_OE.low()  # Active low, set low to enable outputs
     PIN_SHIFT_SRCK.low()  # Clock starts low
     PIN_SHIFT_RCLK.low()  # Latch starts low
 
-    # Wait for initialization to complete
-    time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
-
     # Clear all outputs.
     set_shift_registers([False] * 48)
-    time.sleep_ms(SHIFT_REGISTER_INIT_SLEEP_MS)
 
 
 def set_shift_registers(data: list[bool]) -> None:
