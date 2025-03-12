@@ -8,18 +8,28 @@ import json
 
 from ina219 import INA219
 
-# Pin definitions for shift register control
+# Pin definitions for shift register control.
 PIN_SHIFT_SER_IN = Pin(2, Pin.OUT)  # GP2: Serial data input
 PIN_SHIFT_SRCK = Pin(3, Pin.OUT)  # GP3: Shift register clock
 PIN_SHIFT_N_SRCLR = Pin(4, Pin.OUT)  # GP4: Shift register clear
 PIN_SHIFT_RCLK = Pin(5, Pin.OUT)  # GP5: Register clock (latch)
 PIN_SHIFT_N_OE = Pin(6, Pin.OUT)  # GP6: Output enable
 
+# Constants for setting the state of the shift registers.
+DOT_ADDITION_CONSTANT_UP = 0
+DOT_ADDITION_CONSTANT_DOWN = 1
+DOT_ADDITION_CONSTANTS = {
+    "up": DOT_ADDITION_CONSTANT_UP,
+    "down": DOT_ADDITION_CONSTANT_DOWN,
+}
+
+# Pin definitions for general purpose LEDs and buttons.
 PIN_SW1 = Pin(28, Pin.IN, Pin.PULL_UP)
 PIN_SW2 = Pin(27, Pin.IN, Pin.PULL_UP)
 PIN_GP_LED_0 = Pin(7, Pin.OUT)
 PIN_GP_LED_1 = Pin(8, Pin.OUT)
 
+# Pin/Peripheral Init: INA219 Current Sensor.
 INA_SHUNT_OMHS = 0.300
 ina_i2c = I2C(1, scl=Pin(15), sda=Pin(14), freq=100_000)
 ina: INA219  # Constructed/initialized in `init_ina()`
@@ -49,13 +59,19 @@ def init_shift_register() -> None:
     PIN_SHIFT_SRCK.low()  # Clock starts low
     PIN_SHIFT_RCLK.low()  # Latch starts low
 
-    # Clear all outputs.
+    fast_clear_shift_register()
+
+    # Clear all outputs explicity (as a precaution).
     set_shift_registers([False] * 48)
 
 
 def init() -> None:
-    print("Starting init.")
     init_shift_register()
+
+    # Print this message after clearing the shift registers.
+    # Important to do them as fast as possible on startup.
+    print("Starting init.")
+
     PIN_GP_LED_0.low()
     PIN_GP_LED_1.low()
     init_ina()
@@ -99,7 +115,7 @@ def set_shift_registers(data: list[bool]) -> None:
     print(f"Shift register set in {duration_us:,} us = {duration_us / 1000:.1f} ms.")
 
 
-def fast_clear_shift_registers() -> None:
+def fast_clear_shift_register() -> None:
     """Clear all shift registers.
 
     Duration: 700us.
@@ -123,112 +139,57 @@ def fast_clear_shift_registers() -> None:
     # Ensure data line is LOW before shifting
     ser_set(0)
 
-    # Shift out 48 LOW bits (fastest possible method)
-    for _ in range(48):
-        srck_set(1)
-        srck_set(0)
+    # Do 24 bits twice, so that when using only a single board,
+    # its outputs are cleared first.
+    for _ in range(2):
+        # Shift out LOW bits (fastest possible method)
+        for _ in range(24):
+            srck_set(1)
+            srck_set(0)
 
-    # Latch the data to outputs
-    rclk_set(1)
-    rclk_set(0)
-
-
-def demo_set_all_to_each_state() -> None:
-    print("All outputs off (high-impedance)")
-    outputs = [False] * 48  # All outputs off
-    set_shift_registers(outputs)
-    sleep_ms_and_log_ina_json(2000)
-
-    print("All outputs on - positive")
-    outputs = [(i % 2 == 0) for i in range(48)]  # Alternating on/off pattern
-    set_shift_registers(outputs)
-    sleep_ms_and_log_ina_json(2000)
-
-    print("All outputs on - negative")
-    outputs = [(i % 2 == 1) for i in range(48)]  # Alternating on/off pattern
-    set_shift_registers(outputs)
-    sleep_ms_and_log_ina_json(2000)
+        # Latch the data to outputs
+        rclk_set(1)
+        rclk_set(0)
 
 
-def make_shift_register_list_of_cells(
-    cell_states: list[tuple[str, str, str, str, str, str] | str],
-) -> list[bool]:
-    """Convert a list of cell states to a list of shift register states."""
-    shift_register_state = [False] * 48
+def set_all_to_each_state(
+    duration_each_state_ms: int = 500, pause_duration_ms: int = 100
+) -> None:
+    for state in ("down", "up"):
+        print(f"Setting all outputs to {state}.")
 
-    for cell_number, cell_state in enumerate(cell_states):
-        if isinstance(cell_state, str):
-            cell_state = (
-                cell_state,
-                cell_state,
-                cell_state,
-                cell_state,
-                cell_state,
-                cell_state,
-            )
+        outputs = [(i % 2 == DOT_ADDITION_CONSTANTS[state]) for i in range(48)]
+        set_shift_registers(outputs)
+        sleep_ms_and_log_ina_json(duration_each_state_ms)
 
-        for dot_number, state in enumerate(cell_state):
-            base_offset = cell_number * 6 * 2 + dot_number * 2
-            in_a_in_b = {
-                "brake": (True, True),
-                "high-z": (False, False),
-                "pos": (True, False),
-                "neg": (False, True),
-            }[state]
-            shift_register_state[base_offset] = in_a_in_b[0]
-            shift_register_state[base_offset + 1] = in_a_in_b[1]
+        # Pause for a sec with outputs off.
+        fast_clear_shift_register()
 
-    return shift_register_state
-
-
-def respond_to_buttons() -> None:
-    """Respond to the button presses by setting the state of all.
-
-    * Pressing SW1 sets all to "pos" for a short time, then back to high-z.
-    * Pressing SW2 sets all to "neg" for a short time, then back to high-z.
-    """
-
-    ACTION_TIME_MS = 250
-    DEBOUNCE_TIME_MS = 650
-
-    if PIN_SW1.value() == 0:
-        print(f"SW1 pressed. Activate all for {ACTION_TIME_MS} ms.")
-        PIN_GP_LED_0.high()
-        direction = "pos"
-
-    elif PIN_SW2.value() == 0:
-        print(f"SW2 pressed. Activate all for {ACTION_TIME_MS} ms.")
-        PIN_GP_LED_1.high()
-        direction = "neg"
-
-    else:
-        return
-
-    register_state = make_shift_register_list_of_cells([direction] * 4)
-    # print(f"Setting shift registers: {register_state}")
-    set_shift_registers(register_state)
-    time.sleep_ms(ACTION_TIME_MS)
-    set_shift_registers(make_shift_register_list_of_cells(["high-z"] * 4))
-    print("Waiting for debounce.")
-    time.sleep_ms(DEBOUNCE_TIME_MS)
-    PIN_GP_LED_0.low()
-    PIN_GP_LED_1.low()
+        if state == "down":
+            time.sleep_ms(pause_duration_ms)
 
 
 def set_dot(
     dot_num: int, direction: Literal["up", "down"], duration_ms: int = 0
 ) -> None:
     register_state = [False] * 48
-    if direction == "down":
-        register_state[dot_num * 2] = True
-    elif direction == "up":
-        register_state[dot_num * 2 + 1] = True
+    register_state[dot_num * 2 + DOT_ADDITION_CONSTANTS[direction]] = True
 
     set_shift_registers(register_state)
 
     sleep_ms_and_log_ina_json(duration_ms, log_period_ms=int(round(duration_ms / 15)))
 
-    fast_clear_shift_registers()
+    fast_clear_shift_register()
+
+
+def cycle_dot(
+    dot_num: int, duration_ms: int = 0, count: int = 10, pause_ms: int = 1000
+) -> None:
+    for i in range(count):
+        set_dot(dot_num, "down", duration_ms)
+        time.sleep_ms(pause_ms)
+        set_dot(dot_num, "up", duration_ms)
+        time.sleep_ms(pause_ms)
 
 
 def respond_to_buttons_single_dot(dot_num: int) -> None:
@@ -251,10 +212,7 @@ def respond_to_buttons_single_dot(dot_num: int) -> None:
         return
 
     register_state = [False] * 48
-    if direction == "down":
-        register_state[dot_num * 2] = True
-    elif direction == "up":
-        register_state[dot_num * 2 + 1] = True
+    register_state[(dot_num * 2) + DOT_ADDITION_CONSTANTS[direction]] = True
 
     # print(f"Setting shift registers: {register_state}")
     set_shift_registers(register_state)
@@ -263,7 +221,7 @@ def respond_to_buttons_single_dot(dot_num: int) -> None:
         ACTION_TIME_MS, log_period_ms=int(round(ACTION_TIME_MS / 15))
     )
 
-    fast_clear_shift_registers()
+    fast_clear_shift_register()
     print("Waiting for debounce.")
     time.sleep_ms(DEBOUNCE_TIME_MS)
     PIN_GP_LED_0.low()
@@ -272,17 +230,11 @@ def respond_to_buttons_single_dot(dot_num: int) -> None:
 
 def demo_each_dot_one_by_one() -> None:
     for dot_num in range(24):
-        print(f"Dot {dot_num} - Direction 1")
-        shift_register_state = [False] * 48
-        shift_register_state[dot_num] = True
-        set_shift_registers(shift_register_state)
-        sleep_ms_and_log_ina_json(1000)
+        print(f"Dot {dot_num} - down")
+        set_dot(dot_num, "down", duration_ms=1000)
 
-        print(f"Dot {dot_num} - Direction 2")
-        shift_register_state = [False] * 48
-        shift_register_state[dot_num + 1] = True
-        set_shift_registers(shift_register_state)
-        sleep_ms_and_log_ina_json(1000)
+        print(f"Dot {dot_num} - up")
+        set_dot(dot_num, "up", duration_ms=1000)
 
 
 def log_ina_json(
@@ -331,7 +283,7 @@ def sleep_ms_and_log_ina_json(sleep_time_ms: int, log_period_ms: int = 250) -> N
             time.sleep_ms(min(remaining_time_ms, sleep_time_ms - elapsed_time_ms))
 
 
-def sleep_ms_and_get_ina_stats(sleep_time_ms: int) -> dict[str, float]:
+def sleep_ms_and_get_ina_stats_mA(sleep_time_ms: int) -> dict[str, float]:
     start_time_ms = time.ticks_ms()
     current_values_mA = []
     while True:
@@ -346,7 +298,7 @@ def sleep_ms_and_get_ina_stats(sleep_time_ms: int) -> dict[str, float]:
         "min": min(current_values_mA),
         "max": max(current_values_mA),
         "avg": sum(current_values_mA) / len(current_values_mA),
-        "len": len(current_values_mA),
+        "data_points": len(current_values_mA),
     }
 
 
@@ -364,25 +316,17 @@ def self_test_each_dot(duration_per_dot_ms: int = 10) -> None:
     dot_fail_list = []
     for dot_num in range(24):
         dot_failed = False
-        print(f"Dot {dot_num} - DOWN")
-        register_state = [False] * 48
-        register_state[dot_num * 2] = True
-        set_shift_registers(register_state)
-        stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
-        print(f"    {stats}")
-        if stats["max"] < 20:
-            print(f"WARNING: Dot #{dot_num} 'down' failed self-test.")
-            dot_failed = True
 
-        print(f"Dot {dot_num} - UP")
-        register_state = [False] * 48
-        register_state[dot_num * 2 + 1] = True
-        set_shift_registers(register_state)
-        stats = sleep_ms_and_get_ina_stats(duration_per_dot_ms)
-        print(f"    {stats}")
-        if stats["max"] < 20:
-            print(f"WARNING: Dot #{dot_num} 'up' failed self-test.")
-            dot_failed = True
+        for direction in ("down", "up"):
+            print(f"Dot {dot_num} - {direction}")
+            register_state = [False] * 48
+            register_state[dot_num * 2 + DOT_ADDITION_CONSTANTS[direction]] = True
+            set_shift_registers(register_state)
+            stats_mA = sleep_ms_and_get_ina_stats_mA(duration_per_dot_ms)
+            print(f"    Stats (mA): {json.dumps(stats_mA)}")
+            if stats_mA["max"] < 20:
+                print(f"WARNING: Dot #{dot_num} '{direction}' failed self-test.")
+                dot_failed = True
 
         if dot_failed:
             dot_fail_list.append(dot_num)
@@ -429,12 +373,19 @@ def self_test_lights_and_buttons() -> None:
 def print_available_commands() -> None:
     print("""
 Available commands:
-    - exit()  # Doesn't really do anything.
-    - init AKA reset
+    - help()
+    - init(), reset()
         -> Initialize the shift registers and INA219.
-    - self_test_each_dot()
+    - set_all_to_each_state(duration_each_state_ms: int = 500, pause_duration_ms: int = 100) -> None
+        -> Set all outputs to each state in turn, starting with high-impedance, then down, then up.
+    - self_test_each_dot(duration_per_dot_ms: int = 10) -> None
+        -> Test each dot by setting it to down and up for a short duration.
+        -> Prints a list of passing and failing dots, based on those that draw current.
     - self_test_lights_and_buttons()
     - set_dot(dot_num: int, direction: "up"/"down", duration_ms: int = 0) -> None:
+    - cycle_dot(dot_num: int, duration_ms: int = 0, count: int = 10, pause_ms: int = 1000) -> None:
+    - <just a single period>
+        -> Repeat the last command.
     """)
 
 
@@ -445,15 +396,30 @@ def help() -> None:
 # Set some helpful local aliases.
 up = "up"
 down = "down"
+dn = "down"
+dwn = "down"
+pos = "up"
+neg = "down"
+
+
+class GlobalStoreSingleton:
+    def __init__(self):
+        self.last_command = "help"
+
+
+global_store = GlobalStoreSingleton()
 
 
 def prompt_and_execute() -> None:
     print("Enter a command, or use 'help':")
     command = input(">> ").strip()
 
-    if command == "exit":
-        print("Exiting.")
-        return
+    if command == ".":
+        print("Repeating last command.")
+        command = global_store.last_command
+    else:
+        command = command.strip()
+        global_store.last_command = command  # Store for repeat feature.
 
     # If the command does not have parentheses, add them.
     if "(" not in command and ")" not in command:
@@ -470,7 +436,7 @@ def prompt_and_execute() -> None:
 
 def main() -> None:
     init()
-    
+
     minimum_measure_time()
 
     while 1:
@@ -482,22 +448,6 @@ def main() -> None:
         pass
     print("Button press detected. Starting demo.")
     time.sleep_ms(1000)  # Debounce.
-
-    while 1:
-        respond_to_buttons_single_dot(11)
-
-    if 0:
-        print("Starting basic demo.")
-        demo_set_all_to_each_state()
-        print("Basic demo complete.")
-
-    while 1:
-        print("Starting demo_each_dot_one_by_one().")
-        demo_each_dot_one_by_one()
-
-    print("Starting respond_to_buttons().")
-    while 1:
-        respond_to_buttons()
 
 
 while True:
