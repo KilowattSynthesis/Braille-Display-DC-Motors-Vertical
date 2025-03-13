@@ -14,7 +14,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from functools import reduce
 from itertools import product
-from math import sqrt
+from math import atan2, degrees, sqrt
 from pathlib import Path
 
 import bd_warehouse.thread
@@ -34,6 +34,9 @@ class HousingSpec:
     dot_pitch_y: float = 2.5
     cell_pitch_x: float = 6
     cell_pitch_y: float = 10
+
+    dot_count_x: int = 2
+    dot_count_y: int = 3
 
     motor_body_od: float = 4.5
     motor_body_length: float = 8.0 + 1.0  # Extra 1mm for fit (esp for bottom).
@@ -546,12 +549,58 @@ def solve_motor_spacing() -> None:
     logger.info(f"motor_pitch_y: {motor_pitch_y}")
 
 
+def solve_dot_to_motor_offset_dist(spec: HousingSpec) -> None:
+    """Calculate the distance from the dot to the motor."""
+    dot_coords = [
+        (x, y)
+        for x, y in product(
+            bde.evenly_space_with_center(
+                count=spec.dot_count_x,
+                spacing=spec.dot_pitch_x,
+            ),
+            bde.evenly_space_with_center(
+                count=spec.dot_count_y,
+                spacing=spec.dot_pitch_y,
+            ),
+        )
+    ]
+
+    motor_coords = [
+        (x, y)
+        for x, y in product(
+            bde.evenly_space_with_center(
+                count=spec.dot_count_x,
+                spacing=spec.motor_pitch_x,
+            ),
+            bde.evenly_space_with_center(
+                count=spec.dot_count_y,
+                spacing=spec.motor_pitch_y,
+            ),
+        )
+    ]
+
+    for dot_num, (dot_coord, motor_coord) in enumerate(
+        zip(dot_coords, motor_coords, strict=True), 1
+    ):
+        dot_x, dot_y = dot_coord
+        motor_x, motor_y = motor_coord
+
+        dist = sqrt((dot_x - motor_x) ** 2 + (dot_y - motor_y) ** 2)
+        angle_deg = degrees(atan2(dot_y - motor_y, dot_x - motor_x))
+
+        logger.info(
+            f"Dot {dot_num} to motor dist ({motor_coord} -> {dot_coord}): "
+            f"{dist:.2f} at {angle_deg:.2f}°"
+        )
+
+
 if __name__ == "__main__":
     start_time = datetime.now(UTC)
     py_file_name = Path(__file__).name
     logger.info(f"Running {py_file_name}")
 
     solve_motor_spacing()
+    solve_dot_to_motor_offset_dist(HousingSpec())
 
     parts = {
         "three_mock_thin_motors_joined": show(
