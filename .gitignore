@@ -2,6 +2,12 @@
 ## KiCAD Gitignore ##
 #####################
 
+temp_*
+
+#####################
+## KiCAD Gitignore ##
+#####################
+
 # New Additions
 backups/
 *-backups

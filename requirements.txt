@@ -3,7 +3,7 @@ GitPython
 
 build123d==0.9.1
 ocp_vscode
-git+https://github.com/gumyr/bd_warehouse@c8b3f6bcb5b7c20285cd15f113012c9add32e629
+git+https://github.com/gumyr/bd_warehouse@e3a1f2708f92e1ff6f006dab815917044318bd85
 build123d-ease==0.2.0.0
 git+https://github.com/GarryBGoode/gggears.git
 

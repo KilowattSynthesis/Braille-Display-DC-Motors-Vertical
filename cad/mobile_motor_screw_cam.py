@@ -8,6 +8,7 @@ from pathlib import Path
 
 import build123d as bd
 import build123d_ease as bde
+from bd_warehouse.thread import IsoThread
 from build123d_ease import show
 from loguru import logger
 
@@ -24,6 +25,15 @@ class Spec:
 
     vertical_travel: float = 1.5
 
+    thread_length: float = 2.0
+
+    top_rod_od: float = 2.2  # Contact surface with the dot.
+    top_rod_length: float = 1
+
+    # OD of the part that goes to the spring (out the bottom).
+    spring_id: float = 1.5 - 0.2
+    spring_rod_length: float = 2.2  # 5mm spring total.
+
     def __post_init__(self) -> None:
         """Post initialization checks."""
         data = {}
@@ -35,30 +45,49 @@ class Spec:
         return copy.deepcopy(self)
 
 
-def motor_screw_cam(spec: Spec) -> bd.Part | bd.Compound:
+def motor_screw_cam(spec: Spec, *, draw_dot: bool = False) -> bd.Part | bd.Compound:
     """Make the bushing."""
     p = bd.Part(None)
 
+    thread = IsoThread(
+        major_diameter=2.5,
+        pitch=1.5,
+        length=spec.thread_length,
+        end_finishes=("chamfer", "square"),
+        align=bde.align.ANCHOR_BOTTOM,
+    )
+    p += thread
+
+    # Add rod to spring out the bottom.
     p += bd.Cylinder(
-        radius=spec.od / 2,
-        height=spec.motor_shaft_length + spec.vertical_travel,
+        radius=spec.spring_id / 2,
+        height=spec.spring_rod_length,
+        align=bde.align.ANCHOR_TOP,
+    )
+
+    # Add core.
+    p += bd.Cylinder(
+        radius=thread.min_radius + 0.05,
+        height=spec.thread_length,
         align=bde.align.ANCHOR_BOTTOM,
     )
 
-    p -= bd.Cylinder(
-        radius=spec.motor_shaft_d / 2,
-        height=spec.motor_shaft_length,
+    # Add the top rod.
+    p += bd.Cylinder(
+        radius=spec.top_rod_od / 2,
+        height=spec.top_rod_length,
         align=bde.align.ANCHOR_BOTTOM,
-    )
+    ).translate((0, 0, spec.thread_length))
 
     # Draw the dot for reference.
-    p += bd.Cylinder(
-        radius=1.4 / 2,
-        height=spec.motor_shaft_length,
-        align=bde.align.ANCHOR_BOTTOM,
-    ).translate(
-        (spec.axis_to_axis, 0, spec.motor_shaft_length + spec.vertical_travel + 0.1)
-    )
+    if draw_dot:
+        p += bd.Cylinder(
+            radius=1.4 / 2,
+            height=spec.motor_shaft_length,
+            align=bde.align.ANCHOR_BOTTOM,
+        ).translate(
+            (spec.axis_to_axis, 0, spec.thread_length + spec.top_rod_length + 0.5)
+        )
 
     return p
 
@@ -79,6 +108,6 @@ if __name__ == "__main__":
     ).mkdir(exist_ok=True, parents=True)
     for name, part in parts.items():
         bd.export_stl(part, str(export_folder / f"{name}.stl"))
-        # bd.export_step(part, str(export_folder / f"{name}.step"))
+        bd.export_step(part, str(export_folder / f"{name}.step"))
 
     logger.info(f"Done running {py_file_name} in {datetime.now(UTC) - start_time}")
