@@ -108,6 +108,7 @@
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
         "text_height": "warning",
+        "text_on_edge_cuts": "error",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
@@ -541,123 +542,357 @@
       "+5V": [
         "Power"
       ],
-      "/Braille_Cell/DOT1_A": "Tight",
-      "/Braille_Cell/DOT2_A": "Tight",
-      "/Braille_Cell/DOT3_A": "Tight",
-      "/Braille_Cell/DOT3_B": "Tight",
-      "/Braille_Cell/DOT4_A": "Tight",
-      "/Braille_Cell/DOT5_A": "Tight",
-      "/Braille_Cell/DOT6_A": "Tight",
-      "/Braille_Cell1/DOT1_A": "Tight",
-      "/Braille_Cell1/DOT2_A": "Tight",
-      "/Braille_Cell1/DOT3_A": "Tight",
-      "/Braille_Cell1/DOT3_B": "Tight",
-      "/Braille_Cell1/DOT4_A": "Tight",
-      "/Braille_Cell1/DOT5_A": "Tight",
-      "/Braille_Cell1/DOT6_A": "Tight",
-      "/Braille_Cell2/DOT1_A": "Tight",
-      "/Braille_Cell2/DOT2_A": "Tight",
-      "/Braille_Cell2/DOT3_A": "Tight",
-      "/Braille_Cell2/DOT3_B": "Tight",
-      "/Braille_Cell2/DOT4_A": "Tight",
-      "/Braille_Cell2/DOT5_A": "Tight",
-      "/Braille_Cell2/DOT6_A": "Tight",
-      "/Braille_Cell3/DOT1_A": "Tight",
-      "/Braille_Cell3/DOT2_A": "Tight",
-      "/Braille_Cell3/DOT3_A": "Tight",
-      "/Braille_Cell3/DOT4_A": "Tight",
-      "/Braille_Cell3/DOT5_A": "Tight",
-      "/Braille_Cell3/DOT6_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT1_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT2_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT3_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT4_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT5_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell/DOT6_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT1_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT2_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT3_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT4_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT5_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell1/DOT6_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT1_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT2_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT3_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT4_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT5_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell2/DOT6_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT1_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT2_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT3_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT4_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT5_A": "Tight",
-      "/Braille_Cells_and_Controls/Braille_Cell3/DOT6_A": "Tight",
-      "Net-(B1-1B)": "Tight",
-      "Net-(B1-2B)": "Tight",
-      "Net-(B1-3B)": "Tight",
-      "Net-(B1-4B)": "Tight",
-      "Net-(B1-5B)": "Tight",
-      "Net-(B1-6B)": "Tight",
-      "Net-(B2-1B)": "Tight",
-      "Net-(B2-2B)": "Tight",
-      "Net-(B2-3B)": "Tight",
-      "Net-(B2-4B)": "Tight",
-      "Net-(B2-5B)": "Tight",
-      "Net-(B2-6B)": "Tight",
-      "Net-(B3-1B)": "Tight",
-      "Net-(B3-2B)": "Tight",
-      "Net-(B3-3B)": "Tight",
-      "Net-(B3-4B)": "Tight",
-      "Net-(B3-5B)": "Tight",
-      "Net-(B3-6B)": "Tight",
-      "Net-(B4-1B)": "Tight",
-      "Net-(B4-2B)": "Tight",
-      "Net-(B4-3B)": "Tight",
-      "Net-(B4-4B)": "Tight",
-      "Net-(B4-5B)": "Tight",
-      "Net-(B4-6B)": "Tight",
-      "Net-(J3-Pin_1)": "Power",
-      "Net-(J7-IN2)": "Power",
-      "Net-(JP1-C)": "Power",
-      "Net-(L1-Pad2)": "Tight",
-      "Net-(L10-Pad2)": "Tight",
-      "Net-(L11-Pad2)": "Tight",
-      "Net-(L12-Pad2)": "Tight",
-      "Net-(L13-Pad2)": "Tight",
-      "Net-(L14-Pad2)": "Tight",
-      "Net-(L15-Pad2)": "Tight",
-      "Net-(L16-Pad2)": "Tight",
-      "Net-(L17-Pad2)": "Tight",
-      "Net-(L18-Pad2)": "Tight",
-      "Net-(L19-Pad2)": "Tight",
-      "Net-(L2-Pad2)": "Tight",
-      "Net-(L20-Pad2)": "Tight",
-      "Net-(L21-Pad2)": "Tight",
-      "Net-(L22-Pad2)": "Tight",
-      "Net-(L23-Pad2)": "Tight",
-      "Net-(L24-Pad2)": "Tight",
-      "Net-(L25-Pad2)": "Tight",
-      "Net-(L26-Pad2)": "Tight",
-      "Net-(L27-Pad2)": "Tight",
-      "Net-(L28-Pad2)": "Tight",
-      "Net-(L29-Pad2)": "Tight",
-      "Net-(L3-Pad2)": "Tight",
-      "Net-(L30-Pad2)": "Tight",
-      "Net-(L31-Pad2)": "Tight",
-      "Net-(L32-Pad2)": "Tight",
-      "Net-(L33-Pad2)": "Tight",
-      "Net-(L37-Pad2)": "Tight",
-      "Net-(L38-Pad2)": "Tight",
-      "Net-(L39-Pad2)": "Tight",
-      "Net-(L4-Pad2)": "Tight",
-      "Net-(L43-Pad2)": "Tight",
-      "Net-(L44-Pad2)": "Tight",
-      "Net-(L45-Pad2)": "Tight",
-      "Net-(L5-Pad2)": "Tight",
-      "Net-(L6-Pad2)": "Tight",
-      "Net-(L7-Pad2)": "Tight",
-      "Net-(L8-Pad2)": "Tight",
-      "Net-(L9-Pad2)": "Tight",
+      "/Braille_Cell/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT3_B": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cell/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT3_B": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cell1/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT3_B": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cell2/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cell3/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell1/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell2/DOT6_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT1_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT2_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT3_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT4_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT5_A": [
+        "Tight"
+      ],
+      "/Braille_Cells_and_Controls/Braille_Cell3/DOT6_A": [
+        "Tight"
+      ],
+      "Net-(B1-1B)": [
+        "Tight"
+      ],
+      "Net-(B1-2B)": [
+        "Tight"
+      ],
+      "Net-(B1-3B)": [
+        "Tight"
+      ],
+      "Net-(B1-4B)": [
+        "Tight"
+      ],
+      "Net-(B1-5B)": [
+        "Tight"
+      ],
+      "Net-(B1-6B)": [
+        "Tight"
+      ],
+      "Net-(B2-1B)": [
+        "Tight"
+      ],
+      "Net-(B2-2B)": [
+        "Tight"
+      ],
+      "Net-(B2-3B)": [
+        "Tight"
+      ],
+      "Net-(B2-4B)": [
+        "Tight"
+      ],
+      "Net-(B2-5B)": [
+        "Tight"
+      ],
+      "Net-(B2-6B)": [
+        "Tight"
+      ],
+      "Net-(B3-1B)": [
+        "Tight"
+      ],
+      "Net-(B3-2B)": [
+        "Tight"
+      ],
+      "Net-(B3-3B)": [
+        "Tight"
+      ],
+      "Net-(B3-4B)": [
+        "Tight"
+      ],
+      "Net-(B3-5B)": [
+        "Tight"
+      ],
+      "Net-(B3-6B)": [
+        "Tight"
+      ],
+      "Net-(B4-1B)": [
+        "Tight"
+      ],
+      "Net-(B4-2B)": [
+        "Tight"
+      ],
+      "Net-(B4-3B)": [
+        "Tight"
+      ],
+      "Net-(B4-4B)": [
+        "Tight"
+      ],
+      "Net-(B4-5B)": [
+        "Tight"
+      ],
+      "Net-(B4-6B)": [
+        "Tight"
+      ],
+      "Net-(J3-Pin_1)": [
+        "Power"
+      ],
+      "Net-(J7-IN2)": [
+        "Power"
+      ],
+      "Net-(JP1-C)": [
+        "Power"
+      ],
+      "Net-(L1-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L10-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L11-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L12-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L13-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L14-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L15-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L16-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L17-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L18-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L19-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L2-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L20-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L21-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L22-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L23-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L24-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L25-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L26-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L27-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L28-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L29-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L3-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L30-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L31-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L32-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L33-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L37-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L38-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L39-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L4-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L43-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L44-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L45-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L5-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L6-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L7-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L8-Pad2)": [
+        "Tight"
+      ],
+      "Net-(L9-Pad2)": [
+        "Tight"
+      ],
       "Net-(U102-VO)": [
         "Power"
       ]
