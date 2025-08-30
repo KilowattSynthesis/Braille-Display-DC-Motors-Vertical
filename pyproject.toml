@@ -1,0 +1,23 @@
+[project]
+name = "cad"
+version = "0.0.0"
+dependencies = [
+    "loguru",
+    "GitPython",
+    "build123d==0.9.0",
+    "ocp_vscode",
+    "bd_warehouse @ git+https://github.com/gumyr/bd_warehouse@b7e0dbe87e76244282651e903f6f55257a298219",
+    "build123d-ease==0.2.0.0",
+    "gggears @ git+https://github.com/GarryBGoode/gggears.git",
+    # "ocp_tessellate<3.0.10",
+]
+requires-python = ">=3.12"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.403",
+    "ruff>=0.12.8",
+]
+
+[tool.pyright]
+typeCheckingMode = "basic"
