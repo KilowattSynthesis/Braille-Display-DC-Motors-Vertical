@@ -167,6 +167,21 @@ def hex_driver_grid_printable(
     return p
 
 
+def hex_driver_printable_metal(spec: Spec) -> bd.Part | bd.Compound:
+    """Make a chunk of 4 hex_driver parts."""
+    single_part = hex_driver(spec)
+
+    p = bd.Part(None)
+    for rot_angle in (0, 90, 180, 270):
+        p += (
+            single_part.rotate(axis=bd.Axis.X, angle=-90)
+            .translate((0, spec.shaft_interface_od + 1.0, 0))
+            .rotate(axis=bd.Axis.Z, angle=rot_angle)
+        )
+
+    return p
+
+
 if __name__ == "__main__":
     start_time = datetime.now(UTC)
     py_file_name = Path(__file__).name
@@ -177,7 +192,8 @@ if __name__ == "__main__":
         "hex_driver_grid_printable_sla": show(
             hex_driver_grid_printable(Spec(), PrintableGridSpec())
         ),
-        "hex_driver_grid_printable_metal": show(
+        "hex_driver_printable_metal": show(hex_driver_printable_metal(Spec())),
+        "hex_driver_grid_printable_metal_failed_attempt": (
             hex_driver_grid_printable(
                 Spec(),
                 PrintableGridSpec(
