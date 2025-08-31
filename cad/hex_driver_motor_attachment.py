@@ -24,7 +24,7 @@ class Spec:
     motor_shaft_d: float = 0.6
     motor_shaft_len: float = 2.0
 
-    shaft_interface_od: float = 1.6
+    shaft_interface_od: float = 2.1
 
     cone_len: float = 1.0
 
@@ -50,6 +50,9 @@ class PrintableGridSpec:
     joiner_bar_width_z: float = 1.6
 
     protection_cylinder_od: float = 2.5
+
+    count_x: int = 3
+    count_y: int = 3
 
     def __post_init__(self) -> None:
         """Post initialization checks."""
@@ -111,15 +114,23 @@ def hex_driver_grid_printable(
 
     p = bd.Part(None)
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
-        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(
+            count=print_spec.count_x, spacing=print_spec.spacing
+        ),
+        bde.evenly_space_with_center(
+            count=print_spec.count_y, spacing=print_spec.spacing
+        ),
     ):
         p += bd.Pos((x_val, y_val, 0)) * single_part
 
     # Join grids in Y.
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
-        bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(
+            count=print_spec.count_x, spacing=print_spec.spacing
+        ),
+        bde.evenly_space_with_center(
+            count=print_spec.count_y - 1, spacing=print_spec.spacing
+        ),
     ):
         p += bd.Pos((x_val, y_val, -spec.motor_shaft_len / 2)) * bd.Box(
             print_spec.joiner_bar_width_xy,
@@ -129,8 +140,12 @@ def hex_driver_grid_printable(
 
     # Join grids in X.
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
-        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(
+            count=print_spec.count_x - 1, spacing=print_spec.spacing
+        ),
+        bde.evenly_space_with_center(
+            count=print_spec.count_y, spacing=print_spec.spacing
+        ),
     ):
         p += bd.Pos((x_val, y_val, -spec.motor_shaft_len / 2)) * bd.Box(
             print_spec.spacing - mean(spec.shaft_interface_od, spec.motor_shaft_d),
@@ -141,19 +156,28 @@ def hex_driver_grid_printable(
     # Add protection (vertical cylinders).
     for x_val, y_val in [
         *product(
-            bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
-            bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+            bde.evenly_space_with_center(
+                count=print_spec.count_x - 1, spacing=print_spec.spacing
+            ),
+            bde.evenly_space_with_center(
+                count=print_spec.count_y, spacing=print_spec.spacing
+            ),
         ),
         *product(
-            bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
-            bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
+            bde.evenly_space_with_center(
+                count=print_spec.count_y, spacing=print_spec.spacing
+            ),
+            bde.evenly_space_with_center(
+                count=print_spec.count_x - 1, spacing=print_spec.spacing
+            ),
         ),
     ]:
-        p += bd.Pos(X=x_val, Y=y_val, Z=-2.5) * bd.Cylinder(
-            radius=print_spec.protection_cylinder_od / 2,
-            height=7,
-            align=bde.align.ANCHOR_BOTTOM,
-        )
+        if print_spec.protection_cylinder_od > 0.1:  # noqa: PLR2004
+            p += bd.Pos(X=x_val, Y=y_val, Z=-2.5) * bd.Cylinder(
+                radius=print_spec.protection_cylinder_od / 2,
+                height=7,
+                align=bde.align.ANCHOR_BOTTOM,
+            )
 
     # Add protection (top plate).
     if print_spec.top_plate_thickness > 0.1:  # noqa: PLR2004
@@ -170,14 +194,31 @@ def hex_driver_grid_printable(
 def hex_driver_printable_metal(spec: Spec) -> bd.Part | bd.Compound:
     """Make a chunk of 4 hex_driver parts."""
     single_part = hex_driver(spec)
+    single_part = single_part.translate((0, 0, -single_part.bounding_box().min.Z))
+
+    shift_off_center_distance = spec.shaft_interface_od * 0.4
 
     p = bd.Part(None)
     for rot_angle in (0, 90, 180, 270):
         p += (
             single_part.rotate(axis=bd.Axis.X, angle=-90)
-            .translate((0, spec.shaft_interface_od + 1.0, 0))
+            .translate((0, shift_off_center_distance, 0))
             .rotate(axis=bd.Axis.Z, angle=rot_angle)
         )
+
+    # Add a border oof.
+    box_inside_length = (
+        single_part.bounding_box().size.Z + shift_off_center_distance
+    ) * 2
+    border = bd.Box(box_inside_length + 2.0, box_inside_length + 2.0, 2.1) - bd.Box(
+        box_inside_length, box_inside_length, 10
+    )
+
+    # Debugging: Set breakpoint here.
+    p += border
+
+    if isinstance(p, list):
+        p = bd.Compound(p)
 
     return p
 
@@ -189,7 +230,7 @@ if __name__ == "__main__":
 
     parts: dict[str, bd.Part | bd.Compound] = {
         "hex_driver": (hex_driver(Spec())),
-        "hex_driver_grid_printable_sla": show(
+        "hex_driver_grid_printable_sla": (
             hex_driver_grid_printable(Spec(), PrintableGridSpec())
         ),
         "hex_driver_printable_metal": show(hex_driver_printable_metal(Spec())),
@@ -204,6 +245,19 @@ if __name__ == "__main__":
                 ),
             )
         ),
+        "hex_driver_grid_machining": show(
+            hex_driver_grid_printable(
+                Spec(),
+                PrintableGridSpec(
+                    top_plate_thickness=0,
+                    protection_cylinder_od=0.0,
+                    joiner_bar_width_xy=1.0,
+                    joiner_bar_width_z=1.0,
+                    count_x=4,
+                    count_y=4,
+                ),
+            )
+        ),
     }
 
     logger.info("Saving CAD model(s)")
@@ -212,7 +266,7 @@ if __name__ == "__main__":
         export_folder := Path(__file__).parent.parent / "build" / Path(__file__).stem
     ).mkdir(exist_ok=True, parents=True)
     for name, part in parts.items():
-        logger.debug(f"Exporting {name} - {part.bounding_box()}")
+        logger.debug(f"Exporting {name} - {part.bounding_box().size}")
         bd.export_stl(part, str(export_folder / f"{name}.stl"))
         bd.export_step(part, str(export_folder / f"{name}.step"))
 
