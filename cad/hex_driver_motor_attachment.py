@@ -39,6 +39,29 @@ class Spec:
         return copy.deepcopy(self)
 
 
+@dataclass(kw_only=True)
+class PrintableGridSpec:
+    """Specification for making the grid of the part."""
+
+    top_plate_thickness: float = 1.8
+
+    spacing: float = 7
+    joiner_bar_width_xy: float = 1
+    joiner_bar_width_z: float = 1.6
+
+    protection_cylinder_od: float = 2.5
+
+    def __post_init__(self) -> None:
+        """Post initialization checks."""
+        data = {}
+
+        logger.info(json.dumps(data, indent=2))
+
+    def deep_copy(self) -> "PrintableGridSpec":
+        """Copy the current spec."""
+        return copy.deepcopy(self)
+
+
 def hex_driver(spec: Spec) -> bd.Part | bd.Compound:
     """Make the adapter."""
     p = bd.Part(None)
@@ -80,60 +103,66 @@ def mean(a: float, b: float) -> float:
     return (a + b) / 2
 
 
-def hex_driver_grid_printable(spec: Spec) -> bd.Part | bd.Compound:
+def hex_driver_grid_printable(
+    spec: Spec, print_spec: PrintableGridSpec
+) -> bd.Part | bd.Compound:
     """Make a grid of hex_driver parts."""
     single_part = hex_driver(spec)
 
-    spacing = 7
-    joiner_bar_width_xy = 1
-    joiner_bar_width_z = 1.6
-
     p = bd.Part(None)
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=3, spacing=spacing),
-        bde.evenly_space_with_center(count=3, spacing=spacing),
+        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
     ):
         p += bd.Pos((x_val, y_val, 0)) * single_part
 
     # Join grids in Y.
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=3, spacing=spacing),
-        bde.evenly_space_with_center(count=2, spacing=spacing),
+        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
     ):
         p += bd.Pos((x_val, y_val, -spec.motor_shaft_len / 2)) * bd.Box(
-            joiner_bar_width_xy,
-            spacing - mean(spec.shaft_interface_od, spec.motor_shaft_d),
-            joiner_bar_width_z,
+            print_spec.joiner_bar_width_xy,
+            print_spec.spacing - mean(spec.shaft_interface_od, spec.motor_shaft_d),
+            print_spec.joiner_bar_width_z,
         )
 
     # Join grids in X.
     for x_val, y_val in product(
-        bde.evenly_space_with_center(count=2, spacing=spacing),
-        bde.evenly_space_with_center(count=3, spacing=spacing),
+        bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
+        bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
     ):
         p += bd.Pos((x_val, y_val, -spec.motor_shaft_len / 2)) * bd.Box(
-            spacing - mean(spec.shaft_interface_od, spec.motor_shaft_d),
-            joiner_bar_width_xy,
-            joiner_bar_width_z,
+            print_spec.spacing - mean(spec.shaft_interface_od, spec.motor_shaft_d),
+            print_spec.joiner_bar_width_xy,
+            print_spec.joiner_bar_width_z,
         )
 
     # Add protection (vertical cylinders).
     for x_val, y_val in [
         *product(
-            bde.evenly_space_with_center(count=2, spacing=spacing),
-            bde.evenly_space_with_center(count=3, spacing=spacing),
+            bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
+            bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
         ),
         *product(
-            bde.evenly_space_with_center(count=3, spacing=spacing),
-            bde.evenly_space_with_center(count=2, spacing=spacing),
+            bde.evenly_space_with_center(count=3, spacing=print_spec.spacing),
+            bde.evenly_space_with_center(count=2, spacing=print_spec.spacing),
         ),
     ]:
         p += bd.Pos(X=x_val, Y=y_val, Z=-2.5) * bd.Cylinder(
-            radius=2.5 / 2, height=7, align=bde.align.ANCHOR_BOTTOM
+            radius=print_spec.protection_cylinder_od / 2,
+            height=7,
+            align=bde.align.ANCHOR_BOTTOM,
         )
 
-    # Add protection (top plate):
-    p += bd.Pos(Z=6.5 - 2.5 + 1) * bd.Box(spacing * 2.6, spacing * 2.6, height=1.8)
+    # Add protection (top plate).
+    if print_spec.top_plate_thickness > 0.1:  # noqa: PLR2004
+        p += bd.Pos(Z=6.5 - 2.5) * bd.Box(
+            print_spec.spacing * 2.6,
+            print_spec.spacing * 2.6,
+            height=print_spec.top_plate_thickness,
+            align=bde.align.ANCHOR_BOTTOM,
+        )
 
     return p
 
@@ -145,7 +174,20 @@ if __name__ == "__main__":
 
     parts: dict[str, bd.Part | bd.Compound] = {
         "hex_driver": (hex_driver(Spec())),
-        "hex_driver_grid_printable": show(hex_driver_grid_printable(Spec())),
+        "hex_driver_grid_printable_sla": show(
+            hex_driver_grid_printable(Spec(), PrintableGridSpec())
+        ),
+        "hex_driver_grid_printable_metal": show(
+            hex_driver_grid_printable(
+                Spec(),
+                PrintableGridSpec(
+                    top_plate_thickness=0,
+                    protection_cylinder_od=2.0,
+                    joiner_bar_width_xy=1.0,
+                    joiner_bar_width_z=1.0,
+                ),
+            )
+        ),
     }
 
     logger.info("Saving CAD model(s)")
